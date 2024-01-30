@@ -116,8 +116,8 @@ class SofarsolarHyd extends utils.Adapter {
 				Bat2House = 0;
 				PV2Bat = Power_Bat1 * 1000;
 			}
-			await this.setStateAsync("sofarhyd.0.CalculatedStates.Bat2House", Bat2House, true);
-			await this.setStateAsync("sofarhyd.0.CalculatedStates.PV2Bat", PV2Bat, true);
+			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.Bat2House", Bat2House, true);
+			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.PV2Bat", PV2Bat, true);
 
 			if (ActivePower_PCC_Total > 0) {
 				if (Power_PV1 > 0) {
@@ -133,12 +133,12 @@ class SofarsolarHyd extends utils.Adapter {
 				Net2House = -ActivePower_PCC_Total * 1000;
 				PV2Net = 0;
 			}
-			await this.setStateAsync("sofarhyd.0.CalculatedStates.Net2House", Net2House, true);
-			await this.setStateAsync("sofarhyd.0.CalculatedStates.PV2Net", PV2Net, true);
+			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.Net2House", Net2House, true);
+			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.PV2Net", PV2Net, true);
 
 
 			PV2House = Power_PV1 * 1000 - PV2Bat - PV2Net;
-			await this.setStateAsync("sofarhyd.0.CalculatedStates.PV2House", PV2House, true);
+			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.PV2House", PV2House, true);
 		}
 	}
 
