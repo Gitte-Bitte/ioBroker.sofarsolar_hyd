@@ -89,7 +89,7 @@
 			{
 				"js-controller": ">=3.3.22"
 			},
-			"vis"
+			"vis-2"
 		],
 		"globalDependencies": [
 			{
