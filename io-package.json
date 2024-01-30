@@ -61,6 +61,7 @@
 		"compact": true,
 		"connectionType": "local",
 		"dataSource": "poll",
+        "messagebox": true,
 		"adminUI": {
 			"config": "json",
 			"tab": "materialize"
@@ -96,32 +97,42 @@
 			}
 		]
 	},
-	"native": {
-		"option1": true,
-		"option2": "42"
-	},
-	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "info",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "info.connection",
-			"type": "state",
-			"common": {
-				"role": "indicator.connected",
-				"name": "Device or service connected",
-				"type": "boolean",
-				"read": true,
-				"write": false,
-				"def": false
-			},
-			"native": {}
-		}
-	]
+    "native": {
+        "text1": "",
+        "text2": "",
+        "text3": ""
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "",
+            "type": "meta",
+            "common": {
+                "type": "meta"
+				
+            },
+            "native": {}
+        }
+    ]
 }

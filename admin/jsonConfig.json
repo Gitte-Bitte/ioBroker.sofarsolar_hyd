@@ -1,16 +1,250 @@
-{
-	"i18n": true,
-	"type": "panel",
-	"items": {
-		"option1": {
-			"type": "checkbox",
-			"label": "option1",
-			"newLine": true
-		},
-		"option2": {
-			"type": "text",
-			"label": "option2",
-			"newLine": true
-		}
-	}
+{ // lets start"i18n": true,
+    "type": "tabs",
+    "items": {
+        "tab_1": {
+            "type": "panel",
+            "label": "Protokoll",
+            "sm": 3,
+            "lg": 3,
+            "items": {
+                "select": {
+                    "type": "select",
+                    "label": "Bitte Protokoll wählen",
+                    "newLine": true,
+                    "sm": 3,
+                    "lg": 3,
+                    "options": [
+                        {
+                            "label": "TCP",
+                            "value": 1
+                        },
+                        {
+                            "label": "Seriell",
+                            "value": 2
+                        },
+                        {
+                            "label": "WasWeisIch",
+                            "value": 3
+                        }
+                    ]
+                },
+                "panel_1": {
+                    "type": "panel",
+                    "label": "TCP",
+                    "hidden": "!(data.select==1)",
+                    "newLine": true,
+                    "sm": 3,
+                    "lg": 3,
+                    "items": {
+                        "ip": {
+                            "type": "ip",
+                            "label": "IP-Address",
+                            "newLine": true
+                        },
+                        "port": {
+                            "type": "port",
+                            "label": "Port auswählen",
+                            "newLine": true
+                        }
+                    }
+                },
+                "panel_2": {
+                    "type": "panel",
+                    "hidden": "!(data.select==2)",
+                    "newLine": true,
+                    "sm": 3,
+                    "lg": 3,
+                    "items": {
+                        "schnittstellen": {
+                            "label": "Schnittstelle",
+                            "type": "selectSendTo",
+                            "command": "nu"
+                        },
+                        "baud": {
+                            "type": "select",
+                            "label": "Baudrate",
+                            "newLine": true,
+                            "sm": 3,
+                            "lg": 3,
+                            "options": [
+                                {
+                                    "label": "9600",
+                                    "value": 9600
+                                },
+                                {
+                                    "label": "11000",
+                                    "value": 11000
+                                },
+                                {
+                                    "label": "23000",
+                                    "value": 23000
+                                }
+                            ]
+                        },
+                        "stoppBits": {
+                            "type": "number",
+                            "label": "stopp-bits",
+                            "min": 0,
+                            "max": 3,
+                            "newLine": true,
+                            "sm": 3,
+                            "lg": 3
+                        },
+                        "dataBits": {
+                            "type": "number",
+                            "label": "data-bits",
+                            "min": 5,
+                            "max": 9,
+                            "newLine": true,
+                            "sm": 3,
+                            "lg": 3
+                        },
+                        "parity": {
+                            "type": "checkbox",
+                            "label": "Paritätsbit",
+                            "newLine": true,
+                            "sm": 3,
+                            "lg": 3
+                        }
+                    }
+                },
+                "panel_3": {
+                    "type": "panel",
+                    "label": "TCP",
+                    "hidden": "!(data.select==3)",
+                    "newLine": true,
+                    "sm": 3,
+                    "lg": 3,
+                    "items": {
+                        "selectVal1": {
+                            "type": "pattern",
+                            "pattern": "Hier steht was weiss ich",
+                            "newLine": true
+                        },
+                        "checkbox2a": {
+                            "type": "checkbox",
+                            "label": "wasweissich Checkbox ",
+                            "tooltip": "enables third checkbox",
+                            "newLine": true
+                        }
+                    }
+                },
+                "number2": {
+                    "type": "number",
+                    "label": "Geräte-ID",
+                    "min": 1,
+                    "max": 128,
+                    "newLine": true
+                }
+            }
+        },
+        "tab_2": {
+            "type": "panel",
+            "label": "List:Polling",
+            "items": {
+                "lintToJson": {
+                    "type": "staticLink",
+                    "text": "sssssssssssssssssssssssssssssssssssssssssss",
+                    "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
+                    "icon": "info"
+                },
+                "staticText3a": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "Im Textfeld kann beliebiger Text eingegebenwerden. Auszulesende Register müssen jeweils ein # vorangestellt haben",
+                    "style": {
+                        "fontSize": 24
+                    }
+                },
+                "checkbox1": {
+                    "type": "checkbox",
+                    "label": "Register als HEX",
+                    "tooltip": "click to enable or disable checkbox, check tooltip by hovering over checkbox",
+                    "default": false,
+                    "newLine": true
+                },
+                "autocomplete1": {
+                    "newLine": true,
+                    "type": "autocomplete",
+                    "label": "Interne Aktualisierung in Sekunden",
+                    "options": [
+                        "2",
+                        "3",
+                        "5",
+                        "6",
+                        "10",
+                        "12",
+                        "15",
+                        "20",
+                        "30"
+                    ],
+                    "freeSolo": false,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
+                "autocomplete2": {
+                    "type": "autocomplete",
+                    "label": "Aktualisierung in Minuten",
+                    "options": [
+                        "0,5",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ],
+                    "freeSolo": false,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
+                "text1": {
+                    "newLine": true,
+                    "type": "text",
+                    "label": "Register mit Mittelwert",
+                    "minRows": 3,
+                    "maxRows": 7,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
+                "text2": {
+                    "type": "text",
+                    "label": "Register ohne Mittelwert",
+                    "minRows": 3,
+                    "maxRows": 7,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
+                "text3": {
+                    "type": "text",
+                    "label": "Am Tagesende auszulesen",
+                    "minRows": 3,
+                    "maxRows": 7,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                }
+            }
+        },
+        "tab_3": {
+            "type": "panel",
+            "label": "List:CronJob",
+            "items": {
+                "lintToJson": {
+                    "type": "staticLink",
+                    "text": "https://github.com/Gitte-Bitte/ioBroker.sofarhyd/tree/0.0.1",
+                    "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
+                    "icon": "info"
+                }
+            }
+        }
+    }
 }
