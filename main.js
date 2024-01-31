@@ -1,8 +1,8 @@
 "use strict";
 
-import { stringify } from "querystring";
-import { Interface } from "readline";
-import { arrayBuffer } from "stream/consumers";
+//import { stringify } from "querystring";
+//import { Interface } from "readline";
+//import { arrayBuffer } from "stream/consumers";
 
 const schedule = require("node-schedule");
 
@@ -37,20 +37,20 @@ class SofarsolarHyd extends utils.Adapter {
 
 	regBuffer = new ArrayBuffer(80);
 	fetchLevel = 0;
-	loopCounter=0;
+	loopCounter = 0;
 	singleRegister = new this.registerObject("jhg", "jhg", 56);
 	registerCollection = [];
 
 
-	loopInfo= {
-		0:[
-			{blockStart1:[1,2,3]},
-			{blockStart2:[4,7,9]}
-			],//loopentity,5seconds
-		1:[],//minutes
-		2:[],//hours
-		3:[],//dayly
-		average:[]//average after x loopentitys
+	loopInfo = {
+		0: [
+			{ blockStart1: [1, 2, 3] },
+			{ blockStart2: [4, 7, 9] }
+		],//loopentity,5seconds
+		1: [],//minutes
+		2: [],//hours
+		3: [],//dayly
+		average: []//average after x loopentitys
 	};
 
 	/**
@@ -205,30 +205,30 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 
-async loop(){
-	let average=false;
-	this.loopCounter++;
-	if(this.loopCounter>2){
-		this.loopCounter=0;
-		average=true;
+	async loop() {
+		let average = false;
+		this.loopCounter++;
+		if (this.loopCounter > 2) {
+			this.loopCounter = 0;
+			average = true;
+		}
+		for (const blockAdr of this.loopInfo[this.fetchLevel]) {
+			await this.getRegisterBuffer(blockAdr).then;
+		}
+		this.setTimeout(() => { this.loop(); }, 5000);
 	}
-	for (const blockAdr of this.loopInfo[this.fetchLevel]){
-		await this.getRegisterBuffer(blockAdr).then;
+
+
+	async getRegisterBuffer(adr) {
+
 	}
-	this.setTimeout(() => { this.loop(); }, 5000);
-}
-
-
-async getRegisterBuffer(adr){
-
-}
 
 
 
 	registerObject(firstName, lastName, age) {
-		this.firstName = firstName
-		this.lastName = lastName
-		this.age = age
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
 	}
 
 	async splitter2(resp, arr) {
