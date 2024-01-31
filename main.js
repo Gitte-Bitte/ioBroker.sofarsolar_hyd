@@ -1,5 +1,9 @@
 "use strict";
 
+import { stringify } from "querystring";
+import { Interface } from "readline";
+import { arrayBuffer } from "stream/consumers";
+
 const schedule = require("node-schedule");
 
 const utils = require("@iobroker/adapter-core");
@@ -30,9 +34,30 @@ let Power_Bat1 = 0;
 const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net2House"];
 
 class SofarsolarHyd extends utils.Adapter {
+
+	regBuffer = new ArrayBuffer(80);
+	fetchLevel = 0;
+	loopCounter=0;
+	singleRegister = new this.registerObject("jhg", "jhg", 56);
+	registerCollection = [];
+
+
+	loopInfo= {
+		0:[
+			{blockStart1:[1,2,3]},
+			{blockStart2:[4,7,9]}
+			],//loopentity,5seconds
+		1:[],//minutes
+		2:[],//hours
+		3:[],//dayly
+		average:[]//average after x loopentitys
+	};
+
 	/**
-     * @param {Partial<utils.AdapterOptions>} [options={}]
-     */
+	 * @param {Partial<utils.AdapterOptions>} [options={}]
+	 */
+
+
 	constructor(options) {
 		super({
 			...options,
@@ -46,9 +71,165 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 
+	/** Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
+	* Using this method requires "common.messagebox" property to be set to true in io-package.json
+	* @param {ioBroker.Message} obj
+	*/
+	onMessage(obj) {
+
+		//this.log.debug('onMessage erreicht, empfangenes Objekt: ${JSON.stringify(obj)}');
+		//if (typeof obj === 'object' && obj.message) {
+		if (typeof obj === "object") {
+			//             // e.g. send email or pushover or whatever
+			if (obj.command === "nu") {
+				if (obj.callback) {
+					try {
+						const { SerialPort } = require("serialport");
+						if (SerialPort) {
+							//this.log.debug(`serialport vorhanden`);
+							// read all found serial ports
+							SerialPort.list()
+								.then(ports => {
+									//this.log.debug(`List of port: ${ JSON.stringify(ports) } `);
+									this.sendTo(obj.from, obj.command, ports.map(item => ({ label: item.path, value: item.path })), obj.callback);
+								})
+								.catch(e => {
+									this.sendTo(obj.from, obj.command, [], obj.callback);
+									this.log.error(e);
+								});
+						} else {
+							//this.log.error('Module serialport is not available');
+							this.sendTo(obj.from, obj.command, [{ label: "Not available", value: "" }], obj.callback);
+						}
+					} catch (e) {
+						this.sendTo(obj.from, obj.command, [{ label: "Not available", value: "" }], obj.callback);
+					}
+				}
+			}
+			//             // Send response in callback if required
+		}
+	}
+
+	/**
+	 * Is called when databases are connected and adapter received configuration.
+	 */
+	async onReady() {
+
+		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
+		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
+		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
+
+		this.setState("info.connection", false, true);
+
+		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
+		//socket.on('open', () => { this.log.error('Port geöffnet '); });
+
+		//this.interval1 = this.setInterval(() => this.loop_ask(), 5000);
+		//this.interval1 = this.setInterval(() => this.readChecked(), 5000);
+
+
+		//this.log.info(`config this.config: ${ JSON.stringify(this.config) } `);
+
+		await this.makeStatesFromArray(calcStates, "CalculatedStates");
+		this.fillRegisterObjects().then(() => this.readFromObject());
+
+		//        this.setTimeout(() => { this.readFromObject(); }, 8000);
+
+		/* const job = schedule.scheduleJob('42 * * * *', function(){
+			 this.log.('The answer to life, the universe, and everything!');
+		   });
+		   */
+		const job = schedule.scheduleJob("42 * * * *", () => {
+			this.log.error("The answer to life, the universe, and everything!");
+		});
+
+
+		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
+		//this.subscribeStates('testVariable');
+		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
+		// this.subscribeStates('lights.*');
+		//await this.setStateAsync('testVariable', true);
+		//await this.setStateAsync('testVariable', { val: true, ack: true });
+		//await this.setStateAsync('testVariable', { val: true, ack: true, expire: 30 });
+	}
+
+	/**
+	 * Is called when adapter shuts down - callback has to be called under any circumstances!
+	 * @param {() => void} callback
+	 */
+	onUnload(callback) {
+		try {
+			// Here you must clear all timeouts or intervals that may still be active
+			// clearTimeout(timeout1);
+			// clearTimeout(timeout2);
+			// ...
+			// clearInterval(interval1);
+			schedule.gracefulShutdown();
+
+			callback();
+		} catch (e) {
+			callback();
+		}
+	}
+
+	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
+	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
+	// /**
+	//  * Is called if a subscribed object changes
+	//  * @param {string} id
+	//  * @param {ioBroker.Object | null | undefined} obj
+	//  */
+	// onObjectChange(id, obj) {
+	// 	if (obj) {
+	// 		// The object was changed
+	// 		this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
+	// 	} else {
+	// 		// The object was deleted
+	// 		this.log.info(`object ${id} deleted`);
+	// 	}
+	// }
+
+	/**
+	 * Is called if a subscribed state changes
+	 * @param {string} id
+	 * @param {ioBroker.State | null | undefined} state
+	 */
+	onStateChange(id, state) {
+		if (state) {
+			// The state was changed
+			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+		} else {
+			// The state was deleted
+			this.log.info(`state ${id} deleted`);
+		}
+	}
+
+
+async loop(){
+	let average=false;
+	this.loopCounter++;
+	if(this.loopCounter>2){
+		this.loopCounter=0;
+		average=true;
+	}
+	for (const blockAdr of this.loopInfo[this.fetchLevel]){
+		await this.getRegisterBuffer(blockAdr).then;
+	}
+	this.setTimeout(() => { this.loop(); }, 5000);
+}
+
+
+async getRegisterBuffer(adr){
+
+}
 
 
 
+	registerObject(firstName, lastName, age) {
+		this.firstName = firstName
+		this.lastName = lastName
+		this.age = age
+	}
 
 	async splitter2(resp, arr) {
 		//const buf = Buffer.from(resp.response._body._valuesAsBuffer);
@@ -181,143 +362,6 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 
-	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
-	// /**
-	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	//  * Using this method requires "common.messagebox" property to be set to true in io-package.json
-	//  * @param {ioBroker.Message} obj
-	//  */
-	onMessage(obj) {
-
-		//this.log.debug('onMessage erreicht, empfangenes Objekt: ${JSON.stringify(obj)}');
-		//if (typeof obj === 'object' && obj.message) {
-		if (typeof obj === "object") {
-			//             // e.g. send email or pushover or whatever
-			if (obj.command === "nu") {
-				if (obj.callback) {
-					try {
-						const { SerialPort } = require("serialport");
-
-						if (SerialPort) {
-							//this.log.debug(`serialport vorhanden`);
-
-							// read all found serial ports
-							SerialPort.list()
-								.then(ports => {
-									//this.log.debug(`List of port: ${ JSON.stringify(ports) } `);
-									this.sendTo(obj.from, obj.command, ports.map(item => ({ label: item.path, value: item.path })), obj.callback);
-								})
-								.catch(e => {
-									this.sendTo(obj.from, obj.command, [], obj.callback);
-									this.log.error(e);
-								});
-						} else {
-							//this.log.error('Module serialport is not available');
-							this.sendTo(obj.from, obj.command, [{ label: "Not available", value: "" }], obj.callback);
-						}
-					} catch (e) {
-						this.sendTo(obj.from, obj.command, [{ label: "Not available", value: "" }], obj.callback);
-					}
-				}
-			}
-
-			//             // Send response in callback if required
-		}
-	}
-
-	/**
-     * Is called when databases are connected and adapter received configuration.
-     */
-	async onReady() {
-
-		await this.delObjectAsync("sofarhyd.0.LongInterval", { recursive: true });
-		await this.delObjectAsync("sofarhyd.0.ShortInterval", { recursive: true });
-		await this.delObjectAsync("sofarhyd.0.CalculatedStates", { recursive: true });
-
-		this.setState("info.connection", false, true);
-
-		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
-		//socket.on('open', () => { this.log.error('Port geöffnet '); });
-
-		//this.interval1 = this.setInterval(() => this.loop_ask(), 5000);
-		//this.interval1 = this.setInterval(() => this.readChecked(), 5000);
-
-
-		//this.log.info(`config this.config: ${ JSON.stringify(this.config) } `);
-
-		await this.makeStatesFromArray(calcStates, "CalculatedStates");
-		this.fillRegisterObjects().then(() => this.readFromObject());
-
-		//        this.setTimeout(() => { this.readFromObject(); }, 8000);
-
-		/* const job = schedule.scheduleJob('42 * * * *', function(){
-             this.log.('The answer to life, the universe, and everything!');
-           });
-           */
-		const job = schedule.scheduleJob("42 * * * *", () => {
-			this.log.error("The answer to life, the universe, and everything!");
-		});
-
-
-		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-		//this.subscribeStates('testVariable');
-		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-		// this.subscribeStates('lights.*');
-		//await this.setStateAsync('testVariable', true);
-		//await this.setStateAsync('testVariable', { val: true, ack: true });
-		//await this.setStateAsync('testVariable', { val: true, ack: true, expire: 30 });
-	}
-
-	/**
-     * Is called when adapter shuts down - callback has to be called under any circumstances!
-     * @param {() => void} callback
-     */
-	onUnload(callback) {
-		try {
-			// Here you must clear all timeouts or intervals that may still be active
-			// clearTimeout(timeout1);
-			// clearTimeout(timeout2);
-			// ...
-			// clearInterval(interval1);
-			schedule.gracefulShutdown();
-
-			callback();
-		} catch (e) {
-			callback();
-		}
-	}
-
-	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
-	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-	// /**
-	//  * Is called if a subscribed object changes
-	//  * @param {string} id
-	//  * @param {ioBroker.Object | null | undefined} obj
-	//  */
-	// onObjectChange(id, obj) {
-	// 	if (obj) {
-	// 		// The object was changed
-	// 		this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-	// 	} else {
-	// 		// The object was deleted
-	// 		this.log.info(`object ${id} deleted`);
-	// 	}
-	// }
-
-	/**
-     * Is called if a subscribed state changes
-     * @param {string} id
-     * @param {ioBroker.State | null | undefined} state
-     */
-	onStateChange(id, state) {
-		if (state) {
-			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-		} else {
-			// The state was deleted
-			this.log.info(`state ${id} deleted`);
-		}
-	}
 
 	parseText(str) {
 		const txtArr = str.split("#");
@@ -384,7 +428,7 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async makeStatesFromRegister(obj, myPath) {
-		const path = "/opt/iobroker/node_modules/iobroker.sofarhyd/lib/Mod_Register.json";
+		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path);
 		if (fs.existsSync(path)) {
 			// this.log.error('Datei ist da');
@@ -412,7 +456,7 @@ class SofarsolarHyd extends utils.Adapter {
 				obj[cluster][reg].regAccuracy = accuracy || 1;
 				obj[cluster][reg].regPath = myPath + ".";
 				await this.createStateAsync("", myPath, name, { "role": "value", "name": desc, type: "number", read: true, write: true, "unit": unit })
-				//.then(e => { this.log.debug(`geschafft ${ JSON.stringify(e) } `); })
+					//.then(e => { this.log.debug(`geschafft ${ JSON.stringify(e) } `); })
 					.catch(e => { this.log.error(`fehler ${JSON.stringify(e)} `); });
 			}
 		}
@@ -452,8 +496,8 @@ class SofarsolarHyd extends utils.Adapter {
 if (require.main !== module) {
 	// Export the constructor in compact mode
 	/**
-     * @param {Partial<utils.AdapterOptions>} [options={}]
-     */
+	 * @param {Partial<utils.AdapterOptions>} [options={}]
+	 */
 	module.exports = (options) => new SofarsolarHyd(options);
 } else {
 	// otherwise start the instance directly
