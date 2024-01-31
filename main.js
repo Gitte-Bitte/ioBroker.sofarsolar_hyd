@@ -38,7 +38,7 @@ class SofarsolarHyd extends utils.Adapter {
 	regBuffer = new ArrayBuffer(80);
 	fetchLevel = 0;
 	loopCounter = 0;
-	singleRegister = new this.registerObject("jhg", "jhg", 56);
+	//singleRegister = new this.registerObject("jhg", "jhg", 56);
 	registerCollection = [];
 
 
