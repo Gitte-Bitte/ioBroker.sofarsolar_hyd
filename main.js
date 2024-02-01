@@ -128,8 +128,8 @@ class SofarsolarHyd extends utils.Adapter {
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
 		this.log.error("cron template : "+temp);
 
-		//schedule.scheduleJob(temp, this.setMinuteLoop);
-		schedule.scheduleJob(temp, ()=> {this.log.error("The answer to life, the universe, and everything!");});
+		schedule.scheduleJob(temp, ()=>this.setMinuteLoop);
+		//schedule.scheduleJob(temp, ()=> {this.log.error("The answer to life, the universe, and everything!");});
 		//temp = "* */" + this.config.autocomplete4 + " * * *";
 		//this.log.error("cron template : "+temp);
 
