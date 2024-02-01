@@ -108,7 +108,7 @@ class SofarsolarHyd extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-
+this.log.silly("onready erreicht");
 		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
@@ -133,7 +133,7 @@ class SofarsolarHyd extends utils.Adapter {
 			 this.log.('The answer to life, the universe, and everything!');
 		   });
 		   */
-		this.loop();
+		//this.loop();
 		const job = schedule.scheduleJob("42 * * * *", () => {
 			this.log.error("The answer to life, the universe, and everything!");
 		});
@@ -345,6 +345,7 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async readFromObject() {
+		this.log.silly("readfromobject erreicht");
 		let toRead = null;
 		if (client.connectionState == "online") {
 
