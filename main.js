@@ -125,13 +125,17 @@ class SofarsolarHyd extends utils.Adapter {
 
 		this.setState("info.connection", false, true);
 		this.avgCount = this.config.autocomplete2;
+
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
 		this.log.error("cron template : "+temp);
-
 		schedule.scheduleJob(temp, ()=>{this.setMinuteLoop();});
+
 		temp = "* */" + this.config.autocomplete4 + " * * *";
+		this.log.error("cron template : "+temp);
 		schedule.scheduleJob(temp,  ()=>{this.setHourLoop();});
+
 		schedule.scheduleJob("* 59 23 * *",  ()=>{this.setDayliLoop();});
+		
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
 		//socket.on('open', () => { this.log.error('Port geöffnet '); });
@@ -269,7 +273,11 @@ class SofarsolarHyd extends utils.Adapter {
 		this.log.error(`SetMinuteLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
 	}
 	setHourLoop() {
+		this.log.error(`SetHourLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
+		this.log.error(this.minuteLoop);
 		this.loopTasks.push(this.hourLoop);
+		this.log.error(`SetHourLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
+
 	}
 	setDayliLoop() {
 		this.loopTasks.push(this.dayliLoop);
