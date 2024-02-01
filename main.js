@@ -108,7 +108,7 @@ class SofarsolarHyd extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-this.log.error("onready erreicht");
+		//this.log.error("onready erreicht");
 		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
@@ -133,7 +133,7 @@ this.log.error("onready erreicht");
 			 this.log.('The answer to life, the universe, and everything!');
 		   });
 		   */
-		//this.loop();
+		this.loop();
 		const job = schedule.scheduleJob("42 * * * *", () => {
 			this.log.error("The answer to life, the universe, and everything!");
 		});
@@ -201,6 +201,7 @@ this.log.error("onready erreicht");
 
 
 	async loop() {
+		this.log.error("loop erreicht");
 		let average = false;
 		this.loopCounter++;
 		if (this.loopCounter > 2) {
@@ -210,7 +211,7 @@ this.log.error("onready erreicht");
 		let task = this.combineTasks(this.loopTasks);
 		for (let block in task) {
 			this.log.error("block : " + block);
-			await this.getRegisterBuffer(block);
+			//await this.getRegisterBuffer(block);
 		}
 		this.loopTasks = ["entetiLoop"];
 		this.setTimeout(() => { this.loop(); }, 5000);
