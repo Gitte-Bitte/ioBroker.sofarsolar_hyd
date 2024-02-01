@@ -33,7 +33,7 @@ const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net
 class SofarsolarHyd extends utils.Adapter {
 
 	regBuffer = new ArrayBuffer(80);
-	loopTasks = ["entityLoop"];
+	loopTasks = [this.entityLoop];
 	loopCounter = 0;
 	avgCount = 0;
 	//singleRegister = new this.registerObject("jhg", "jhg", 56);
@@ -263,6 +263,8 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	setMinuteLoop() {
+		this.log.error(`SetMinuteLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
+		this.log.error(this.minuteLoop);
 		this.loopTasks.push(this.minuteLoop);
 		this.log.error(`SetMinuteLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
 	}
@@ -487,7 +489,7 @@ class SofarsolarHyd extends utils.Adapter {
 		this.fillLoopInfo(this.minuteLoop, "text2");
 		this.fillLoopInfo(this.hourLoop, "text3");
 		this.fillLoopInfo(this.dayliLoop, "text4");
-		this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
+		//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 
 		this.addRegister(this.parseText(this.config.text1), registerOften);
 		this.addRegister(this.parseText(this.config.text2), registerRar);
