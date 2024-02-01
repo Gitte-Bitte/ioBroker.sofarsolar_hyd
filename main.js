@@ -129,12 +129,9 @@ class SofarsolarHyd extends utils.Adapter {
 		this.log.error("cron template : "+temp);
 
 		schedule.scheduleJob(temp, ()=>{this.setMinuteLoop();});
-		//schedule.scheduleJob(temp, ()=> {this.log.error("The answer to life, the universe, and everything!");});
-		//temp = "* */" + this.config.autocomplete4 + " * * *";
-		//this.log.error("cron template : "+temp);
-
-		//schedule.scheduleJob(temp, this.setHourLoop);
-		//schedule.scheduleJob("* 59 23 * *", this.setDayliLoop);
+		temp = "* */" + this.config.autocomplete4 + " * * *";
+		schedule.scheduleJob(temp,  ()=>{this.setHourLoop();});
+		schedule.scheduleJob("* 59 23 * *",  ()=>{this.setDayliLoop();});
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
 		//socket.on('open', () => { this.log.error('Port geöffnet '); });
@@ -227,9 +224,11 @@ class SofarsolarHyd extends utils.Adapter {
 			this.loopCounter = 0;
 			average = true;
 		}
-		//this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
 		let task = this.combineTasks(this.loopTasks);
-		//this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);
+		if(this.loopTasks.length>1){
+			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
+			this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);}
 		for (let block in task) {
 			//this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
