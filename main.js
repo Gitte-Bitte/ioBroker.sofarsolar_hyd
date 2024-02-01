@@ -439,20 +439,20 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 	}
 
-	fillLoopInfo() {
-		let regs = this.parseText(this.config.text1);
+	fillLoopInfo(loop, textfeld) {
+		let regs = this.parseText(this.config[textfeld]);
 		for (const i in regs) {
 			//this.log.error("register : " + i);
 			const block = (regs[i] - regs[i] % 0x40);
 			//const relAdr = regs[i] % 0x40;
 			//console.log(c);
 
-			if (this.loopInfo["entityLoop"][block]) {
-				this.loopInfo["entityLoop"][block].push(regs[i]);
+			if (this.loopInfo[loop][block]) {
+				this.loopInfo[loop][block].push(regs[i]);
 			}
 			else {
 				// console.log('cluster existiert nicht');
-				this.loopInfo["entityLoop"][block] = [regs[i]];
+				this.loopInfo[loop][block] = [regs[i]];
 			}
 		}
 	}
@@ -460,7 +460,11 @@ class SofarsolarHyd extends utils.Adapter {
 
 	async fillRegisterObjects() {
 		//this.log.error("fillregisterobject erreicht");
-		this.fillLoopInfo();
+		this.fillLoopInfo("entityLoop","text1");
+		this.fillLoopInfo("minuteLoop","text2");
+		this.fillLoopInfo("dayliLoop","text3");
+		this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
+
 		this.addRegister(this.parseText(this.config.text1), registerOften);
 		this.addRegister(this.parseText(this.config.text2), registerRar);
 		this.addRegister(this.parseText(this.config.text3), registerDayly);
