@@ -142,12 +142,6 @@
             "type": "panel",
             "label": "List:Polling",
             "items": {
-                "lintToJson": {
-                    "type": "staticLink",
-                    "text": "sssssssssssssssssssssssssssssssssssssssssss",
-                    "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
-                    "icon": "info"
-                },
                 "staticText3a": {
                     "newLine": true,
                     "type": "staticText",
@@ -166,10 +160,8 @@
                 "autocomplete1": {
                     "newLine": true,
                     "type": "autocomplete",
-                    "label": "Interne Aktualisierung in Sekunden",
+                    "label": "Aktualisierung in Sekunden",
                     "options": [
-                        "2",
-                        "3",
                         "5",
                         "6",
                         "10",
@@ -185,6 +177,24 @@
                     "xs": 6
                 },
                 "autocomplete2": {
+                    "newLine": true,
+                    "type": "autocomplete",
+                    "label": "Anzahl der Messungen bis zur Mittelwertsbildung",
+                    "options": [
+                        "0",
+                        "2",
+                        "3",
+                        "5",
+                        "10"
+                    ],
+                    "freeSolo": false,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
+                "autocomplete3": {
+                    "newLine": true,
                     "type": "autocomplete",
                     "label": "Aktualisierung in Minuten",
                     "options": [
@@ -201,10 +211,29 @@
                     "lg": 6,
                     "xs": 6
                 },
+                "autocomplete4": {
+                    "newLine": true,
+                    "type": "autocomplete",
+                    "label": "Aktualisierung in Stunden",
+                    "options": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "6",
+                        "8",
+                        "12"
+                    ],
+                    "freeSolo": false,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
                 "text1": {
                     "newLine": true,
                     "type": "text",
-                    "label": "Register mit Mittelwert",
+                    "label": "Zu lesende Register für Sekunden",
                     "minRows": 3,
                     "maxRows": 7,
                     "sm": 6,
@@ -214,7 +243,7 @@
                 },
                 "text2": {
                     "type": "text",
-                    "label": "Register ohne Mittelwert",
+                    "label": "Zu lesende Register für Minuten",
                     "minRows": 3,
                     "maxRows": 7,
                     "sm": 6,
@@ -223,6 +252,16 @@
                     "xs": 6
                 },
                 "text3": {
+                    "type": "text",
+                    "label": "Zu lesende Register für Stunden",
+                    "minRows": 3,
+                    "maxRows": 7,
+                    "sm": 6,
+                    "md": 6,
+                    "lg": 6,
+                    "xs": 6
+                },
+                "text4": {
                     "type": "text",
                     "label": "Am Tagesende auszulesen",
                     "minRows": 3,

@@ -35,9 +35,16 @@ class SofarsolarHyd extends utils.Adapter {
 	regBuffer = new ArrayBuffer(80);
 	loopTasks = ["entityLoop"];
 	loopCounter = 0;
+	avgCount = 0;
 	//singleRegister = new this.registerObject("jhg", "jhg", 56);
 	registerCollection = [];
 
+
+	entityLoop = "entityLoop";
+	minuteLoop = "minuteLoop";
+	hourLoop = "hourLoop";
+	dayliLoop = "dayliLoop";
+	optionalLoop = "optionalLoop";
 
 	loopInfo = {
 
@@ -45,6 +52,7 @@ class SofarsolarHyd extends utils.Adapter {
 		minuteLoop: {},
 		hourLoop: {},
 		dayliLoop: {},
+		optionalLoop: {}
 	};
 
 
@@ -109,13 +117,20 @@ class SofarsolarHyd extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
+		let temp = "";
 		//this.log.error("onready erreicht");
 		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
 
 		this.setState("info.connection", false, true);
-
+		this.avgCount = this.config.autocomplete2;
+		temp = "/" + this.config.autocomplete3 + " * * * *";
+		schedule.scheduleJob(temp, this.setMinuteLoop);
+		temp = "* /" + this.config.autocomplete4 + " * * *";
+		schedule.scheduleJob(temp, this.setHourLoop);
+		schedule.scheduleJob("* 59 23 * *", this.setDayliLoop);
+		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
 		//socket.on('open', () => { this.log.error('Port geöffnet '); });
 
@@ -134,10 +149,6 @@ class SofarsolarHyd extends utils.Adapter {
 			 this.log.('The answer to life, the universe, and everything!');
 		   });
 		   */
-		this.loop();
-		const job = schedule.scheduleJob("42 * * * *", () => {
-			this.log.error("The answer to life, the universe, and everything!");
-		});
 
 
 		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
@@ -199,7 +210,9 @@ class SofarsolarHyd extends utils.Adapter {
 			this.log.info(`state ${id} deleted`);
 		}
 	}
-
+	//################################################################################################################
+	//#####################    Meine Funktionen  #####################################################################
+	//################################################################################################################
 
 	async loop() {
 		this.log.error("loop erreicht");
@@ -209,8 +222,9 @@ class SofarsolarHyd extends utils.Adapter {
 			this.loopCounter = 0;
 			average = true;
 		}
+		this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
 		let task = this.combineTasks(this.loopTasks);
-		this.log.error(`task für heute  ${JSON.stringify(task)}`);
+		this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);
 		for (let block in task) {
 			//this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
@@ -218,6 +232,8 @@ class SofarsolarHyd extends utils.Adapter {
 		this.loopTasks = ["entityLoop"];
 		this.setTimeout(() => { this.loop(); }, 5000);
 	}
+
+	//################################################################################################################
 
 
 	async getRegisterBuffer(adr) {
@@ -243,13 +259,16 @@ class SofarsolarHyd extends utils.Adapter {
 		return temp;
 	}
 
-
-
-	registerObject(firstName, lastName, age) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
+	setMinuteLoop() {
+		this.loopTasks.push(this.minuteLoop);
 	}
+	setHourLoop() {
+		this.loopTasks.push(this.hourLoop);
+	}
+	setDayliLoop() {
+		this.loopTasks.push(this.dayliLoop);
+	}
+
 
 	async splitter2(resp, arr) {
 		//const buf = Buffer.from(resp.response._body._valuesAsBuffer);
@@ -460,9 +479,10 @@ class SofarsolarHyd extends utils.Adapter {
 
 	async fillRegisterObjects() {
 		//this.log.error("fillregisterobject erreicht");
-		this.fillLoopInfo("entityLoop","text1");
-		this.fillLoopInfo("minuteLoop","text2");
-		this.fillLoopInfo("dayliLoop","text3");
+		this.fillLoopInfo(this.entityLoop, "text1");
+		this.fillLoopInfo(this.minuteLoop, "text2");
+		this.fillLoopInfo(this.hourLoop, "text3");
+		this.fillLoopInfo(this.dayliLoop, "text4");
 		this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 
 		this.addRegister(this.parseText(this.config.text1), registerOften);

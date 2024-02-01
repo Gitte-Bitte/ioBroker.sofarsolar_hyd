@@ -100,7 +100,11 @@
     "native": {
         "text1": "",
         "text2": "",
-        "text3": ""
+        "text3": "",
+		"text4":"",
+		"autocomplete2":0,
+		"autocomplete3":0,
+		"autocomplete4":0
     },
     "objects": [],
     "instanceObjects": [
