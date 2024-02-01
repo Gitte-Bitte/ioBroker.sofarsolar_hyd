@@ -129,11 +129,11 @@ class SofarsolarHyd extends utils.Adapter {
 		this.log.error("cron template : "+temp);
 
 		schedule.scheduleJob(temp, this.setMinuteLoop);
-		temp = "* */" + this.config.autocomplete4 + " * * *";
-		this.log.error("cron template : "+temp);
+		//temp = "* */" + this.config.autocomplete4 + " * * *";
+		//this.log.error("cron template : "+temp);
 
-		schedule.scheduleJob(temp, this.setHourLoop);
-		schedule.scheduleJob("* 59 23 * *", this.setDayliLoop);
+		//schedule.scheduleJob(temp, this.setHourLoop);
+		//schedule.scheduleJob("* 59 23 * *", this.setDayliLoop);
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
 		//socket.on('open', () => { this.log.error('Port geöffnet '); });
