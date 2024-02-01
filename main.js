@@ -130,6 +130,8 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob(temp, this.setMinuteLoop);
 		temp = "* */" + this.config.autocomplete4 + " * * *";
+		this.log.error("cron template : "+temp);
+
 		schedule.scheduleJob(temp, this.setHourLoop);
 		schedule.scheduleJob("* 59 23 * *", this.setDayliLoop);
 		this.loop();
