@@ -1,8 +1,5 @@
 "use strict";
 
-//import { stringify } from "querystring";
-//import { Interface } from "readline";
-//import { arrayBuffer } from "stream/consumers";
 
 const schedule = require("node-schedule");
 
@@ -36,21 +33,18 @@ const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net
 class SofarsolarHyd extends utils.Adapter {
 
 	regBuffer = new ArrayBuffer(80);
-	fetchLevel = 0;
+	loopTasks = [];
 	loopCounter = 0;
-	//singleRegister = new this.registerObject("jhg", "jhg", 56);
+	singleRegister = new this.registerObject("jhg", "jhg", 56);
 	registerCollection = [];
 
 
 	loopInfo = {
-		0: [
-			{ blockStart1: [1, 2, 3] },
-			{ blockStart2: [4, 7, 9] }
-		],//loopentity,5seconds
-		1: [],//minutes
-		2: [],//hours
-		3: [],//dayly
-		average: []//average after x loopentitys
+
+		entityLoop: { blockStart1: [1, 2, 53], blockStart2: [47, 7, 9] },
+		minuteLoop: { blockStart1: [1, 32, 3], blockStart2: [4, 76, 77, 9] },
+		hourLoop: { blockStart5: [1, 2, 33], blockStart6: [4, 7, 79] },
+		dayliLoop: { blockStart7: [31, 2, 3], blockStart8: [84, 7, 9] },
 	};
 
 	/**
@@ -139,6 +133,7 @@ class SofarsolarHyd extends utils.Adapter {
 			 this.log.('The answer to life, the universe, and everything!');
 		   });
 		   */
+		  this.loop();
 		const job = schedule.scheduleJob("42 * * * *", () => {
 			this.log.error("The answer to life, the universe, and everything!");
 		});
@@ -212,15 +207,37 @@ class SofarsolarHyd extends utils.Adapter {
 			this.loopCounter = 0;
 			average = true;
 		}
-		for (const blockAdr of this.loopInfo[this.fetchLevel]) {
-			await this.getRegisterBuffer(blockAdr).then;
+		let task = this.combineTasks(this.loopTasks);
+		for (let block in task) {
+			this.log.error("block : " + block);
+			await this.getRegisterBuffer(block);
 		}
+		this.loopTasks = ["entetiLoop"];
 		this.setTimeout(() => { this.loop(); }, 5000);
 	}
 
 
 	async getRegisterBuffer(adr) {
 
+	}
+
+	combineTasks(tasks) {
+		let temp = {};
+		for (let task of tasks) {
+			//console.log("task : " + task);
+			for (let block in this.loopInfo[task]) {
+				//console.log("block : " + block);
+				if (temp[block] == undefined) {
+					temp[block] = this.loopInfo[task][block];
+				}
+				else {
+					temp[block] = temp[block].concat(this.loopInfo[task][block]);
+				}
+				temp[block] = [...new Set(temp[block])];
+			}
+		}
+		//console.log(` tempinfo: ${JSON.stringify(temp)} `);
+		return temp;
 	}
 
 
@@ -234,12 +251,12 @@ class SofarsolarHyd extends utils.Adapter {
 	async splitter2(resp, arr) {
 		//const buf = Buffer.from(resp.response._body._valuesAsBuffer);
 		const buf = Buffer.from(resp);
-		this.log.info(`splitter2: ${JSON.stringify(resp)} , ${JSON.stringify(arr)}  `);
+		this.log.silly(`splitter2: resp: ${JSON.stringify(resp)} , array:  ${JSON.stringify(arr)}  `);
 		for (const register of arr) {
 			const addr = (register.regNrRel) * 2;
 			const fktr = register.regAccuracy;
-			this.log.info(`const: ${JSON.stringify(register)}  arr_const    ${JSON.stringify(register.regName)} `);
-			this.log.info(register.regPath + register.regName + "  : " + (addr) + "  accuracy : " + register.regAccuracy + "  fktr : " + fktr + " typeof : " + typeof (register.regAccuracy) + " typeof fktr : " + typeof (fktr));
+			this.log.silly(`const: ${JSON.stringify(register)}  arr_const    ${JSON.stringify(register.regName)} `);
+			this.log.silly(register.regPath + register.regName + "  : " + (addr) + "  accuracy : " + register.regAccuracy + "  fktr : " + fktr + " typeof : " + typeof (register.regAccuracy) + " typeof fktr : " + typeof (fktr));
 			let val = 0;
 			const name = register.regPath + register.regName;
 			if (register.regType == "I16") {
