@@ -252,6 +252,8 @@ class SofarsolarHyd extends utils.Adapter {
 		for (let task of tasks) {
 			//console.log("task : " + task);
 			for (let block in this.loopInfo[task]) {
+				this.log.error(`Combine block:  ${JSON.stringify(block)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
+
 				//console.log("block : " + block);
 				if (temp[block] == undefined) {
 					temp[block] = this.loopInfo[task][block];
