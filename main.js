@@ -212,7 +212,7 @@ class SofarsolarHyd extends utils.Adapter {
 		let task = this.combineTasks(this.loopTasks);
 		this.log.error(`task für heute  ${JSON.stringify(task)}`);
 		for (let block in task) {
-			this.log.error("block : " + block);
+			//this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
 		}
 		this.loopTasks = ["entityLoop"];
@@ -440,23 +440,19 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	fillLoopInfo() {
-		this.log.error("fillloopstask erreicht");
 		let regs = this.parseText(this.config.text1);
-		this.log.error(`geparster text: ${JSON.stringify(regs)} `);
 		for (const i in regs) {
-			this.log.error("register : " + i);
+			//this.log.error("register : " + i);
 			const block = (regs[i] - regs[i] % 0x40);
 			//const relAdr = regs[i] % 0x40;
 			//console.log(c);
 
 			if (this.loopInfo["entityLoop"][block]) {
-				// console.log(' cluster existiert');
-				// console.log('array einfügen');
-				this.loopInfo["entityLoop"][block].push([i]);
+				this.loopInfo["entityLoop"][block].push(regs[i]);
 			}
 			else {
 				// console.log('cluster existiert nicht');
-				this.loopInfo["entityLoop"][block] = [i];
+				this.loopInfo["entityLoop"][block] = [regs[i]];
 			}
 		}
 	}
