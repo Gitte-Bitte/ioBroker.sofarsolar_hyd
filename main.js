@@ -33,7 +33,7 @@ const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net
 class SofarsolarHyd extends utils.Adapter {
 
 	regBuffer = new ArrayBuffer(80);
-	loopTasks = [];
+	loopTasks = ["entityLoop"];
 	loopCounter = 0;
 	//singleRegister = new this.registerObject("jhg", "jhg", 56);
 	registerCollection = [];
@@ -209,11 +209,12 @@ class SofarsolarHyd extends utils.Adapter {
 			average = true;
 		}
 		let task = this.combineTasks(this.loopTasks);
+		this.log.error(`task für heute  ${JSON.stringify(task)}`);
 		for (let block in task) {
 			this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
 		}
-		this.loopTasks = ["entetiLoop"];
+		this.loopTasks = ["entityLoop"];
 		this.setTimeout(() => { this.loop(); }, 5000);
 	}
 
@@ -346,7 +347,7 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async readFromObject() {
-		this.log.error("readfromobject erreicht");
+		//this.log.error("readfromobject erreicht");
 		let toRead = null;
 		if (client.connectionState == "online") {
 
