@@ -108,7 +108,7 @@ class SofarsolarHyd extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-this.log.silly("onready erreicht");
+this.log.error("onready erreicht");
 		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
