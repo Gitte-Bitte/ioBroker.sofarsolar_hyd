@@ -35,7 +35,7 @@ class SofarsolarHyd extends utils.Adapter {
 	regBuffer = new ArrayBuffer(80);
 	loopTasks = [];
 	loopCounter = 0;
-	singleRegister = new this.registerObject("jhg", "jhg", 56);
+	//singleRegister = new this.registerObject("jhg", "jhg", 56);
 	registerCollection = [];
 
 
@@ -133,7 +133,7 @@ class SofarsolarHyd extends utils.Adapter {
 			 this.log.('The answer to life, the universe, and everything!');
 		   });
 		   */
-		  this.loop();
+		this.loop();
 		const job = schedule.scheduleJob("42 * * * *", () => {
 			this.log.error("The answer to life, the universe, and everything!");
 		});
