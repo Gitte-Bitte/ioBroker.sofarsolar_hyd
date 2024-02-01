@@ -39,13 +39,7 @@ class SofarsolarHyd extends utils.Adapter {
 	registerCollection = [];
 
 
-	loopInfo = {
-
-		entityLoop: { blockStart1: [1, 2, 53], blockStart2: [47, 7, 9] },
-		minuteLoop: { blockStart1: [1, 32, 3], blockStart2: [4, 76, 77, 9] },
-		hourLoop: { blockStart5: [1, 2, 33], blockStart6: [4, 7, 79] },
-		dayliLoop: { blockStart7: [31, 2, 3], blockStart8: [84, 7, 9] },
-	};
+	loopInfo = {};
 
 	/**
 	 * @param {Partial<utils.AdapterOptions>} [options={}]
@@ -437,8 +431,31 @@ class SofarsolarHyd extends utils.Adapter {
 			}
 		}
 	}
+
+	fillLoopTasks() {
+		let regs = this.parseText(this.config.text1);
+		for (const i in regs) {
+			//console.log(reg[i]);
+			const block = (regs[i] - regs[i] % 0x40);
+			//const relAdr = regs[i] % 0x40;
+			//console.log(c);
+
+			if (this.loopTasks["etityLoop"][block]) {
+				// console.log(' cluster existiert');
+				// console.log('array einfügen');
+				this.loopTasks["etityLoop"][block].push([i]);
+			}
+			else {
+				// console.log('cluster existiert nicht');
+				this.loopTasks["etityLoop"][block] = [i];
+			}
+		}
+	}
+
+
 	async fillRegisterObjects() {
-		this.log.error("fillregisterobject erreicht");
+		//this.log.error("fillregisterobject erreicht");
+		this.fillLoopTasks();
 		this.addRegister(this.parseText(this.config.text1), registerOften);
 		this.addRegister(this.parseText(this.config.text2), registerRar);
 		this.addRegister(this.parseText(this.config.text3), registerDayly);
