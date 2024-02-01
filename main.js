@@ -32,27 +32,28 @@ const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net
 
 class SofarsolarHyd extends utils.Adapter {
 
-	regBuffer = new ArrayBuffer(80);
-	loopTasks = [this.entityLoop];
-	loopCounter = 0;
-	avgCount = 0;
-	//singleRegister = new this.registerObject("jhg", "jhg", 56);
-	registerCollection = [];
-
-
 	entityLoop = "entityLoop";
 	minuteLoop = "minuteLoop";
 	hourLoop = "hourLoop";
 	dayliLoop = "dayliLoop";
 	optionalLoop = "optionalLoop";
 
+	regBuffer = new ArrayBuffer(80);
+	loopTasks = [this.entityLoop];
+	loopCounter = 0;
+	avgCount = 0;
+	//registerCollection = [];
+	loopTasksChanged = false;
+	loopObject = {};
+
+
 	loopInfo = {
 
-		entityLoop: {},
-		minuteLoop: {},
-		hourLoop: {},
-		dayliLoop: {},
-		optionalLoop: {}
+		entityLoop: [],
+		minuteLoop: [],
+		hourLoop: [],
+		dayliLoop: [],
+		optionalLoop: []
 	};
 
 
@@ -127,11 +128,9 @@ class SofarsolarHyd extends utils.Adapter {
 		this.avgCount = this.config.autocomplete2;
 
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
-		this.log.error("cron template : " + temp);
 		schedule.scheduleJob(temp, () => { this.setMinuteLoop(); });
 
 		temp = "0 */" + this.config.autocomplete4 + " * * *";
-		this.log.error("cron template : " + temp);
 		schedule.scheduleJob(temp, () => { this.setHourLoop(); });
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
@@ -228,17 +227,25 @@ class SofarsolarHyd extends utils.Adapter {
 			this.loopCounter = 0;
 			average = true;
 		}
-		let task = this.combineTasks(this.loopTasks);
+		if (this.loopTasksChanged) {
+			this.loopObject = this.createLoopObject(this.loopTasks);
+		}
 		if (this.loopTasks.length > 1) {
 			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
 			this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
-			this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);
+			this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
 		}
-		for (let block in task) {
+		for (let block in this.loopObject) {
 			//this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
 		}
-		this.loopTasks = ["entityLoop"];
+		if (this.loopTasks.length > 1) {
+			this.loopTasks = ["entityLoop"];
+			this.loopTasksChanged = true;
+		}
+		else {
+			this.loopTasksChanged = false;
+		}
 		this.setTimeout(() => { this.loop(); }, 5000);
 	}
 
@@ -248,10 +255,11 @@ class SofarsolarHyd extends utils.Adapter {
 	async getRegisterBuffer(adr) {
 	}
 
+	/*
 	combineTasks(tasks) {
 		let temp = {};
 		for (let task of tasks) {
-			this.log.error(`Combine task:  ${JSON.stringify(task)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
+			//this.log.error(`Combine task:  ${JSON.stringify(task)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
 			//console.log("task : " + task);
 			for (let block in this.loopInfo[task]) {
 
@@ -269,21 +277,45 @@ class SofarsolarHyd extends utils.Adapter {
 		return temp;
 	}
 
+*/
+
+	createLoopObject(tasks) {
+		let tempObj = {};
+		let tempArray = [];
+		for (let task of tasks) {
+			tempArray = tempArray.concat(this.loopInfo[task]);
+		}
+		tempArray = [...new Set(tempArray)];
+
+		for (const i in tempArray) {
+			//console.log(reg[i]);
+			const c = (tempArray[i] - tempArray[i] % 0x40);
+			const relAdr = tempArray[i] % 0x40;
+			//console.log(c);
+			if (tempObj[c]) {
+				// console.log(' cluster existiert');
+				tempObj[c].push(tempArray[i]);
+			}
+			else {
+				// console.log('cluster existiert nicht');
+				tempObj[c] = [tempArray[i]];
+			}
+		}
+		return tempObj;
+	}
+
+
 	setMinuteLoop() {
-		this.log.error(`SetMinuteLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
-		this.log.error(this.minuteLoop);
 		this.loopTasks.push(this.minuteLoop);
-		this.log.error(`SetMinuteLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
+		this.loopTasksChanged = true;
 	}
 	setHourLoop() {
-		this.log.error(`SetHourLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
-		this.log.error(this.hourLoop);
 		this.loopTasks.push(this.hourLoop);
-		this.log.error(`SetHourLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
-
+		this.loopTasksChanged = true;
 	}
 	setDayliLoop() {
 		this.loopTasks.push(this.dayliLoop);
+		this.loopTasksChanged = true;
 	}
 
 
@@ -477,20 +509,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	fillLoopInfo(loop, textfeld) {
 		let regs = this.parseText(this.config[textfeld]);
-		for (const i in regs) {
-			//this.log.error("register : " + i);
-			const block = (regs[i] - regs[i] % 0x40);
-			//const relAdr = regs[i] % 0x40;
-			//console.log(c);
-
-			if (this.loopInfo[loop][block]) {
-				this.loopInfo[loop][block].push(regs[i]);
-			}
-			else {
-				// console.log('cluster existiert nicht');
-				this.loopInfo[loop][block] = [regs[i]];
-			}
-		}
+		this.loopInfo[loop] = regs;
 	}
 
 
