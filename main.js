@@ -215,16 +215,16 @@ class SofarsolarHyd extends utils.Adapter {
 	//################################################################################################################
 
 	async loop() {
-		this.log.error("loop erreicht");
+		//this.log.error("loop erreicht");
 		let average = false;
 		this.loopCounter++;
 		if (this.loopCounter > 2) {
 			this.loopCounter = 0;
 			average = true;
 		}
-		this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+		//this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
 		let task = this.combineTasks(this.loopTasks);
-		this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);
+		//this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);
 		for (let block in task) {
 			//this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
@@ -261,6 +261,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	setMinuteLoop() {
 		this.loopTasks.push(this.minuteLoop);
+		this.log.error(`SetMinuteLoop erreicht, task ist jetzt  ${JSON.stringify(this.loopTasks)} `);
 	}
 	setHourLoop() {
 		this.loopTasks.push(this.hourLoop);
