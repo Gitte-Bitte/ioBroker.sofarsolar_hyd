@@ -125,11 +125,11 @@ class SofarsolarHyd extends utils.Adapter {
 
 		this.setState("info.connection", false, true);
 		this.avgCount = this.config.autocomplete2;
-		temp = "/" + this.config.autocomplete3 + " * * * *";
+		temp = "*/" + this.config.autocomplete3 + " * * * *";
 		this.log.error("cron template : "+temp);
 
 		schedule.scheduleJob(temp, this.setMinuteLoop);
-		temp = "* /" + this.config.autocomplete4 + " * * *";
+		temp = "* */" + this.config.autocomplete4 + " * * *";
 		schedule.scheduleJob(temp, this.setHourLoop);
 		schedule.scheduleJob("* 59 23 * *", this.setDayliLoop);
 		this.loop();
