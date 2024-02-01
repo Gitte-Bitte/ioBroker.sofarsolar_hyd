@@ -127,14 +127,14 @@ class SofarsolarHyd extends utils.Adapter {
 		this.avgCount = this.config.autocomplete2;
 
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
-		this.log.error("cron template : "+temp);
-		schedule.scheduleJob(temp, ()=>{this.setMinuteLoop();});
+		this.log.error("cron template : " + temp);
+		schedule.scheduleJob(temp, () => { this.setMinuteLoop(); });
 
 		temp = "0 */" + this.config.autocomplete4 + " * * *";
-		this.log.error("cron template : "+temp);
-		schedule.scheduleJob(temp,  ()=>{this.setHourLoop();});
+		this.log.error("cron template : " + temp);
+		schedule.scheduleJob(temp, () => { this.setHourLoop(); });
 
-		schedule.scheduleJob("* 59 23 * *",  ()=>{this.setDayliLoop();});
+		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
@@ -229,10 +229,11 @@ class SofarsolarHyd extends utils.Adapter {
 			average = true;
 		}
 		let task = this.combineTasks(this.loopTasks);
-		if(this.loopTasks.length>1){
+		if (this.loopTasks.length > 1) {
 			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
 			this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
-			this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);}
+			this.log.error(`task in blocks and regs  ${JSON.stringify(task)}`);
+		}
 		for (let block in task) {
 			//this.log.error("block : " + block);
 			//await this.getRegisterBuffer(block);
@@ -250,9 +251,9 @@ class SofarsolarHyd extends utils.Adapter {
 	combineTasks(tasks) {
 		let temp = {};
 		for (let task of tasks) {
+			this.log.error(`Combine task:  ${JSON.stringify(task)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
 			//console.log("task : " + task);
 			for (let block in this.loopInfo[task]) {
-				this.log.error(`Combine block:  ${JSON.stringify(block)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
 
 				//console.log("block : " + block);
 				if (temp[block] == undefined) {
