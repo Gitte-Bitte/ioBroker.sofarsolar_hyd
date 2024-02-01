@@ -345,7 +345,7 @@ this.log.error("onready erreicht");
 	}
 
 	async readFromObject() {
-		this.log.silly("readfromobject erreicht");
+		this.log.error("readfromobject erreicht");
 		let toRead = null;
 		if (client.connectionState == "online") {
 
@@ -436,6 +436,7 @@ this.log.error("onready erreicht");
 		}
 	}
 	async fillRegisterObjects() {
+		this.log.error("fillregisterobject erreicht");
 		this.addRegister(this.parseText(this.config.text1), registerOften);
 		this.addRegister(this.parseText(this.config.text2), registerRar);
 		this.addRegister(this.parseText(this.config.text3), registerDayly);
