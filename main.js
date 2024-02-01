@@ -440,14 +440,14 @@ class SofarsolarHyd extends utils.Adapter {
 			//const relAdr = regs[i] % 0x40;
 			//console.log(c);
 
-			if (this.loopTasks["etityLoop"][block]) {
+			if (this.loopTasks["entityLoop"][block]) {
 				// console.log(' cluster existiert');
 				// console.log('array einfügen');
-				this.loopTasks["etityLoop"][block].push([i]);
+				this.loopTasks["entityLoop"][block].push([i]);
 			}
 			else {
 				// console.log('cluster existiert nicht');
-				this.loopTasks["etityLoop"][block] = [i];
+				this.loopTasks["entityLoop"][block] = [i];
 			}
 		}
 	}
