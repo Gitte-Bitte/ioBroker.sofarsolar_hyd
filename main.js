@@ -497,18 +497,18 @@ class SofarsolarHyd extends utils.Adapter {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path);
 		if (fs.existsSync(path)) {
-			// this.log.error('Datei ist da');
+			this.log.error("Datei ist da");
 		}
 		else {
-			// this.log.error('Datei fehlt');
+			this.log.error("Datei fehlt");
 		}
 		const json = JSON.parse(data);
 
 
 		for (const entry of this.config.table) {
-			//console.log(` entry: ${JSON.stringify(entry)} `);
+			console.log(` entry: ${JSON.stringify(entry)} `);
 			if (entry.aktiv) {
-				//console.log(` entry: ${JSON.stringify(entry.regAdr)} `);
+				console.log(` entry: ${JSON.stringify(entry.regAdr)} `);
 				this.registerList[entry.regAdr] = {};
 				this.registerList[entry.regAdr].loop = entry.loop;
 				this.registerList[entry.regAdr].mw = entry.mw;
