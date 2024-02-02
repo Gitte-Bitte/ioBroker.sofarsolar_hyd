@@ -135,7 +135,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
-		this.log.error(`aus Tabelle gelesen -> ${ JSON.stringify(this.config.table1)}`);
+		this.log.error(`aus Tabelle gelesen -> ${JSON.stringify(this.config.table1)}`);
 
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
@@ -471,6 +471,28 @@ class SofarsolarHyd extends utils.Adapter {
 			}
 		}
 		return regArr;
+	}
+	/*
+	
+	[
+	  {
+		"table1Chk": true,
+		"table1Unique": "456",
+		"undefined": 4,
+		"table1ChkHide": false,
+		"table1Text1": "op4"
+	  },
+	  {
+		"table1Chk": true,
+		"table1Unique": "567",
+		"undefined": 5,
+		"table1ChkHide": true,
+		"table1Text1": "opt5"
+	  }
+	]
+	 */
+	parseTable() {
+
 	}
 
 	arrayIncludesReg(arr, val) {

@@ -316,33 +316,51 @@
                         },
                         {
                             "type": "select",
+                            "attr":"select",
                             "title": "Bitte Protokoll wählen",
                             "label": "",
                             "width": "20% ",
                             "options": [
                                 {
                                     "label": "sekündlich ohne Mw.",
-                                    "value": 1
-                                },
-                                {
-                                    "label": "sekündlich mit Mw.",
-                                    "value": 2
+                                    "value": "entityLoop"
                                 },
                                 {
                                     "label": "minütlich",
-                                    "value": 3
+                                    "value": "minuteLoop"
                                 },
                                 {
                                     "label": "stündlich",
-                                    "value": 4
+                                    "value": "hourLoop"
                                 },
                                 {
                                     "label": "täglichh",
-                                    "value": 5
+                                    "value": "dayliLoop"
                                 }
                             ]
                         },
-
+                        {
+                            "type": "checkbox",
+                            "attr": "table1Chk2",
+                            "width": "5% ",
+                            "title": "Aktiv",
+                            "hidden": "data.select!='entityLoop'",
+                            "tooltip": "Click on it",
+                            "filter": false,
+                            "sort": false,
+                            "default": false
+                        },
+                        {
+                            "type": "checkbox",
+                            "attr": "table1Chk3",
+                            "width": "5% ",
+                            "title": "Aktiv",
+                            "hidden": "data.select!='sekündlich ohne Mw.'",
+                            "tooltip": "Click on it",
+                            "filter": false,
+                            "sort": false,
+                            "default": false
+                        },
                         {
                             "type": "checkbox",
                             "attr": "table1ChkHide",
