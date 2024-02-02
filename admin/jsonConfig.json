@@ -283,18 +283,18 @@
                     "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
                     "icon": "info"
                 },
-                "table1": {
+                "table": {
                     "type": "table",
                     "newLine": true,
                     "sm": 12,
                     "md": 12,
                     "lg": 12,
                     "label": "Label",
-                    "showSecondAddAt": 5,
+                    "showSecondAddAt": 4,
                     "items": [
                         {
                             "type": "checkbox",
-                            "attr": "table1Chk",
+                            "attr": "aktiv",
                             "width": "5% ",
                             "title": "Aktiv",
                             "tooltip": "Click on it",
@@ -304,7 +304,7 @@
                         },
                         {
                             "type": "text",
-                            "attr": "table1Unique",
+                            "attr": "regAdr",
                             "width": "10% ",
                             "title": "Hex Adresse",
                             "tooltip": "enter any text",
@@ -316,7 +316,7 @@
                         },
                         {
                             "type": "select",
-                            "attr":"select",
+                            "attr":"loop",
                             "title": "Bitte Protokoll wählen",
                             "label": "",
                             "width": "20% ",
@@ -341,7 +341,7 @@
                         },
                         {
                             "type": "checkbox",
-                            "attr": "table1Chk2",
+                            "attr": "mw",
                             "width": "5% ",
                             "title": "Mittelwert",
                             "hidden": "data.select!='entityLoop'",
@@ -352,7 +352,7 @@
                         },
                         {
                             "type": "checkbox",
-                            "attr": "table1ChkHide",
+                            "attr": "reading",
                             "width": "5% ",
                             "title": "Reading erstellen",
                             "tooltip": "click to hide fields",
@@ -362,7 +362,7 @@
                         },
                         {
                             "type": "text",
-                            "attr": "table1Text1",
+                            "attr": "optDescription",
                             "title": "opt. Beschreibung",
                             "tooltip": "enter any text",
                             "filter": false,
