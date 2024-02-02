@@ -45,7 +45,7 @@ class SofarsolarHyd extends utils.Adapter {
 	//registerCollection = [];
 	loopTasksChanged = false;
 	loopObject = {};
-
+	registerList = {};
 
 	loopInfo = {
 
@@ -136,6 +136,7 @@ class SofarsolarHyd extends utils.Adapter {
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
 		this.log.error(`aus Tabelle gelesen -> ${JSON.stringify(this.config.table)}`);
+		this.parseTable();
 
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
@@ -473,25 +474,52 @@ class SofarsolarHyd extends utils.Adapter {
 		return regArr;
 	}
 	/*
-	
-	[
-	  {
-		"table1Chk": true,
-		"table1Unique": "456",
-		"undefined": 4,
-		"table1ChkHide": false,
-		"table1Text1": "op4"
-	  },
-	  {
-		"table1Chk": true,
-		"table1Unique": "567",
-		"undefined": 5,
-		"table1ChkHide": true,
-		"table1Text1": "opt5"
-	  }
-	]
+[
+  {
+	"aktiv": true,
+	"regAdr": "456",
+	"loop": "dayliLoop",
+	"mw": false,
+	"reading": true,
+	"optDescription": "nmbnm"
+  },
+  {
+	"aktiv": true,
+	"regAdr": "567",
+	"loop": "entityLoop",
+	"mw": true,
+	"reading": false,
+	"optDescription": "iuj"
+  }
+]
 	 */
 	parseTable() {
+		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
+		const data = fs.readFileSync(path);
+		if (fs.existsSync(path)) {
+			// this.log.error('Datei ist da');
+		}
+		else {
+			// this.log.error('Datei fehlt');
+		}
+		const json = JSON.parse(data);
+
+
+		for (const entry of this.config.table) {
+			//console.log(` entry: ${JSON.stringify(entry)} `);
+			if (entry.aktiv) {
+				//console.log(` entry: ${JSON.stringify(entry.regAdr)} `);
+				this.registerList[entry.regAdr] = {};
+				this.registerList[entry.regAdr].loop = entry.loop;
+				this.registerList[entry.regAdr].mw = entry.mw;
+				this.registerList[entry.regAdr].reading = entry.reading;
+				this.registerList[entry.regAdr].desc = entry.optDescription;
+				this.loopInfo[entry.loop].push(entry.regAdr);
+				this.registerList[entry.regAdr].regName = json[entry.regAdr].Field;
+			}
+		}
+		this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
+		this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 
 	}
 
