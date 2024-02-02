@@ -305,7 +305,7 @@
                         {
                             "type": "text",
                             "attr": "table1Unique",
-                            "width": "8% ",
+                            "width": "10% ",
                             "title": "Hex Adresse",
                             "tooltip": "enter any text",
                             "filter": false,
@@ -316,10 +316,9 @@
                         },
                         {
                             "type": "select",
-                            "label": "Bitte Protokoll wählen",
-                            "newLine": true,
-                            "sm": 3,
-                            "lg": 3,
+                            "title": "Bitte Protokoll wählen",
+                            "label": "",
+                            "width": "20% ",
                             "options": [
                                 {
                                     "label": "sekündlich ohne Mw.",
@@ -357,7 +356,6 @@
                         {
                             "type": "text",
                             "attr": "table1Text1",
-                            "width": "8% ",
                             "title": "opt. Beschreibung",
                             "tooltip": "enter any text",
                             "filter": false,

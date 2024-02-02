@@ -135,6 +135,8 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
+		this.log.error(`aus Tabelle gelesen -> ${ JSON.stringify(this.config.table1)}`);
+
 		this.loop();
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
 		//socket.on('open', () => { this.log.error('Port geöffnet '); });
