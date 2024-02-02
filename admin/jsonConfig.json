@@ -282,7 +282,91 @@
                     "text": "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd",
                     "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
                     "icon": "info"
+                },
+                "table1": {
+                    "type": "table",
+                    "newLine": true,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "label": "Label",
+                    "showSecondAddAt": 5,
+                    "items": [
+                        {
+                            "type": "checkbox",
+                            "attr": "table1Chk",
+                            "width": "5% ",
+                            "title": "Aktiv",
+                            "tooltip": "Click on it",
+                            "filter": false,
+                            "sort": false,
+                            "default": true
+                        },
+                        {
+                            "type": "text",
+                            "attr": "table1Unique",
+                            "width": "8% ",
+                            "title": "Hex Adresse",
+                            "tooltip": "enter any text",
+                            "filter": false,
+                            "sort": false,
+                            "default": "",
+                            "validator": "const x={};for (const c of globalData.table1) {if (x[c.table1Unique]==='x') return false; x[c.table1Unique]='x';}; return true;",
+                            "validatorNoSaveOnError": true
+                        },
+                        {
+                            "type": "select",
+                            "label": "Bitte Protokoll wählen",
+                            "newLine": true,
+                            "sm": 3,
+                            "lg": 3,
+                            "options": [
+                                {
+                                    "label": "sekündlich ohne Mw.",
+                                    "value": 1
+                                },
+                                {
+                                    "label": "sekündlich mit Mw.",
+                                    "value": 2
+                                },
+                                {
+                                    "label": "minütlich",
+                                    "value": 3
+                                },
+                                {
+                                    "label": "stündlich",
+                                    "value": 4
+                                },
+                                {
+                                    "label": "täglichh",
+                                    "value": 5
+                                }
+                            ]
+                        },
+
+                        {
+                            "type": "checkbox",
+                            "attr": "table1ChkHide",
+                            "width": "5% ",
+                            "title": "Reading erstellen",
+                            "tooltip": "click to hide fields",
+                            "filter": false,
+                            "sort": false,
+                            "default": false
+                        },
+                        {
+                            "type": "text",
+                            "attr": "table1Text1",
+                            "width": "8% ",
+                            "title": "opt. Beschreibung",
+                            "tooltip": "enter any text",
+                            "filter": false,
+                            "sort": false,
+                            "default": ""
+                        }
+                    ]
                 }
+
             }
         }
     }
