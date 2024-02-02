@@ -283,11 +283,6 @@
                     "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
                     "icon": "info"
                 },
-                "path":{
-                    "type": "fileSelector",
-                    "tooltip": "enter any text",
-                    "default": "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json"
-                },
 
                 "table": {
                     "type": "table",
