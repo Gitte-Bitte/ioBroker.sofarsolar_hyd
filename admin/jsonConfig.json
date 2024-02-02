@@ -311,7 +311,7 @@
                             "filter": false,
                             "sort": false,
                             "default": "",
-                            "validator": "const x={};for (const c of globalData.table1) {if (x[c.table]==='x') return false; x[c.table]='x';}; return true;",
+                            "validator": "const x={};for (const c of globalData.table) {if (x[c.table]==='x') return false; x[c.table]='x';}; return true;",
                             "validatorNoSaveOnError": true
                         },
                         {
