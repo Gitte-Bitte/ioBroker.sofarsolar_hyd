@@ -506,7 +506,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 		for (const entry of this.config.table) {
-			console.log(` entry: ${JSON.stringify(entry)} `);
+			this.log.error(` entry: ${JSON.stringify(entry)} `);
 			if (entry.aktiv) {
 				console.log(` entry: ${JSON.stringify(entry.regAdr)} `);
 				this.registerList[entry.regAdr] = {};
