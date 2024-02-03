@@ -496,31 +496,32 @@ class SofarsolarHyd extends utils.Adapter {
 	parseTable() {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path);
-		if (fs.existsSync(path)) {
-			this.log.error("Datei ist da");
-		}
-		else {
+		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
-		}
-		const json = JSON.parse(data);
+			const json = JSON.parse(data);
 
 
-		for (const entry of this.config.table) {
-			this.log.error(` entry: ${JSON.stringify(entry)} `);
-			if (entry.aktiv) {
-				console.log(` entry: ${JSON.stringify(entry.regAdr)} `);
-				this.registerList[entry.regAdr] = {};
-				this.registerList[entry.regAdr].loop = entry.loop;
-				this.registerList[entry.regAdr].mw = entry.mw;
-				this.registerList[entry.regAdr].reading = entry.reading;
-				this.registerList[entry.regAdr].desc = entry.optDescription;
-				this.loopInfo[entry.loop].push(entry.regAdr);
-				this.registerList[entry.regAdr].regName = json[entry.regAdr].Field;
+			for (const entry of this.config.table) {
+				//this.log.error(` entry: ${JSON.stringify(entry)} `);
+				if (json[entry.regAdr] != undefined) {
+					if (entry.aktiv) {
+						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
+						this.registerList[entry.regAdr] = {};
+						this.registerList[entry.regAdr].loop = entry.loop;
+						this.registerList[entry.regAdr].mw = entry.mw;
+						this.registerList[entry.regAdr].reading = entry.reading;
+						this.registerList[entry.regAdr].desc = entry.optDescription;
+						this.loopInfo[entry.loop].push(entry.regAdr);
+						this.registerList[entry.regAdr].regName = json[entry.regAdr].Field;
+					}
+				}
+				else {
+					this.log.error(` Eintrag-> ${JSON.stringify(entry.regAdr)} <- wurde nicht in Datei gefunden`);
+				}
 			}
+			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
+			this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 		}
-		this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
-		this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
-
 	}
 
 	arrayIncludesReg(arr, val) {
