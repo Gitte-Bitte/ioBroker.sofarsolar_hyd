@@ -499,8 +499,8 @@ class SofarsolarHyd extends utils.Adapter {
 		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
 			const json = JSON.parse(data);
-
-
+		}
+		else {
 			for (const entry of this.config.table) {
 				//this.log.error(` entry: ${JSON.stringify(entry)} `);
 				if (json[entry.regAdr] != undefined) {
