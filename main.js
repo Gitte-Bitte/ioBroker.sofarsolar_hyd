@@ -223,7 +223,7 @@ class SofarsolarHyd extends utils.Adapter {
 	//################################################################################################################
 
 	async loop() {
-		//this.log.error("loop erreicht");
+		this.log.error("loop erreicht");
 		//let average = false;
 		this.loopCounter++;
 		if (this.loopCounter > 2) {
@@ -518,8 +518,8 @@ class SofarsolarHyd extends utils.Adapter {
 					this.log.error(` Eintrag-> ${JSON.stringify(register_str)} <- wurde nicht in Datei gefunden`);
 				}
 			}
-			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
-			this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
+			//this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
+			//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 		}
 	}
 
