@@ -229,15 +229,22 @@ class SofarsolarHyd extends utils.Adapter {
 		if (this.loopCounter > 2) {
 			this.loopCounter = 0;
 			//average = true;
+			this.log.error("average");
+
 		}
 		if (this.loopTasksChanged) {
+			this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
 		if (this.loopTasks.length > 1) {
+			this.log.error("loopTasks.length>1");
+
 			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
 			this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
 			this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
 		}
+		this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
+
 		for (const block in this.loopObject) {
 			this.log.error(`block :   ${JSON.stringify(block)}`);
 			this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
