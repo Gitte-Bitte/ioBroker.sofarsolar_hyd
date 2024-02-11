@@ -123,7 +123,7 @@ class SofarsolarHyd extends utils.Adapter {
 		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
 		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
-
+		this.loopTasksChanged = true;
 		this.setState("info.connection", false, true);
 		this.avgCount = this.config.autocomplete2;
 
