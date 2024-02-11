@@ -224,11 +224,11 @@ class SofarsolarHyd extends utils.Adapter {
 
 	async loop() {
 		//this.log.error("loop erreicht");
-		let average = false;
+		//let average = false;
 		this.loopCounter++;
 		if (this.loopCounter > 2) {
 			this.loopCounter = 0;
-			average = true;
+			//average = true;
 		}
 		if (this.loopTasksChanged) {
 			this.loopObject = this.createLoopObject(this.loopTasks);
@@ -238,9 +238,15 @@ class SofarsolarHyd extends utils.Adapter {
 			this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
 			this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
 		}
-		for (let block in this.loopObject) {
-			//this.log.error("block : " + block);
-			//await this.getRegisterBuffer(block);
+		for (const block in this.loopObject) {
+			this.log.error(`block :   ${JSON.stringify(block)}`);
+			this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
+			/*
+			await client.readHoldingRegisters(Number(block), 0x40)
+				.then((resp) => this.splitter2(resp.response._body._valuesAsBuffer, toRead[r]))
+				.then(() => this.delay(20))
+				.catch((resp) => { this.log.error(` : Stimmt was nicht: ${JSON.stringify(resp)} `); socket.connect({ path: "/dev/ttyUSB0", baudRate: 9600 }); });
+				*/
 		}
 		if (this.loopTasks.length > 1) {
 			this.loopTasks = ["entityLoop"];
@@ -255,8 +261,6 @@ class SofarsolarHyd extends utils.Adapter {
 	//################################################################################################################
 
 
-	async getRegisterBuffer(adr) {
-	}
 
 	/*
 	combineTasks(tasks) {
@@ -283,9 +287,9 @@ class SofarsolarHyd extends utils.Adapter {
 */
 
 	createLoopObject(tasks) {
-		let tempObj = {};
+		const tempObj = {};
 		let tempArray = [];
-		for (let task of tasks) {
+		for (const task of tasks) {
 			tempArray = tempArray.concat(this.loopInfo[task]);
 		}
 		tempArray = [...new Set(tempArray)];
@@ -473,63 +477,45 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 		return regArr;
 	}
-	/*
-[
-  {
-	"aktiv": true,
-	"regAdr": "456",
-	"loop": "dayliLoop",
-	"mw": false,
-	"reading": true,
-	"optDescription": "nmbnm"
-  },
-  {
-	"aktiv": true,
-	"regAdr": "567",
-	"loop": "entityLoop",
-	"mw": true,
-	"reading": false,
-	"optDescription": "iuj"
-  }
-]
-	 */
 
 
 
-/*
-
-	createRegName(i) {
-		return i.toString(16).toUpperCase().padStart(4, "0");
-	}
-
-*/
 
 	parseTable() {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path).toLocaleString();
-		let register = "";
+		let register_str = "";
+		let register_nmbr = 0;
+		let loopKind = "";
 		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
 		}
 		else {
 			const json = JSON.parse(data);
 			for (const entry of this.config.table) {
-				register = parseInt(entry["regAdr"],16).toString(16).toUpperCase().padStart(4,"0");
+				register_nmbr = parseInt(entry["regAdr"], 16);
+				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
+				loopKind = entry["loop"];
 				//this.log.error(` entry: ${JSON.stringify(entry)} `);
-				if (json[register] != undefined) {
+				if (json[register_str] != undefined) {
 					if (entry["aktiv"]) {
 						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
-						this.registerList[register] = {};
-						this.registerList[register].loop = entry["loop"];
-						this.registerList[register].mw = entry["mw"];
-						this.registerList[register].reading = entry["reading"];
-						this.registerList[register].desc = entry["optDescription"];
-						this.loopInfo[(entry.loop)].push(register);
-						this.registerList[register].regName = json[register].Field;
+						this.registerList[register_nmbr] = {};
+						this.registerList[register_nmbr].loop = entry["loop"];
+						this.registerList[register_nmbr].mw = entry["mw"];
+						this.registerList[register_nmbr].reading = entry["reading"];
+						this.registerList[register_nmbr].desc = entry["optDescription"];
+						this.registerList[register_nmbr].regName = json[register_str].Field;
+						this.registerList[register_nmbr].regType = json[register_str].Typ;
+						this.registerList[register_nmbr].regAccuracy = json[register_str].Accuracy;
+						this.registerList[register_nmbr].regUnit = json[register_str].Unit;
+						this.registerList[register_nmbr].regAdrStr = register_str;
+						this.registerList[register_nmbr].regValue = 0;
+						this.loopInfo[loopKind].push(register_nmbr);
 					}
 				}
 				else {
-					this.log.error(` Eintrag-> ${JSON.stringify(register)} <- wurde nicht in Datei gefunden`);
+					this.log.error(` Eintrag-> ${JSON.stringify(register_str)} <- wurde nicht in Datei gefunden`);
 				}
 			}
 			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
