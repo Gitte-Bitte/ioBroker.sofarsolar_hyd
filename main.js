@@ -292,7 +292,7 @@ class SofarsolarHyd extends utils.Adapter {
 					break;
 			}
 			this.registerList[register].value = val;
-			this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val);
+			this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
 
 		}
 
