@@ -255,6 +255,8 @@ class SofarsolarHyd extends utils.Adapter {
 				.catch((resp) => { this.log.error(` : Stimmt was nicht: ${JSON.stringify(resp)} `); socket.connect({ path: "/dev/ttyUSB0", baudRate: 9600 }); });
 
 		}
+		this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
+
 		if (this.loopTasks.length > 1) {
 			this.loopTasks = ["entityLoop"];
 			this.loopTasksChanged = true;
@@ -266,11 +268,32 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async parseBuffer(buf, liste) {
+		let relAdr = 0;
+		let val = 0;
+		let fktr = 1;
 		this.log.error("parseBuffer erreicht");
-		this.log.error(`buf :   ${JSON.stringify(buf)}`);
-		this.log.error(`liste :   ${JSON.stringify(liste)}`);
+		//this.log.error(`buf :   ${JSON.stringify(buf)}`);
+		//this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
 			this.log.error(`register :   ${JSON.stringify(register)}`);
+			relAdr = register % 0x40;
+			const type = this.registerList[register].regType;
+			fktr = this.registerList[register].regAccuracy;
+			switch (type) {
+				case "I16":
+					val = buf.readInt16BE(relAdr) / fktr;
+					break;
+				case "U16":
+					val = buf.readUInt16BE(relAdr) / fktr;
+					break;
+				case "U32":
+					val = buf.readUInt32BE(relAdr) / fktr;
+					break;
+				case "U64":
+					val = buf.readBigUInt64BE(relAdr) / fktr;
+					break;
+			}
+			this.registerList[register].value = val;
 		}
 
 	}
