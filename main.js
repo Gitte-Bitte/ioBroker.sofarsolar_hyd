@@ -496,27 +496,29 @@ class SofarsolarHyd extends utils.Adapter {
 	parseTable() {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path).toLocaleString();
+		let register = "";
 		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
 		}
 		else {
 			const json = JSON.parse(data);
 			for (const entry of this.config.table) {
+				register = entry["regAdr"];
 				//this.log.error(` entry: ${JSON.stringify(entry)} `);
-				if (json[entry["regAdr"]] != undefined) {
-					if (entry.aktiv) {
+				if (json[register] != undefined) {
+					if (entry["aktiv"]) {
 						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
-						this.registerList[entry.regAdr] = {};
-						this.registerList[entry.regAdr].loop = entry.loop;
-						this.registerList[entry.regAdr].mw = entry.mw;
-						this.registerList[entry.regAdr].reading = entry.reading;
-						this.registerList[entry.regAdr].desc = entry.optDescription;
-						this.loopInfo[entry.loop].push(entry.regAdr);
-						this.registerList[entry.regAdr].regName = json[entry.regAdr].Field;
+						this.registerList[register] = {};
+						this.registerList[register].loop = entry["loop"];
+						this.registerList[register].mw = entry["mw"];
+						this.registerList[register].reading = entry["reading"];
+						this.registerList[register].desc = entry["optDescription"];
+						this.loopInfo[entry.loop].push(register);
+						this.registerList[register].regName = json[register].Field;
 					}
 				}
 				else {
-					this.log.error(` Eintrag-> ${JSON.stringify(entry.regAdr)} <- wurde nicht in Datei gefunden`);
+					this.log.error(` Eintrag-> ${JSON.stringify(register)} <- wurde nicht in Datei gefunden`);
 				}
 			}
 			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
@@ -585,7 +587,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	async makeStatesFromRegister(obj, myPath) {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
-		const data = fs.readFileSync(path);
+		const data = fs.readFileSync(path).toLocaleString();
 		if (fs.existsSync(path)) {
 			// this.log.error('Datei ist da');
 		}
@@ -593,12 +595,12 @@ class SofarsolarHyd extends utils.Adapter {
 			// this.log.error('Datei fehlt');
 		}
 		const json = JSON.parse(data);
-		//this.log.info(myPath + ` :  ${JSON.stringify(obj)} `);
+		this.log.info(myPath + ` :  ${JSON.stringify(obj)} `);
 		for (const cluster in obj) {
-			// this.log.error(cluster + `obj_cluster:  :  ${ JSON.stringify(obj[cluster]) } `);
+			this.log.error(cluster + `obj_cluster:  :  ${JSON.stringify(obj[cluster])} `);
 			for (const reg in obj[cluster]) {
-				// this.log.error(reg + `obj_cluster_reg:  ${ JSON.stringify(obj[cluster][reg]) } `);
-				//this.log.error(`regname:  ${ JSON.stringify(obj[cluster][reg].regName) } `);
+				this.log.error(reg + `obj_cluster_reg:  ${JSON.stringify(obj[cluster][reg])} `);
+				this.log.error(`regname:  ${JSON.stringify(obj[cluster][reg].regName)} `);
 
 				if (json[obj[cluster][reg].regName] == undefined) { this.log.error("gibtsnet"); obj[cluster].splice(reg, 1); break; }
 				const desc = "0x" + obj[cluster][reg].regName + "_" + json[obj[cluster][reg].regName].Field;
