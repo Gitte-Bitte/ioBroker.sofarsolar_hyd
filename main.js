@@ -514,7 +514,7 @@ class SofarsolarHyd extends utils.Adapter {
 		else {
 			const json = JSON.parse(data);
 			for (const entry of this.config.table) {
-				register = entry["regAdr"].toString(16).toUpperCase().padStart(4,"0");
+				register = parseInt(entry["regAdr"],16).toString(16).toUpperCase().padStart(4,"0");
 				//this.log.error(` entry: ${JSON.stringify(entry)} `);
 				if (json[register] != undefined) {
 					if (entry["aktiv"]) {
@@ -524,7 +524,7 @@ class SofarsolarHyd extends utils.Adapter {
 						this.registerList[register].mw = entry["mw"];
 						this.registerList[register].reading = entry["reading"];
 						this.registerList[register].desc = entry["optDescription"];
-						this.loopInfo[entry.loop].push(register);
+						this.loopInfo[(entry.loop)].push(register);
 						this.registerList[register].regName = json[register].Field;
 					}
 				}
