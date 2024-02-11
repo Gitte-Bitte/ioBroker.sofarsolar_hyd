@@ -270,7 +270,7 @@ class SofarsolarHyd extends utils.Adapter {
 	async parseBuffer(buf, liste) {
 		let val = 0;
 		this.log.error("parseBuffer erreicht");
-		//this.log.error(`buf :   ${JSON.stringify(buf)}`);
+		this.log.error(`buf :   ${JSON.stringify(buf)}`);
 		//this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
 			this.log.error(`register :   ${JSON.stringify(register)}`);
@@ -280,6 +280,7 @@ class SofarsolarHyd extends utils.Adapter {
 			switch (type) {
 				case "I16":
 					val = buf.readInt16BE(relAdr) / fktr;
+					this.log.error("i16");
 					break;
 				case "U16":
 					val = buf.readUInt16BE(relAdr) / fktr;
