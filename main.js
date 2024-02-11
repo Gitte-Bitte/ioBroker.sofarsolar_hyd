@@ -223,31 +223,31 @@ class SofarsolarHyd extends utils.Adapter {
 	//################################################################################################################
 
 	async loop() {
-		this.log.error("loop erreicht");
+		//this.log.error("loop erreicht");
 		//let average = false;
 		this.loopCounter++;
 		if (this.loopCounter > 2) {
 			this.loopCounter = 0;
 			//average = true;
-			this.log.error("average");
+			//this.log.error("average");
 
 		}
 		if (this.loopTasksChanged) {
-			this.log.error("loopTaskChanged");
+			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
 		if (this.loopTasks.length > 1) {
-			this.log.error("loopTasks.length>1");
+			//this.log.error("loopTasks.length>1");
 
-			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
-			this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
-			this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
+			//this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			//this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
+			//this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
 		}
-		this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
+		//this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 
 		for (const block in this.loopObject) {
-			this.log.error(`block :   ${JSON.stringify(block)}`);
-			this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
+			//this.log.error(`block :   ${JSON.stringify(block)}`);
+			//this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
 
 			await client.readHoldingRegisters(Number(block), 0x40)
 				.then((resp) => this.parseBuffer(resp.response._body._valuesAsBuffer, this.loopObject[block]))
@@ -266,10 +266,14 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async parseBuffer(buf, liste) {
+		this.log.error("parseBuffer erreicht");
+		this.log.error(`buf :   ${JSON.stringify(buf)}`);
+		this.log.error(`liste :   ${JSON.stringify(liste)}`);
+		for (const register of liste) {
+			this.log.error(`register :   ${JSON.stringify(register)}`);
+		}
 
 	}
-
-
 	//################################################################################################################
 
 
@@ -281,7 +285,7 @@ class SofarsolarHyd extends utils.Adapter {
 			//this.log.error(`Combine task:  ${JSON.stringify(task)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
 			//console.log("task : " + task);
 			for (let block in this.loopInfo[task]) {
-
+	
 				//console.log("block : " + block);
 				if (temp[block] == undefined) {
 					temp[block] = this.loopInfo[task][block];
@@ -295,7 +299,7 @@ class SofarsolarHyd extends utils.Adapter {
 		//console.log(` tempinfo: ${JSON.stringify(temp)} `);
 		return temp;
 	}
-
+	
 */
 
 	createLoopObject(tasks) {
