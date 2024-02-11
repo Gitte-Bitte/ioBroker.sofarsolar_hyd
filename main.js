@@ -268,11 +268,11 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async parseBuffer(buf, liste) {
-		let val = 0;
 		this.log.error("parseBuffer erreicht");
 		this.log.error(`buf :   ${JSON.stringify(buf)}`);
 		//this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
+			let val = 0;
 			this.log.error(`register :   ${JSON.stringify(register)}`);
 			const relAdr = register % 0x40;
 			const type = this.registerList[register].regType;
