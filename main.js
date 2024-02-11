@@ -493,6 +493,17 @@ class SofarsolarHyd extends utils.Adapter {
   }
 ]
 	 */
+
+
+
+/*
+
+	createRegName(i) {
+		return i.toString(16).toUpperCase().padStart(4, "0");
+	}
+
+*/
+
 	parseTable() {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path).toLocaleString();
@@ -503,7 +514,7 @@ class SofarsolarHyd extends utils.Adapter {
 		else {
 			const json = JSON.parse(data);
 			for (const entry of this.config.table) {
-				register = entry["regAdr"];
+				register = entry["regAdr"].toString(16).toUpperCase().padStart(4,"0");
 				//this.log.error(` entry: ${JSON.stringify(entry)} `);
 				if (json[register] != undefined) {
 					if (entry["aktiv"]) {
@@ -595,12 +606,12 @@ class SofarsolarHyd extends utils.Adapter {
 			// this.log.error('Datei fehlt');
 		}
 		const json = JSON.parse(data);
-		this.log.info(myPath + ` :  ${JSON.stringify(obj)} `);
+		//this.log.info(myPath + ` :  ${JSON.stringify(obj)} `);
 		for (const cluster in obj) {
-			this.log.error(cluster + `obj_cluster:  :  ${JSON.stringify(obj[cluster])} `);
+			//this.log.error(cluster + `obj_cluster:  :  ${JSON.stringify(obj[cluster])} `);
 			for (const reg in obj[cluster]) {
-				this.log.error(reg + `obj_cluster_reg:  ${JSON.stringify(obj[cluster][reg])} `);
-				this.log.error(`regname:  ${JSON.stringify(obj[cluster][reg].regName)} `);
+				//this.log.error(reg + `obj_cluster_reg:  ${JSON.stringify(obj[cluster][reg])} `);
+				//this.log.error(`regname:  ${JSON.stringify(obj[cluster][reg].regName)} `);
 
 				if (json[obj[cluster][reg].regName] == undefined) { this.log.error("gibtsnet"); obj[cluster].splice(reg, 1); break; }
 				const desc = "0x" + obj[cluster][reg].regName + "_" + json[obj[cluster][reg].regName].Field;
