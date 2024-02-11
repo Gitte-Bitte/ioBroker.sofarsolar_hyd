@@ -268,17 +268,15 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async parseBuffer(buf, liste) {
-		let relAdr = 0;
 		let val = 0;
-		let fktr = 1;
 		this.log.error("parseBuffer erreicht");
 		//this.log.error(`buf :   ${JSON.stringify(buf)}`);
 		//this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
 			this.log.error(`register :   ${JSON.stringify(register)}`);
-			relAdr = register % 0x40;
+			const relAdr = register % 0x40;
 			const type = this.registerList[register].regType;
-			fktr = this.registerList[register].regAccuracy;
+			const fktr = this.registerList[register].regAccuracy;
 			switch (type) {
 				case "I16":
 					val = buf.readInt16BE(relAdr) / fktr;
@@ -294,6 +292,8 @@ class SofarsolarHyd extends utils.Adapter {
 					break;
 			}
 			this.registerList[register].value = val;
+			this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val);
+
 		}
 
 	}
