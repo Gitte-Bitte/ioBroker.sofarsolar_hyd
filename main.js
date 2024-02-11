@@ -135,7 +135,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
-		this.log.error(`aus Tabelle gelesen -> ${JSON.stringify(this.config.table)}`);
+		//this.log.error(`aus Tabelle gelesen -> ${JSON.stringify(this.config.table)}`);
 		this.parseTable();
 
 		this.loop();
@@ -148,8 +148,8 @@ class SofarsolarHyd extends utils.Adapter {
 
 		//this.log.info(`config this.config: ${ JSON.stringify(this.config) } `);
 
-		await this.makeStatesFromArray(calcStates, "CalculatedStates");
-		this.fillRegisterObjects().then(() => this.readFromObject());
+		//await this.makeStatesFromArray(calcStates, "CalculatedStates");
+		//this.fillRegisterObjects().then(() => this.readFromObject());
 
 		//        this.setTimeout(() => { this.readFromObject(); }, 8000);
 
@@ -248,12 +248,12 @@ class SofarsolarHyd extends utils.Adapter {
 		for (const block in this.loopObject) {
 			this.log.error(`block :   ${JSON.stringify(block)}`);
 			this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
-			/*
+
 			await client.readHoldingRegisters(Number(block), 0x40)
-				.then((resp) => this.splitter2(resp.response._body._valuesAsBuffer, toRead[r]))
+				.then((resp) => this.parseBuffer(resp.response._body._valuesAsBuffer, this.loopObject[block]))
 				.then(() => this.delay(20))
 				.catch((resp) => { this.log.error(` : Stimmt was nicht: ${JSON.stringify(resp)} `); socket.connect({ path: "/dev/ttyUSB0", baudRate: 9600 }); });
-				*/
+
 		}
 		if (this.loopTasks.length > 1) {
 			this.loopTasks = ["entityLoop"];
@@ -264,6 +264,11 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 		this.setTimeout(() => { this.loop(); }, 5000);
 	}
+
+	async parseBuffer(buf, liste) {
+
+	}
+
 
 	//################################################################################################################
 
