@@ -353,7 +353,7 @@
   "1039": {
     "Field": "PV_Generation_Ratio",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "800",
     "Max": "3600",
@@ -425,7 +425,7 @@
   "1047": {
     "Field": "BatConfig_Voltage_Over",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -434,7 +434,7 @@
   "1048": {
     "Field": "BatConfig_Voltage_Charge",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -443,7 +443,7 @@
   "1049": {
     "Field": "BatConfig_Voltage_Lack",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -452,7 +452,7 @@
   "1050": {
     "Field": "BatConfig_Voltage_Nominal",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -515,7 +515,7 @@
   "1057": {
     "Field": "BatConfig_TEMPCO",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "mV/Cell",
     "Min": "-60",
     "Max": "0",
@@ -524,7 +524,7 @@
   "1058": {
     "Field": "BatConfig_Voltage_Recovery_Buffer",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -596,7 +596,7 @@
   "1066": {
     "Field": "pv_branch_current_limit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "0",
     "Max": "65535",
@@ -776,7 +776,7 @@
   "1106": {
     "Field": "Active_Power_Export_Limit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "%",
     "Min": "0",
     "Max": "1000",
@@ -785,7 +785,7 @@
   "1107": {
     "Field": "Active_Power_Import_Limit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "%",
     "Min": "0",
     "Max": "1000",
@@ -794,7 +794,7 @@
   "1108": {
     "Field": "Reactive_Power_Setting",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "%",
     "Min": "-1000",
     "Max": "1000",
@@ -803,7 +803,7 @@
   "1109": {
     "Field": "Power_Factor_Setting",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "p.u.",
     "Min": "-100",
     "Max": "100",
@@ -1073,7 +1073,7 @@
   "1145": {
     "Field": "Off_Grid_Grid_Power",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "0",
     "Max": "65535",
@@ -1082,7 +1082,7 @@
   "1146": {
     "Field": "Off_Grid_DG_Power",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "0",
     "Max": "65535",
@@ -1307,7 +1307,7 @@
   "1304": {
     "Field": "Italay_Autotest_Result1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1325,7 +1325,7 @@
   "1306": {
     "Field": "Italay_Autotest_Result3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1343,7 +1343,7 @@
   "1308": {
     "Field": "Italay_Autotest_Result5",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1361,7 +1361,7 @@
   "1310": {
     "Field": "Italay_Autotest_Result13",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1379,7 +1379,7 @@
   "1312": {
     "Field": "Italay_Autotest_Result15",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1397,7 +1397,7 @@
   "1314": {
     "Field": "Italay_Autotest_Result17",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -1415,7 +1415,7 @@
   "1316": {
     "Field": "Italay_Autotest_Result19",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -1433,7 +1433,7 @@
   "1318": {
     "Field": "Italay_Autotest_Result21",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -1451,7 +1451,7 @@
   "1320": {
     "Field": "Italay_Autotest_Result29",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -1469,7 +1469,7 @@
   "1322": {
     "Field": "Italay_Autotest_Result31",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -1613,7 +1613,7 @@
   "1344": {
     "Field": "IVCurve_Voltage1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1622,7 +1622,7 @@
   "1345": {
     "Field": "IVCurve_Current1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1631,7 +1631,7 @@
   "1346": {
     "Field": "IVCurve_Voltage2",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1640,7 +1640,7 @@
   "1347": {
     "Field": "IVCurve_Current2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1649,7 +1649,7 @@
   "1348": {
     "Field": "IVCurve_Voltage3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1658,7 +1658,7 @@
   "1349": {
     "Field": "IVCurve_Current3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1667,7 +1667,7 @@
   "1350": {
     "Field": "IVCurve_Voltage7",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1676,7 +1676,7 @@
   "1351": {
     "Field": "IVCurve_Current7",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1685,7 +1685,7 @@
   "1352": {
     "Field": "IVCurve_Voltage8",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1694,7 +1694,7 @@
   "1353": {
     "Field": "IVCurve_Current8",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1703,7 +1703,7 @@
   "1354": {
     "Field": "IVCurve_Voltage9",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1712,7 +1712,7 @@
   "1355": {
     "Field": "IVCurve_Current9",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1721,7 +1721,7 @@
   "1356": {
     "Field": "IVCurve_Voltage10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1730,7 +1730,7 @@
   "1357": {
     "Field": "IVCurve_Current10",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1739,7 +1739,7 @@
   "1358": {
     "Field": "IVCurve_Voltage11",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1748,7 +1748,7 @@
   "1359": {
     "Field": "IVCurve_Current11",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1757,7 +1757,7 @@
   "1360": {
     "Field": "IVCurve_Voltage15",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1766,7 +1766,7 @@
   "1361": {
     "Field": "IVCurve_Current15",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1775,7 +1775,7 @@
   "1362": {
     "Field": "IVCurve_Voltage16",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1784,7 +1784,7 @@
   "1363": {
     "Field": "IVCurve_Current16",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1793,7 +1793,7 @@
   "1364": {
     "Field": "IVCurve_Voltage17",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1802,7 +1802,7 @@
   "1365": {
     "Field": "IVCurve_Current17",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1811,7 +1811,7 @@
   "1366": {
     "Field": "IVCurve_Voltage18",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1820,7 +1820,7 @@
   "1367": {
     "Field": "IVCurve_Current18",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1829,7 +1829,7 @@
   "1368": {
     "Field": "IVCurve_Voltage19",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1838,7 +1838,7 @@
   "1369": {
     "Field": "IVCurve_Current19",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1847,7 +1847,7 @@
   "1370": {
     "Field": "IVCurve_Voltage23",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1856,7 +1856,7 @@
   "1371": {
     "Field": "IVCurve_Current23",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1865,7 +1865,7 @@
   "1372": {
     "Field": "IVCurve_Voltage24",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1874,7 +1874,7 @@
   "1373": {
     "Field": "IVCurve_Current24",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1883,7 +1883,7 @@
   "1374": {
     "Field": "IVCurve_Voltage25",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1892,7 +1892,7 @@
   "1375": {
     "Field": "IVCurve_Current25",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1901,7 +1901,7 @@
   "1376": {
     "Field": "IVCurve_Voltage26",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1910,7 +1910,7 @@
   "1377": {
     "Field": "IVCurve_Current26",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1919,7 +1919,7 @@
   "1378": {
     "Field": "IVCurve_Voltage27",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1928,7 +1928,7 @@
   "1379": {
     "Field": "IVCurve_Current27",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1973,7 +1973,7 @@
   "1384": {
     "Field": "IVCurve_Voltage31",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -1982,7 +1982,7 @@
   "1385": {
     "Field": "IVCurve_Current31",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -1991,7 +1991,7 @@
   "1386": {
     "Field": "IVCurve_Voltage32",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2000,7 +2000,7 @@
   "1387": {
     "Field": "IVCurve_Current32",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2009,7 +2009,7 @@
   "1388": {
     "Field": "IVCurve_Voltage33",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2018,7 +2018,7 @@
   "1389": {
     "Field": "IVCurve_Current33",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2027,7 +2027,7 @@
   "1390": {
     "Field": "IVCurve_Voltage37",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2036,7 +2036,7 @@
   "1391": {
     "Field": "IVCurve_Current37",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2045,7 +2045,7 @@
   "1392": {
     "Field": "IVCurve_Voltage38",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2054,7 +2054,7 @@
   "1393": {
     "Field": "IVCurve_Current38",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2063,7 +2063,7 @@
   "1394": {
     "Field": "IVCurve_Voltage39",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2072,7 +2072,7 @@
   "1395": {
     "Field": "IVCurve_Current39",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2081,7 +2081,7 @@
   "1396": {
     "Field": "IVCurve_Voltage40",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2090,7 +2090,7 @@
   "1397": {
     "Field": "IVCurve_Current40",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2099,7 +2099,7 @@
   "1398": {
     "Field": "IVCurve_Voltage41",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2108,7 +2108,7 @@
   "1399": {
     "Field": "IVCurve_Current41",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2153,7 +2153,7 @@
   "1404": {
     "Field": "IVCurve_Voltage91",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2162,7 +2162,7 @@
   "1405": {
     "Field": "IVCurve_Current91",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2171,7 +2171,7 @@
   "1406": {
     "Field": "IVCurve_Voltage92",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2180,7 +2180,7 @@
   "1407": {
     "Field": "IVCurve_Current92",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2189,7 +2189,7 @@
   "1408": {
     "Field": "IVCurve_Voltage93",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2198,7 +2198,7 @@
   "1409": {
     "Field": "IVCurve_Current93",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2207,7 +2207,7 @@
   "1410": {
     "Field": "IVCurve_Voltage97",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2216,7 +2216,7 @@
   "1411": {
     "Field": "IVCurve_Current97",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2225,7 +2225,7 @@
   "1412": {
     "Field": "IVCurve_Voltage98",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2234,7 +2234,7 @@
   "1413": {
     "Field": "IVCurve_Current98",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2243,7 +2243,7 @@
   "1414": {
     "Field": "IVCurve_Voltage99",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2252,7 +2252,7 @@
   "1415": {
     "Field": "IVCurve_Current99",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2261,7 +2261,7 @@
   "1416": {
     "Field": "IVCurve_Voltage100",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2270,7 +2270,7 @@
   "1417": {
     "Field": "IVCurve_Current100",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2279,7 +2279,7 @@
   "1418": {
     "Field": "IVCurve_Voltage101",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2288,7 +2288,7 @@
   "1419": {
     "Field": "IVCurve_Current101",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2297,7 +2297,7 @@
   "1420": {
     "Field": "IVCurve_Voltage105",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2306,7 +2306,7 @@
   "1421": {
     "Field": "IVCurve_Current105",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2315,7 +2315,7 @@
   "1422": {
     "Field": "IVCurve_Voltage106",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2324,7 +2324,7 @@
   "1423": {
     "Field": "IVCurve_Current106",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2333,7 +2333,7 @@
   "1424": {
     "Field": "IVCurve_Voltage107",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2342,7 +2342,7 @@
   "1425": {
     "Field": "IVCurve_Current107",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2351,7 +2351,7 @@
   "1426": {
     "Field": "IVCurve_Voltage108",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2360,7 +2360,7 @@
   "1427": {
     "Field": "IVCurve_Current108",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2369,7 +2369,7 @@
   "1428": {
     "Field": "IVCurve_Voltage109",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2378,7 +2378,7 @@
   "1429": {
     "Field": "IVCurve_Current109",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2387,7 +2387,7 @@
   "1430": {
     "Field": "IVCurve_Voltage113",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2396,7 +2396,7 @@
   "1431": {
     "Field": "IVCurve_Current113",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2405,7 +2405,7 @@
   "1432": {
     "Field": "IVCurve_Voltage114",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2414,7 +2414,7 @@
   "1433": {
     "Field": "IVCurve_Current114",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2423,7 +2423,7 @@
   "1434": {
     "Field": "IVCurve_Voltage115",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2432,7 +2432,7 @@
   "1435": {
     "Field": "IVCurve_Current115",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2441,7 +2441,7 @@
   "1436": {
     "Field": "IVCurve_Voltage116",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2450,7 +2450,7 @@
   "1437": {
     "Field": "IVCurve_Current116",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2459,7 +2459,7 @@
   "1438": {
     "Field": "IVCurve_Voltage117",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2468,7 +2468,7 @@
   "1439": {
     "Field": "IVCurve_Current117",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2513,7 +2513,7 @@
   "1444": {
     "Field": "IVCurve_Voltage121",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2522,7 +2522,7 @@
   "1445": {
     "Field": "IVCurve_Current121",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2531,7 +2531,7 @@
   "1446": {
     "Field": "IVCurve_Voltage122",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2540,7 +2540,7 @@
   "1447": {
     "Field": "IVCurve_Current122",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2549,7 +2549,7 @@
   "1448": {
     "Field": "IVCurve_Voltage123",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2558,7 +2558,7 @@
   "1449": {
     "Field": "IVCurve_Current123",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2567,7 +2567,7 @@
   "1450": {
     "Field": "IVCurve_Voltage127",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2576,7 +2576,7 @@
   "1451": {
     "Field": "IVCurve_Current127",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2585,7 +2585,7 @@
   "1452": {
     "Field": "IVCurve_Voltage128",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2594,7 +2594,7 @@
   "1453": {
     "Field": "IVCurve_Current128",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2603,7 +2603,7 @@
   "1454": {
     "Field": "IVCurve_Voltage129",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2612,7 +2612,7 @@
   "1455": {
     "Field": "IVCurve_Current129",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2621,7 +2621,7 @@
   "1456": {
     "Field": "IVCurve_Voltage130",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2630,7 +2630,7 @@
   "1457": {
     "Field": "IVCurve_Current130",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2639,7 +2639,7 @@
   "1458": {
     "Field": "IVCurve_Voltage131",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2648,7 +2648,7 @@
   "1459": {
     "Field": "IVCurve_Current131",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2657,7 +2657,7 @@
   "1460": {
     "Field": "IVCurve_Voltage135",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2666,7 +2666,7 @@
   "1461": {
     "Field": "IVCurve_Current135",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2675,7 +2675,7 @@
   "1462": {
     "Field": "IVCurve_Voltage136",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2684,7 +2684,7 @@
   "1463": {
     "Field": "IVCurve_Current136",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2693,7 +2693,7 @@
   "1464": {
     "Field": "IVCurve_Voltage137",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2702,7 +2702,7 @@
   "1465": {
     "Field": "IVCurve_Current137",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2711,7 +2711,7 @@
   "1466": {
     "Field": "IVCurve_Voltage138",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2720,7 +2720,7 @@
   "1467": {
     "Field": "IVCurve_Current138",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2729,7 +2729,7 @@
   "1468": {
     "Field": "IVCurve_Voltage139",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2738,7 +2738,7 @@
   "1469": {
     "Field": "IVCurve_Current139",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2747,7 +2747,7 @@
   "1470": {
     "Field": "IVCurve_Voltage143",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2756,7 +2756,7 @@
   "1471": {
     "Field": "IVCurve_Current143",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2765,7 +2765,7 @@
   "1472": {
     "Field": "IVCurve_Voltage144",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2774,7 +2774,7 @@
   "1473": {
     "Field": "IVCurve_Current144",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2783,7 +2783,7 @@
   "1474": {
     "Field": "IVCurve_Voltage145",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2792,7 +2792,7 @@
   "1475": {
     "Field": "IVCurve_Current145",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2801,7 +2801,7 @@
   "1476": {
     "Field": "IVCurve_Voltage146",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2810,7 +2810,7 @@
   "1477": {
     "Field": "IVCurve_Current146",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -2819,7 +2819,7 @@
   "1478": {
     "Field": "IVCurve_Voltage147",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -2828,7 +2828,7 @@
   "1479": {
     "Field": "IVCurve_Current147",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -4007,7 +4007,7 @@
   "1610": {
     "Field": "EnergyStatistics1",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4025,7 +4025,7 @@
   "1612": {
     "Field": "EnergyStatistics2",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4043,7 +4043,7 @@
   "1614": {
     "Field": "EnergyStatistics3",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4061,7 +4061,7 @@
   "1616": {
     "Field": "EnergyStatistics4",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4079,7 +4079,7 @@
   "1618": {
     "Field": "EnergyStatistics5",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4097,7 +4097,7 @@
   "1620": {
     "Field": "EnergyStatistics9",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4115,7 +4115,7 @@
   "1622": {
     "Field": "EnergyStatistics10",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4133,7 +4133,7 @@
   "1624": {
     "Field": "EnergyStatistics11",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4151,7 +4151,7 @@
   "1626": {
     "Field": "EnergyStatistics12",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4169,7 +4169,7 @@
   "1628": {
     "Field": "EnergyStatistics13",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4187,7 +4187,7 @@
   "1630": {
     "Field": "EnergyStatistics17",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4205,7 +4205,7 @@
   "1632": {
     "Field": "EnergyStatistics18",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4223,7 +4223,7 @@
   "1634": {
     "Field": "EnergyStatistics19",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4241,7 +4241,7 @@
   "1636": {
     "Field": "EnergyStatistics20",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4259,7 +4259,7 @@
   "1638": {
     "Field": "EnergyStatistics21",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4277,7 +4277,7 @@
   "1640": {
     "Field": "EnergyStatistics25",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4295,7 +4295,7 @@
   "1642": {
     "Field": "EnergyStatistics26",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4313,7 +4313,7 @@
   "1644": {
     "Field": "EnergyStatistics27",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4331,7 +4331,7 @@
   "1646": {
     "Field": "EnergyStatistics28",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4349,7 +4349,7 @@
   "1648": {
     "Field": "EnergyStatistics29",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4367,7 +4367,7 @@
   "1650": {
     "Field": "EnergyStatistics33",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4385,7 +4385,7 @@
   "1652": {
     "Field": "EnergyStatistics34",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4403,7 +4403,7 @@
   "1654": {
     "Field": "EnergyStatistics35",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4421,7 +4421,7 @@
   "1656": {
     "Field": "EnergyStatistics36",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -4439,7 +4439,7 @@
   "1658": {
     "Field": "EnergyStatistics37",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -5321,7 +5321,7 @@
   "6030": {
     "Field": "PCU_BusP",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5330,7 +5330,7 @@
   "6031": {
     "Field": "PCU_BusN",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5339,7 +5339,7 @@
   "6032": {
     "Field": "PCU_FC_Voltage1 -- 4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5348,7 +5348,7 @@
   "6033": {
     "Field": "PCU_FC_Voltage1 -- 4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5357,7 +5357,7 @@
   "6034": {
     "Field": "PCU_FC_Voltage1 -- 4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5366,7 +5366,7 @@
   "6035": {
     "Field": "PCU_FC_Voltage1 -- 4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5375,7 +5375,7 @@
   "6036": {
     "Field": "PCU_IL_Current1 -- 4",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -5384,7 +5384,7 @@
   "6037": {
     "Field": "PCU_IL_Current1 -- 4",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -5393,7 +5393,7 @@
   "6038": {
     "Field": "PCU_IL_Current1 -- 4",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -5402,7 +5402,7 @@
   "6039": {
     "Field": "PCU_IL_Current1 -- 4",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -5465,7 +5465,7 @@
   "6046": {
     "Field": "PCU_Max_Charge_Current",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "0",
     "Max": "65535",
@@ -5474,7 +5474,7 @@
   "6047": {
     "Field": "PCU_Max_Discharge_Current",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "0",
     "Max": "65535",
@@ -5483,7 +5483,7 @@
   "6048": {
     "Field": "K_Voltage_HVbus",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -5492,7 +5492,7 @@
   "6049": {
     "Field": "K_Voltage_Pbus",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -5735,7 +5735,7 @@
   "9010": {
     "Field": "Total_Current",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -5744,7 +5744,7 @@
   "9011": {
     "Field": "Cell_Average_Temperature",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -5933,7 +5933,7 @@
   "9051": {
     "Field": "Pack_RT_Cell_Voltage1",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5942,7 +5942,7 @@
   "9052": {
     "Field": "Pack_RT_Cell_Voltage2",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5951,7 +5951,7 @@
   "9053": {
     "Field": "Pack_RT_Cell_Voltage3",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5960,7 +5960,7 @@
   "9054": {
     "Field": "Pack_RT_Cell_Voltage4",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5969,7 +5969,7 @@
   "9055": {
     "Field": "Pack_RT_Cell_Voltage5",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5978,7 +5978,7 @@
   "9056": {
     "Field": "Pack_RT_Cell_Voltage6",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5987,7 +5987,7 @@
   "9057": {
     "Field": "Pack_RT_Cell_Voltage7",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -5996,7 +5996,7 @@
   "9058": {
     "Field": "Pack_RT_Cell_Voltage8",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6005,7 +6005,7 @@
   "9059": {
     "Field": "Pack_RT_Cell_Voltage9",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6014,7 +6014,7 @@
   "9060": {
     "Field": "Pack_RT_Cell_Voltage16",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6023,7 +6023,7 @@
   "9061": {
     "Field": "Pack_RT_Cell_Voltage17",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6032,7 +6032,7 @@
   "9062": {
     "Field": "Pack_RT_Cell_Voltage18",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6041,7 +6041,7 @@
   "9063": {
     "Field": "Pack_RT_Cell_Voltage19",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6050,7 +6050,7 @@
   "9064": {
     "Field": "Pack_RT_Cell_Voltage20",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6059,7 +6059,7 @@
   "9065": {
     "Field": "Pack_RT_Cell_Voltage21",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6068,7 +6068,7 @@
   "9066": {
     "Field": "Pack_RT_Cell_Voltage22",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6077,7 +6077,7 @@
   "9067": {
     "Field": "Pack_RT_Cell_Voltage23",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6086,7 +6086,7 @@
   "9068": {
     "Field": "Pack_RT_Cell_Voltage24",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6095,7 +6095,7 @@
   "9069": {
     "Field": "Pack_RT_Cell_Max_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6104,7 +6104,7 @@
   "9070": {
     "Field": "Pack_RT_Temperature_Env",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -6113,7 +6113,7 @@
   "9071": {
     "Field": "Pack_RT_Current",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -6122,7 +6122,7 @@
   "9072": {
     "Field": "Pack_RT_Remaining_Capacity",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "Ah",
     "Min": "",
     "Max": "",
@@ -6131,7 +6131,7 @@
   "9073": {
     "Field": "Pack_RT_FullCharge_Capacity",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "Ah",
     "Min": "",
     "Max": "",
@@ -6185,7 +6185,7 @@
   "9079": {
     "Field": "Pack_RT_Total_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6293,7 +6293,7 @@
   "9091": {
     "Field": "Pack_Fault_Cell_Voltage1",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6302,7 +6302,7 @@
   "9092": {
     "Field": "Pack_Fault_Cell_Voltage2",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6311,7 +6311,7 @@
   "9093": {
     "Field": "Pack_Fault_Cell_Voltage3",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6320,7 +6320,7 @@
   "9094": {
     "Field": "Pack_Fault_Cell_Voltage4",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6329,7 +6329,7 @@
   "9095": {
     "Field": "Pack_Fault_Cell_Voltage5",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6338,7 +6338,7 @@
   "9096": {
     "Field": "Pack_Fault_Cell_Voltage6",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6347,7 +6347,7 @@
   "9097": {
     "Field": "Pack_Fault_Cell_Voltage7",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6356,7 +6356,7 @@
   "9098": {
     "Field": "Pack_Fault_Cell_Voltage8",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -6365,7 +6365,7 @@
   "9099": {
     "Field": "Pack_Fault_Cell_Voltage9",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -7877,7 +7877,7 @@
   "0484": {
     "Field": "Frequency_Grid",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -7886,7 +7886,7 @@
   "0485": {
     "Field": "ActivePower_Output_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7895,7 +7895,7 @@
   "0486": {
     "Field": "ReactivePower_Output_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7904,7 +7904,7 @@
   "0487": {
     "Field": "ApparentPower_Output_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7913,7 +7913,7 @@
   "0488": {
     "Field": "ActivePower_PCC_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7922,7 +7922,7 @@
   "0489": {
     "Field": "ReactivePower_PCC_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7931,7 +7931,7 @@
   "048A": {
     "Field": "ApparentPower_PCC_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7958,7 +7958,7 @@
   "048D": {
     "Field": "Voltage_Phase_R",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -7967,7 +7967,7 @@
   "048E": {
     "Field": "Current_Output_R",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -7976,7 +7976,7 @@
   "048F": {
     "Field": "ActivePower_Output_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7985,7 +7985,7 @@
   "0490": {
     "Field": "ReactivePower_Output_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -7994,7 +7994,7 @@
   "0491": {
     "Field": "PowerFactor_Output_R",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8003,7 +8003,7 @@
   "0492": {
     "Field": "Current_PCC_R",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8012,7 +8012,7 @@
   "0493": {
     "Field": "ActivePower_PCC_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8021,7 +8021,7 @@
   "0494": {
     "Field": "ReactivePower_PCC_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8030,7 +8030,7 @@
   "0495": {
     "Field": "PowerFactor_PCC_R",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8057,7 +8057,7 @@
   "0498": {
     "Field": "Voltage_Phase_S",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8066,7 +8066,7 @@
   "0499": {
     "Field": "Current_Output_S",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8075,7 +8075,7 @@
   "049A": {
     "Field": "ActivePower_Output_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8084,7 +8084,7 @@
   "049B": {
     "Field": "ReactivePower_Output_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8093,7 +8093,7 @@
   "049C": {
     "Field": "PowerFactor_Output_S",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8102,7 +8102,7 @@
   "049D": {
     "Field": "Current_PCC_S",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8111,7 +8111,7 @@
   "049E": {
     "Field": "ActivePower_PCC_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8120,7 +8120,7 @@
   "049F": {
     "Field": "ReactivePower_PCC_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8129,7 +8129,7 @@
   "04A0": {
     "Field": "PowerFactor_PCC_S",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8156,7 +8156,7 @@
   "04A3": {
     "Field": "Voltage_Phase_T",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8165,7 +8165,7 @@
   "04A4": {
     "Field": "Current_Output_T",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8174,7 +8174,7 @@
   "04A5": {
     "Field": "ActivePower_Output_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8183,7 +8183,7 @@
   "04A6": {
     "Field": "ReactivePower_Output_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8192,7 +8192,7 @@
   "04A7": {
     "Field": "PowerFactor_Output_T",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8201,7 +8201,7 @@
   "04A8": {
     "Field": "Current_PCC_T",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8210,7 +8210,7 @@
   "04A9": {
     "Field": "ActivePower_PCC_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8219,7 +8219,7 @@
   "04AA": {
     "Field": "ReactivePower_PCC_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8228,7 +8228,7 @@
   "04AB": {
     "Field": "PowerFactor_PCC_T",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8255,7 +8255,7 @@
   "04AE": {
     "Field": "ActivePower_PV_Ext",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8264,7 +8264,7 @@
   "04AF": {
     "Field": "ActivePower_Load_Sys",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8273,7 +8273,7 @@
   "04B0": {
     "Field": "Voltage_Phase_L1N",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8282,7 +8282,7 @@
   "04B1": {
     "Field": "Current_Output_L1N",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8291,7 +8291,7 @@
   "04B2": {
     "Field": "ActivePower_Output_L1N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8300,7 +8300,7 @@
   "04B3": {
     "Field": "Current_PCC_L1N",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8309,7 +8309,7 @@
   "04B4": {
     "Field": "ActivePower_PCC_L1N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8318,7 +8318,7 @@
   "04B5": {
     "Field": "Voltage_Phase_L2N",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8327,7 +8327,7 @@
   "04B6": {
     "Field": "Current_Output_L2N",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8336,7 +8336,7 @@
   "04B7": {
     "Field": "ActivePower_Output_L2N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8345,7 +8345,7 @@
   "04B8": {
     "Field": "Current_PCC_L2N",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8354,7 +8354,7 @@
   "04B9": {
     "Field": "ActivePower_PCC_L2N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8363,7 +8363,7 @@
   "04BA": {
     "Field": "Voltage_Line_L1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8372,7 +8372,7 @@
   "04BB": {
     "Field": "Voltage_Line_L2",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8381,7 +8381,7 @@
   "04BC": {
     "Field": "Voltage_Line_L3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8390,7 +8390,7 @@
   "04BD": {
     "Field": "Power_Factor",
     "Typ": "I16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8435,7 +8435,7 @@
   "0504": {
     "Field": "ActivePower_Load_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8444,7 +8444,7 @@
   "0505": {
     "Field": "ReactivePower_Load_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8453,7 +8453,7 @@
   "0506": {
     "Field": "ApparentPower_Load_Total",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8462,7 +8462,7 @@
   "0507": {
     "Field": "Frequency_Output",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -8489,7 +8489,7 @@
   "050A": {
     "Field": "Voltage_Output_R",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8498,7 +8498,7 @@
   "050B": {
     "Field": "Current_Load_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8507,7 +8507,7 @@
   "050C": {
     "Field": "ActivePower_Load_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8516,7 +8516,7 @@
   "050D": {
     "Field": "ReactivePower_Load_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8525,7 +8525,7 @@
   "050E": {
     "Field": "ApparentPower_Load_R",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kVA",
     "Min": "",
     "Max": "",
@@ -8534,7 +8534,7 @@
   "050F": {
     "Field": "LoadPeakRatio_R",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8561,7 +8561,7 @@
   "0512": {
     "Field": "Voltage_Output_S",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8570,7 +8570,7 @@
   "0513": {
     "Field": "Current_Load_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8579,7 +8579,7 @@
   "0514": {
     "Field": "ActivePower_Load_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8588,7 +8588,7 @@
   "0515": {
     "Field": "ReactivePower_Load_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8597,7 +8597,7 @@
   "0516": {
     "Field": "ApparentPower_Load_S",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kVA",
     "Min": "",
     "Max": "",
@@ -8606,7 +8606,7 @@
   "0517": {
     "Field": "LoadPeakRatio_S",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8633,7 +8633,7 @@
   "051A": {
     "Field": "Voltage_Output_T",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8642,7 +8642,7 @@
   "051B": {
     "Field": "Current_Load_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8651,7 +8651,7 @@
   "051C": {
     "Field": "ActivePower_Load_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8660,7 +8660,7 @@
   "051D": {
     "Field": "ReactivePower_Load_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8669,7 +8669,7 @@
   "051E": {
     "Field": "ApparentPower_Load_T",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kVA",
     "Min": "",
     "Max": "",
@@ -8678,7 +8678,7 @@
   "051F": {
     "Field": "LoadPeakRatio_T",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "p.u.",
     "Min": "",
     "Max": "",
@@ -8705,7 +8705,7 @@
   "0522": {
     "Field": "Voltage_Output_L1N",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8714,7 +8714,7 @@
   "0523": {
     "Field": "Current_Load_L1N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8723,7 +8723,7 @@
   "0524": {
     "Field": "ActivePower_Load_L1N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8732,7 +8732,7 @@
   "0525": {
     "Field": "Voltage_Output_L2N",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8741,7 +8741,7 @@
   "0526": {
     "Field": "Current_Load_L2N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8750,7 +8750,7 @@
   "0527": {
     "Field": "ActivePower_Load_L2N",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8795,7 +8795,7 @@
   "0584": {
     "Field": "Voltage_PV1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8804,7 +8804,7 @@
   "0585": {
     "Field": "Current_PV1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8813,7 +8813,7 @@
   "0586": {
     "Field": "Power_PV1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8822,7 +8822,7 @@
   "0587": {
     "Field": "Voltage_PV2",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8831,7 +8831,7 @@
   "0588": {
     "Field": "Current_PV2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8840,7 +8840,7 @@
   "0589": {
     "Field": "Power_PV2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8849,7 +8849,7 @@
   "058A": {
     "Field": "Voltage_PV3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8858,7 +8858,7 @@
   "058B": {
     "Field": "Current_PV3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8867,7 +8867,7 @@
   "058C": {
     "Field": "Power_PV3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8876,7 +8876,7 @@
   "058D": {
     "Field": "Voltage_PV4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8885,7 +8885,7 @@
   "058E": {
     "Field": "Current_PV4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8894,7 +8894,7 @@
   "058F": {
     "Field": "Power_PV4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8903,7 +8903,7 @@
   "0590": {
     "Field": "Voltage_PV5",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8912,7 +8912,7 @@
   "0591": {
     "Field": "Current_PV5",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8921,7 +8921,7 @@
   "0592": {
     "Field": "Power_PV5",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8930,7 +8930,7 @@
   "0593": {
     "Field": "Voltage_PV6",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8939,7 +8939,7 @@
   "0594": {
     "Field": "Current_PV6",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8948,7 +8948,7 @@
   "0595": {
     "Field": "Power_PV6",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8957,7 +8957,7 @@
   "0596": {
     "Field": "Voltage_PV7",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8966,7 +8966,7 @@
   "0597": {
     "Field": "Current_PV7",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -8975,7 +8975,7 @@
   "0598": {
     "Field": "Power_PV7",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -8984,7 +8984,7 @@
   "0599": {
     "Field": "Voltage_PV8",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -8993,7 +8993,7 @@
   "059A": {
     "Field": "Current_PV8",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9002,7 +9002,7 @@
   "059B": {
     "Field": "Power_PV8",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9011,7 +9011,7 @@
   "059C": {
     "Field": "Voltage_PV9",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9020,7 +9020,7 @@
   "059D": {
     "Field": "Current_PV9",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9029,7 +9029,7 @@
   "059E": {
     "Field": "Power_PV9",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9038,7 +9038,7 @@
   "059F": {
     "Field": "Voltage_PV10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9047,7 +9047,7 @@
   "05A0": {
     "Field": "Current_PV10",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9056,7 +9056,7 @@
   "05A1": {
     "Field": "Power_PV10",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9065,7 +9065,7 @@
   "05A2": {
     "Field": "Voltage_PV11",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9074,7 +9074,7 @@
   "05A3": {
     "Field": "Current_PV11",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9083,7 +9083,7 @@
   "05A4": {
     "Field": "Power_PV11",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9092,7 +9092,7 @@
   "05A5": {
     "Field": "Voltage_PV12",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9101,7 +9101,7 @@
   "05A6": {
     "Field": "Current_PV12",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9110,7 +9110,7 @@
   "05A7": {
     "Field": "Power_PV12",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9119,7 +9119,7 @@
   "05A8": {
     "Field": "Voltage_PV13",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9128,7 +9128,7 @@
   "05A9": {
     "Field": "Current_PV13",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9137,7 +9137,7 @@
   "05AA": {
     "Field": "Power_PV13",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9146,7 +9146,7 @@
   "05AB": {
     "Field": "Voltage_PV14",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9155,7 +9155,7 @@
   "05AC": {
     "Field": "Current_PV14",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9164,7 +9164,7 @@
   "05AD": {
     "Field": "Power_PV14",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9173,7 +9173,7 @@
   "05AE": {
     "Field": "Voltage_PV15",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9182,7 +9182,7 @@
   "05AF": {
     "Field": "Current_PV15",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9191,7 +9191,7 @@
   "05B0": {
     "Field": "Power_PV15",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9200,7 +9200,7 @@
   "05B1": {
     "Field": "Voltage_PV16",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9209,7 +9209,7 @@
   "05B2": {
     "Field": "Current_PV16",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9218,7 +9218,7 @@
   "05B3": {
     "Field": "Power_PV16",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9263,7 +9263,7 @@
   "05C4": {
     "Field": "Power_PV_Total",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9308,7 +9308,7 @@
   "0604": {
     "Field": "Voltage_Bat1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9317,7 +9317,7 @@
   "0605": {
     "Field": "Current_Bat1",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9326,7 +9326,7 @@
   "0606": {
     "Field": "Power_Bat1",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9371,7 +9371,7 @@
   "060B": {
     "Field": "Voltage_Bat2",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9380,7 +9380,7 @@
   "060C": {
     "Field": "Current_Bat2",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9389,7 +9389,7 @@
   "060D": {
     "Field": "Power_Bat2",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9434,7 +9434,7 @@
   "0612": {
     "Field": "Voltage_Bat3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9443,7 +9443,7 @@
   "0613": {
     "Field": "Current_Bat3",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9452,7 +9452,7 @@
   "0614": {
     "Field": "Power_Bat3",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9497,7 +9497,7 @@
   "0619": {
     "Field": "Voltage_Bat4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9506,7 +9506,7 @@
   "061A": {
     "Field": "Current_Bat4",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9515,7 +9515,7 @@
   "061B": {
     "Field": "Power_Bat4",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9560,7 +9560,7 @@
   "0620": {
     "Field": "Voltage_Bat5",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9569,7 +9569,7 @@
   "0621": {
     "Field": "Current_Bat5",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9578,7 +9578,7 @@
   "0622": {
     "Field": "Power_Bat5",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9623,7 +9623,7 @@
   "0627": {
     "Field": "Voltage_Bat6",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9632,7 +9632,7 @@
   "0628": {
     "Field": "Current_Bat6",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9641,7 +9641,7 @@
   "0629": {
     "Field": "Power_Bat6",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9686,7 +9686,7 @@
   "062E": {
     "Field": "Voltage_Bat7",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9695,7 +9695,7 @@
   "062F": {
     "Field": "Current_Bat7",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9704,7 +9704,7 @@
   "0630": {
     "Field": "Power_Bat7",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9749,7 +9749,7 @@
   "0635": {
     "Field": "Voltage_Bat8",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9758,7 +9758,7 @@
   "0636": {
     "Field": "Current_Bat8",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9767,7 +9767,7 @@
   "0637": {
     "Field": "Power_Bat8",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9884,7 +9884,7 @@
   "0644": {
     "Field": "Voltage_Bat9",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9893,7 +9893,7 @@
   "0645": {
     "Field": "Current_Bat9",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9902,7 +9902,7 @@
   "0646": {
     "Field": "Power_Bat9",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -9947,7 +9947,7 @@
   "064B": {
     "Field": "Voltage_Bat10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -9956,7 +9956,7 @@
   "064C": {
     "Field": "Current_Bat10",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -9965,7 +9965,7 @@
   "064D": {
     "Field": "Power_Bat10",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -10010,7 +10010,7 @@
   "0652": {
     "Field": "Voltage_Bat11",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10019,7 +10019,7 @@
   "0653": {
     "Field": "Current_Bat11",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -10028,7 +10028,7 @@
   "0654": {
     "Field": "Power_Bat11",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -10073,7 +10073,7 @@
   "0659": {
     "Field": "Voltage_Bat12",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10082,7 +10082,7 @@
   "065A": {
     "Field": "Current_Bat12",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -10091,7 +10091,7 @@
   "065B": {
     "Field": "Power_Bat12",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -10181,7 +10181,7 @@
   "0684": {
     "Field": "PV_Generation_Today",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10199,7 +10199,7 @@
   "0686": {
     "Field": "PV_Generation_Total",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10217,7 +10217,7 @@
   "0688": {
     "Field": "Load_Consumption_Today",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10235,7 +10235,7 @@
   "068A": {
     "Field": "Load_Consumption_Total",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10253,7 +10253,7 @@
   "068C": {
     "Field": "Energy_Purchase_Today",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10271,7 +10271,7 @@
   "068E": {
     "Field": "Energy_Purchase_Total",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10289,7 +10289,7 @@
   "0690": {
     "Field": "Energy_Selling_Today",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10307,7 +10307,7 @@
   "0692": {
     "Field": "Energy_Selling_Total",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10325,7 +10325,7 @@
   "0694": {
     "Field": "Bat_Charge_Today",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10343,7 +10343,7 @@
   "0696": {
     "Field": "Bat_Charge_Total",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10361,7 +10361,7 @@
   "0698": {
     "Field": "Bat_Discharge_Today",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10379,7 +10379,7 @@
   "069A": {
     "Field": "Bat_Discharge_Total",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10397,7 +10397,7 @@
   "069C": {
     "Field": "PV_Generation_Month",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10415,7 +10415,7 @@
   "069E": {
     "Field": "PV_Generation_Year",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10433,7 +10433,7 @@
   "06A0": {
     "Field": "Load_Consumption_Month",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10451,7 +10451,7 @@
   "06A2": {
     "Field": "Load_Consumption_Year",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10469,7 +10469,7 @@
   "06A4": {
     "Field": "Energy_Purchase_Month",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10487,7 +10487,7 @@
   "06A6": {
     "Field": "Energy_Purchase_Year",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10505,7 +10505,7 @@
   "06A8": {
     "Field": "Energy_Selling_Month",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10523,7 +10523,7 @@
   "06AA": {
     "Field": "Energy_Selling_Year",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10541,7 +10541,7 @@
   "06AC": {
     "Field": "Bat_Charge_Month",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10559,7 +10559,7 @@
   "06AE": {
     "Field": "Bat_Charge_Year",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10577,7 +10577,7 @@
   "06B0": {
     "Field": "Bat_Discharge_Month",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10595,7 +10595,7 @@
   "06B2": {
     "Field": "Bat_Discharge_Year",
     "Typ": "U32",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -10658,7 +10658,7 @@
   "06C5": {
     "Field": "Current_Bus_Balance",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -10721,7 +10721,7 @@
   "06CC": {
     "Field": "Voltage_Bus",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10730,7 +10730,7 @@
   "06CD": {
     "Field": "Voltage_Bus_P",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10739,7 +10739,7 @@
   "06CE": {
     "Field": "Voltage_Bus_N",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10748,7 +10748,7 @@
   "06CF": {
     "Field": "Voltage_Bus_LLC",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10757,7 +10757,7 @@
   "06D0": {
     "Field": "Current_BuckBoost",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -10766,7 +10766,7 @@
   "06D1": {
     "Field": "Voltage_Bus_P_Half",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10775,7 +10775,7 @@
   "06D2": {
     "Field": "Voltage_Bus_N_Half",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10784,7 +10784,7 @@
   "06D3": {
     "Field": "FlyingCap_Voltage1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10793,7 +10793,7 @@
   "06D4": {
     "Field": "FlyingCap_Voltage2",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10802,7 +10802,7 @@
   "06D5": {
     "Field": "FlyingCap_Voltage3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10811,7 +10811,7 @@
   "06D6": {
     "Field": "FlyingCap_Voltage4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10820,7 +10820,7 @@
   "06D7": {
     "Field": "FlyingCap_Voltage5",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10829,7 +10829,7 @@
   "06D8": {
     "Field": "FlyingCap_Voltage6",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10838,7 +10838,7 @@
   "06D9": {
     "Field": "FlyingCap_Voltage7",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10847,7 +10847,7 @@
   "06DA": {
     "Field": "FlyingCap_Voltage8",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10856,7 +10856,7 @@
   "06DB": {
     "Field": "FlyingCap_Voltage9",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10865,7 +10865,7 @@
   "06DC": {
     "Field": "FlyingCap_Voltage10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10874,7 +10874,7 @@
   "06DD": {
     "Field": "FlyingCap_Voltage11",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10883,7 +10883,7 @@
   "06DE": {
     "Field": "FlyingCap_Voltage12",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10892,7 +10892,7 @@
   "06DF": {
     "Field": "FlyingCap_Voltage13",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10901,7 +10901,7 @@
   "06E0": {
     "Field": "FlyingCap_Voltage14",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10910,7 +10910,7 @@
   "06E1": {
     "Field": "FlyingCap_Voltage15",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10919,7 +10919,7 @@
   "06E2": {
     "Field": "FlyingCap_Voltage16",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10928,7 +10928,7 @@
   "06E3": {
     "Field": "Internal_Info1 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10937,7 +10937,7 @@
   "06E4": {
     "Field": "Internal_Info2 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10946,7 +10946,7 @@
   "06E5": {
     "Field": "Internal_Info3 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10955,7 +10955,7 @@
   "06E6": {
     "Field": "Internal_Info4 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10964,7 +10964,7 @@
   "06E7": {
     "Field": "Internal_Info5 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10973,7 +10973,7 @@
   "06E8": {
     "Field": "Internal_Info6 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10982,7 +10982,7 @@
   "06E9": {
     "Field": "Internal_Info7 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -10991,7 +10991,7 @@
   "06EA": {
     "Field": "Internal_Info8 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11000,7 +11000,7 @@
   "06EB": {
     "Field": "Internal_Info9 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11009,7 +11009,7 @@
   "06EC": {
     "Field": "Internal_Info10 -- 10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11072,7 +11072,7 @@
   "0704": {
     "Field": "Voltage_Group1",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11081,7 +11081,7 @@
   "0705": {
     "Field": "Current_Group1_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11090,7 +11090,7 @@
   "0706": {
     "Field": "Current_Group1_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11099,7 +11099,7 @@
   "0707": {
     "Field": "Voltage_Group2",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11108,7 +11108,7 @@
   "0708": {
     "Field": "Current_Group2_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11117,7 +11117,7 @@
   "0709": {
     "Field": "Current_Group2_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11126,7 +11126,7 @@
   "070A": {
     "Field": "Voltage_Group3",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11135,7 +11135,7 @@
   "070B": {
     "Field": "Current_Group3_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11144,7 +11144,7 @@
   "070C": {
     "Field": "Current_Group3_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11153,7 +11153,7 @@
   "070D": {
     "Field": "Voltage_Group4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11162,7 +11162,7 @@
   "070E": {
     "Field": "Current_Group4_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11171,7 +11171,7 @@
   "070F": {
     "Field": "Current_Group4_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11180,7 +11180,7 @@
   "0710": {
     "Field": "Voltage_Group5",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11189,7 +11189,7 @@
   "0711": {
     "Field": "Current_Group5_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11198,7 +11198,7 @@
   "0712": {
     "Field": "Current_Group5_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11207,7 +11207,7 @@
   "0713": {
     "Field": "Voltage_Group6",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11216,7 +11216,7 @@
   "0714": {
     "Field": "Current_Group6_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11225,7 +11225,7 @@
   "0715": {
     "Field": "Current_Group6_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11234,7 +11234,7 @@
   "0716": {
     "Field": "Voltage_Group7",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11243,7 +11243,7 @@
   "0717": {
     "Field": "Current_Group7_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11252,7 +11252,7 @@
   "0718": {
     "Field": "Current_Group7_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11261,7 +11261,7 @@
   "0719": {
     "Field": "Voltage_Group8",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11270,7 +11270,7 @@
   "071A": {
     "Field": "Current_Group8_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11279,7 +11279,7 @@
   "071B": {
     "Field": "Current_Group8_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11288,7 +11288,7 @@
   "071C": {
     "Field": "Voltage_Group9",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11297,7 +11297,7 @@
   "071D": {
     "Field": "Current_Group9_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11306,7 +11306,7 @@
   "071E": {
     "Field": "Current_Group9_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11315,7 +11315,7 @@
   "071F": {
     "Field": "Voltage_Group10",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11324,7 +11324,7 @@
   "0720": {
     "Field": "Current_Group10_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11333,7 +11333,7 @@
   "0721": {
     "Field": "Current_Group10_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11342,7 +11342,7 @@
   "0722": {
     "Field": "Voltage_Group11",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11351,7 +11351,7 @@
   "0723": {
     "Field": "Current_Group11_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11360,7 +11360,7 @@
   "0724": {
     "Field": "Current_Group11_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11369,7 +11369,7 @@
   "0725": {
     "Field": "Voltage_Group12",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11378,7 +11378,7 @@
   "0726": {
     "Field": "Current_Group12_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11387,7 +11387,7 @@
   "0727": {
     "Field": "Current_Group12_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11396,7 +11396,7 @@
   "0728": {
     "Field": "Voltage_Group13",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11405,7 +11405,7 @@
   "0729": {
     "Field": "Current_Group13_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11414,7 +11414,7 @@
   "072A": {
     "Field": "Current_Group13_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11423,7 +11423,7 @@
   "072B": {
     "Field": "Voltage_Group14",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11432,7 +11432,7 @@
   "072C": {
     "Field": "Current_Group14_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11441,7 +11441,7 @@
   "072D": {
     "Field": "Current_Group14_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11450,7 +11450,7 @@
   "072E": {
     "Field": "Voltage_Group15",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11459,7 +11459,7 @@
   "072F": {
     "Field": "Current_Group15_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11468,7 +11468,7 @@
   "0730": {
     "Field": "Current_Group15_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11477,7 +11477,7 @@
   "0731": {
     "Field": "Voltage_Group16",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -11486,7 +11486,7 @@
   "0732": {
     "Field": "Current_Group16_Branch1",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11495,7 +11495,7 @@
   "0733": {
     "Field": "Current_Group16_Branch2",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11540,7 +11540,7 @@
   "0744": {
     "Field": "Current_Group1_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11549,7 +11549,7 @@
   "0745": {
     "Field": "Current_Group1_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11558,7 +11558,7 @@
   "0746": {
     "Field": "Current_Group2_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11567,7 +11567,7 @@
   "0747": {
     "Field": "Current_Group2_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11576,7 +11576,7 @@
   "0748": {
     "Field": "Current_Group3_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11585,7 +11585,7 @@
   "0749": {
     "Field": "Current_Group3_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11594,7 +11594,7 @@
   "074A": {
     "Field": "Current_Group4_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11603,7 +11603,7 @@
   "074B": {
     "Field": "Current_Group4_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11612,7 +11612,7 @@
   "074C": {
     "Field": "Current_Group5_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11621,7 +11621,7 @@
   "074D": {
     "Field": "Current_Group5_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11630,7 +11630,7 @@
   "074E": {
     "Field": "Current_Group6_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11639,7 +11639,7 @@
   "074F": {
     "Field": "Current_Group6_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11648,7 +11648,7 @@
   "0750": {
     "Field": "Current_Group7_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11657,7 +11657,7 @@
   "0751": {
     "Field": "Current_Group7_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11666,7 +11666,7 @@
   "0752": {
     "Field": "Current_Group8_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11675,7 +11675,7 @@
   "0753": {
     "Field": "Current_Group8_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11684,7 +11684,7 @@
   "0754": {
     "Field": "Current_Group9_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11693,7 +11693,7 @@
   "0755": {
     "Field": "Current_Group9_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11702,7 +11702,7 @@
   "0756": {
     "Field": "Current_Group10_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11711,7 +11711,7 @@
   "0757": {
     "Field": "Current_Group10_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11720,7 +11720,7 @@
   "0758": {
     "Field": "Current_Group11_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11729,7 +11729,7 @@
   "0759": {
     "Field": "Current_Group11_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11738,7 +11738,7 @@
   "075A": {
     "Field": "Current_Group12_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11747,7 +11747,7 @@
   "075B": {
     "Field": "Current_Group12_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11756,7 +11756,7 @@
   "075C": {
     "Field": "Current_Group13_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11765,7 +11765,7 @@
   "075D": {
     "Field": "Current_Group13_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11774,7 +11774,7 @@
   "075E": {
     "Field": "Current_Group14_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11783,7 +11783,7 @@
   "075F": {
     "Field": "Current_Group14_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11792,7 +11792,7 @@
   "0760": {
     "Field": "Current_Group15_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11801,7 +11801,7 @@
   "0761": {
     "Field": "Current_Group15_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11810,7 +11810,7 @@
   "0762": {
     "Field": "Current_Group16_Branch3",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -11819,7 +11819,7 @@
   "0763": {
     "Field": "Current_Group16_Branch4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -12512,7 +12512,7 @@
   "0804": {
     "Field": "VoltHighLimit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12521,7 +12521,7 @@
   "0805": {
     "Field": "VoltLowLimit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12530,7 +12530,7 @@
   "0806": {
     "Field": "FreqHighLimit",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12539,7 +12539,7 @@
   "0807": {
     "Field": "FreqLowLimit",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12548,7 +12548,7 @@
   "0808": {
     "Field": "ReconnectVoltHighLimit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12557,7 +12557,7 @@
   "0809": {
     "Field": "ReconnectVoltLowLimit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12566,7 +12566,7 @@
   "080A": {
     "Field": "ReconnectFreqHighLimit",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12575,7 +12575,7 @@
   "080B": {
     "Field": "ReconnectFreqLowLimit",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12593,7 +12593,7 @@
   "0841": {
     "Field": "RatedVoltage",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12602,7 +12602,7 @@
   "0842": {
     "Field": "FirstOvervoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12620,7 +12620,7 @@
   "0844": {
     "Field": "SecondOvervoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12638,7 +12638,7 @@
   "0846": {
     "Field": "ThirdOvervoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12656,7 +12656,7 @@
   "0848": {
     "Field": "FirstUnderVoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12674,7 +12674,7 @@
   "084A": {
     "Field": "SecondUnderVoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12692,7 +12692,7 @@
   "084C": {
     "Field": "ThirdUnderVoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12710,7 +12710,7 @@
   "084E": {
     "Field": "10MinOvervoltageProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -12755,7 +12755,7 @@
   "0881": {
     "Field": "RatedFrequency",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12764,7 +12764,7 @@
   "0882": {
     "Field": "FirstOverfrequencyProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12782,7 +12782,7 @@
   "0884": {
     "Field": "SecondOverfrequencyProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12800,7 +12800,7 @@
   "0886": {
     "Field": "ThirdOverfrequencyProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12818,7 +12818,7 @@
   "0888": {
     "Field": "FirstUnderfrequencyProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12836,7 +12836,7 @@
   "088A": {
     "Field": "SecondUnderfrequencyProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -12854,7 +12854,7 @@
   "088C": {
     "Field": "ThirdUnderfrequencyProtectionValue",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13016,7 +13016,7 @@
   "08CA": {
     "Field": "DCIFirstProtectionProportion",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%",
     "Min": "1",
     "Max": "65535",
@@ -13025,7 +13025,7 @@
   "08CB": {
     "Field": "DCISecondProtectionProportion",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%",
     "Min": "1",
     "Max": "65535",
@@ -13034,7 +13034,7 @@
   "08CC": {
     "Field": "DCIThirdProtectionProportion",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%",
     "Min": "1",
     "Max": "65535",
@@ -13052,7 +13052,7 @@
   "0901": {
     "Field": "ActiveOutputLimit",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "%",
     "Min": "0",
     "Max": "1000",
@@ -13070,7 +13070,7 @@
   "0903": {
     "Field": "GridVoltageDropStart",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -13079,7 +13079,7 @@
   "0904": {
     "Field": "GridVoltageDropStop",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -13106,7 +13106,7 @@
   "0907": {
     "Field": "ChgDerateVoltStart",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -13115,7 +13115,7 @@
   "0908": {
     "Field": "ChgDerateVoltEnd",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -13268,7 +13268,7 @@
   "0941": {
     "Field": "OverfrequencyStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13277,7 +13277,7 @@
   "0942": {
     "Field": "OverfrequencyEnd",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13313,7 +13313,7 @@
   "0946": {
     "Field": "OverfrequencyReloadStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13331,7 +13331,7 @@
   "0948": {
     "Field": "UnderfrequencyStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13340,7 +13340,7 @@
   "0949": {
     "Field": "UnderfrequencyEnd",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13376,7 +13376,7 @@
   "094D": {
     "Field": "UnderfrequencyReloadStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13394,7 +13394,7 @@
   "094F": {
     "Field": "FrequencyRecoverMax",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13403,7 +13403,7 @@
   "0950": {
     "Field": "FrequencyRecoverMin",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13412,7 +13412,7 @@
   "0951": {
     "Field": "ESSOverFrequencyStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13421,7 +13421,7 @@
   "0952": {
     "Field": "ESSOverfrequencyEnd",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13457,7 +13457,7 @@
   "0956": {
     "Field": "ESSOverfrequencyReloadStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13475,7 +13475,7 @@
   "0958": {
     "Field": "ESSUnderFrequencyStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13484,7 +13484,7 @@
   "0959": {
     "Field": "ESSUnderfrequencyEnd",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13520,7 +13520,7 @@
   "095D": {
     "Field": "ESSUnderfrequencyReloadStart",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13538,7 +13538,7 @@
   "095F": {
     "Field": "ESSFrequencyRecoverMax",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13547,7 +13547,7 @@
   "0960": {
     "Field": "ESSFrequencyRecoverMin",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13556,7 +13556,7 @@
   "0961": {
     "Field": "ESSOverFrequencyTransition",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13565,7 +13565,7 @@
   "0962": {
     "Field": "ESSUnderFrequencyTransition",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "4000",
     "Max": "7000",
@@ -13583,7 +13583,7 @@
   "0981": {
     "Field": "PowerFactor",
     "Typ": "I16",
-    "Accuracy": "0,0001",
+    "Accuracy": "0.0001",
     "Unit": "",
     "Min": "-10000",
     "Max": "10000",
@@ -13592,7 +13592,7 @@
   "0982": {
     "Field": "FixedReactivePercentage",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%",
     "Min": "-6000",
     "Max": "6000",
@@ -13601,7 +13601,7 @@
   "0983": {
     "Field": "ReactiveCos1",
     "Typ": "I16",
-    "Accuracy": "0,0001",
+    "Accuracy": "0.0001",
     "Unit": "",
     "Min": "-10000",
     "Max": "10000",
@@ -13619,7 +13619,7 @@
   "0985": {
     "Field": "ReactiveCos2",
     "Typ": "I16",
-    "Accuracy": "0,0001",
+    "Accuracy": "0.0001",
     "Unit": "",
     "Min": "-10000",
     "Max": "10000",
@@ -13637,7 +13637,7 @@
   "0987": {
     "Field": "ReactiveCos3",
     "Typ": "I16",
-    "Accuracy": "0,0001",
+    "Accuracy": "0.0001",
     "Unit": "",
     "Min": "-10000",
     "Max": "10000",
@@ -13655,7 +13655,7 @@
   "0989": {
     "Field": "ReactiveCos4",
     "Typ": "I16",
-    "Accuracy": "0,0001",
+    "Accuracy": "0.0001",
     "Unit": "",
     "Min": "-10000",
     "Max": "10000",
@@ -13745,7 +13745,7 @@
   "0993": {
     "Field": "MaxLeadingReactivePower4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%Pn",
     "Min": "0",
     "Max": "10000",
@@ -13763,7 +13763,7 @@
   "0995": {
     "Field": "ReactivePowerOffset4",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%Qmax",
     "Min": "-10000",
     "Max": "10000",
@@ -13772,7 +13772,7 @@
   "0996": {
     "Field": "ReactivePowerStart4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%Pn",
     "Min": "-10000",
     "Max": "10000",
@@ -13835,7 +13835,7 @@
   "099D": {
     "Field": "MaxReactivePower5",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%",
     "Min": "0",
     "Max": "10000",
@@ -13871,7 +13871,7 @@
   "09A1": {
     "Field": "MaxLaggingReactivePower4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "%Pn",
     "Min": "0",
     "Max": "10000",
@@ -13970,7 +13970,7 @@
   "09CA": {
     "Field": "LvrtReactiveCurrentCoefficientK",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "p.u.",
     "Min": "0",
     "Max": "65535",
@@ -14078,7 +14078,7 @@
   "09D6": {
     "Field": "OvrtReactiveCurrentCoefficientK",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "p.u.",
     "Min": "0",
     "Max": "65535",
@@ -14402,7 +14402,7 @@
   "103A": {
     "Field": "Energy_Purchase_Ratio",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "800",
     "Max": "1500",
@@ -14411,7 +14411,7 @@
   "103B": {
     "Field": "Energy_Selling_Ratio",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "800",
     "Max": "1500",
@@ -14420,7 +14420,7 @@
   "103C": {
     "Field": "Bat_Charge_Ratio",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "800",
     "Max": "1500",
@@ -14429,7 +14429,7 @@
   "103D": {
     "Field": "Bat_Discharge_Ratio",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "800",
     "Max": "1500",
@@ -14447,7 +14447,7 @@
   "104A": {
     "Field": "BatConfig_Voltage_Discharge_Stop",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "65535",
@@ -14456,7 +14456,7 @@
   "104B": {
     "Field": "BatConfig_Current_Charge_Limit",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "0",
     "Max": "65535",
@@ -14465,7 +14465,7 @@
   "104C": {
     "Field": "BatConfig_Current_Discharge_Limit",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "0",
     "Max": "65535",
@@ -14501,7 +14501,7 @@
   "105A": {
     "Field": "BatConfig_Voltage_Float",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -14627,7 +14627,7 @@
   "10B3": {
     "Field": "PID_Working_PV_Threshold",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "65535",
@@ -14654,7 +14654,7 @@
   "110B": {
     "Field": "Reactive_Power_Response_Time",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "second",
     "Min": "0",
     "Max": "65535",
@@ -14663,7 +14663,7 @@
   "110C": {
     "Field": "SVG_Fixed_Reactive_Power_Setting",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "kVar",
     "Min": "-32768",
     "Max": "32767",
@@ -15284,7 +15284,7 @@
   "130A": {
     "Field": "Italay_Autotest_Result7",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15302,7 +15302,7 @@
   "130C": {
     "Field": "Italay_Autotest_Result9",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15320,7 +15320,7 @@
   "130E": {
     "Field": "Italay_Autotest_Result11",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15338,7 +15338,7 @@
   "131A": {
     "Field": "Italay_Autotest_Result23",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -15356,7 +15356,7 @@
   "131C": {
     "Field": "Italay_Autotest_Result25",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -15374,7 +15374,7 @@
   "131E": {
     "Field": "Italay_Autotest_Result27",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "Hz",
     "Min": "",
     "Max": "",
@@ -15446,7 +15446,7 @@
   "134A": {
     "Field": "IVCurve_Voltage4",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15455,7 +15455,7 @@
   "134B": {
     "Field": "IVCurve_Current4",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15464,7 +15464,7 @@
   "134C": {
     "Field": "IVCurve_Voltage5",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15473,7 +15473,7 @@
   "134D": {
     "Field": "IVCurve_Current5",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15482,7 +15482,7 @@
   "134E": {
     "Field": "IVCurve_Voltage6",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15491,7 +15491,7 @@
   "134F": {
     "Field": "IVCurve_Current6",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15500,7 +15500,7 @@
   "135A": {
     "Field": "IVCurve_Voltage12",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15509,7 +15509,7 @@
   "135B": {
     "Field": "IVCurve_Current12",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15518,7 +15518,7 @@
   "135C": {
     "Field": "IVCurve_Voltage13",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15527,7 +15527,7 @@
   "135D": {
     "Field": "IVCurve_Current13",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15536,7 +15536,7 @@
   "135E": {
     "Field": "IVCurve_Voltage14",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15545,7 +15545,7 @@
   "135F": {
     "Field": "IVCurve_Current14",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15554,7 +15554,7 @@
   "136A": {
     "Field": "IVCurve_Voltage20",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15563,7 +15563,7 @@
   "136B": {
     "Field": "IVCurve_Current20",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15572,7 +15572,7 @@
   "136C": {
     "Field": "IVCurve_Voltage21",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15581,7 +15581,7 @@
   "136D": {
     "Field": "IVCurve_Current21",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15590,7 +15590,7 @@
   "136E": {
     "Field": "IVCurve_Voltage22",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15599,7 +15599,7 @@
   "136F": {
     "Field": "IVCurve_Current22",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15608,7 +15608,7 @@
   "137A": {
     "Field": "IVCurve_Voltage28",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15617,7 +15617,7 @@
   "137B": {
     "Field": "IVCurve_Current28",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15626,7 +15626,7 @@
   "137C": {
     "Field": "IVCurve_Voltage29",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15635,7 +15635,7 @@
   "137D": {
     "Field": "IVCurve_Current29",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15644,7 +15644,7 @@
   "137E": {
     "Field": "IVCurve_Voltage30",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15653,7 +15653,7 @@
   "137F": {
     "Field": "IVCurve_Current30",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15662,7 +15662,7 @@
   "138A": {
     "Field": "IVCurve_Voltage34",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15671,7 +15671,7 @@
   "138B": {
     "Field": "IVCurve_Current34",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15680,7 +15680,7 @@
   "138C": {
     "Field": "IVCurve_Voltage35",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15689,7 +15689,7 @@
   "138D": {
     "Field": "IVCurve_Current35",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15698,7 +15698,7 @@
   "138E": {
     "Field": "IVCurve_Voltage36",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15707,7 +15707,7 @@
   "138F": {
     "Field": "IVCurve_Current36",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15716,7 +15716,7 @@
   "139A": {
     "Field": "IVCurve_Voltage42",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15725,7 +15725,7 @@
   "139B": {
     "Field": "IVCurve_Current42",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15734,7 +15734,7 @@
   "139C": {
     "Field": "IVCurve_Voltage43",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15743,7 +15743,7 @@
   "139D": {
     "Field": "IVCurve_Current43",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15752,7 +15752,7 @@
   "139E": {
     "Field": "IVCurve_Voltage44",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15761,7 +15761,7 @@
   "139F": {
     "Field": "IVCurve_Current44",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15770,7 +15770,7 @@
   "13A0": {
     "Field": "IVCurve_Voltage45",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15779,7 +15779,7 @@
   "13A1": {
     "Field": "IVCurve_Current45",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15788,7 +15788,7 @@
   "13A2": {
     "Field": "IVCurve_Voltage46",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15797,7 +15797,7 @@
   "13A3": {
     "Field": "IVCurve_Current46",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15806,7 +15806,7 @@
   "13A4": {
     "Field": "IVCurve_Voltage47",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15815,7 +15815,7 @@
   "13A5": {
     "Field": "IVCurve_Current47",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15824,7 +15824,7 @@
   "13A6": {
     "Field": "IVCurve_Voltage48",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15833,7 +15833,7 @@
   "13A7": {
     "Field": "IVCurve_Current48",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15842,7 +15842,7 @@
   "13A8": {
     "Field": "IVCurve_Voltage49",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15851,7 +15851,7 @@
   "13A9": {
     "Field": "IVCurve_Current49",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15860,7 +15860,7 @@
   "13AA": {
     "Field": "IVCurve_Voltage50",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15869,7 +15869,7 @@
   "13AB": {
     "Field": "IVCurve_Current50",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15878,7 +15878,7 @@
   "13AC": {
     "Field": "IVCurve_Voltage51",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15887,7 +15887,7 @@
   "13AD": {
     "Field": "IVCurve_Current51",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15896,7 +15896,7 @@
   "13AE": {
     "Field": "IVCurve_Voltage52",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15905,7 +15905,7 @@
   "13AF": {
     "Field": "IVCurve_Current52",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15914,7 +15914,7 @@
   "13B0": {
     "Field": "IVCurve_Voltage53",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15923,7 +15923,7 @@
   "13B1": {
     "Field": "IVCurve_Current53",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15932,7 +15932,7 @@
   "13B2": {
     "Field": "IVCurve_Voltage54",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15941,7 +15941,7 @@
   "13B3": {
     "Field": "IVCurve_Current54",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15950,7 +15950,7 @@
   "13B4": {
     "Field": "IVCurve_Voltage55",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15959,7 +15959,7 @@
   "13B5": {
     "Field": "IVCurve_Current55",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15968,7 +15968,7 @@
   "13B6": {
     "Field": "IVCurve_Voltage56",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15977,7 +15977,7 @@
   "13B7": {
     "Field": "IVCurve_Current56",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -15986,7 +15986,7 @@
   "13B8": {
     "Field": "IVCurve_Voltage57",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -15995,7 +15995,7 @@
   "13B9": {
     "Field": "IVCurve_Current57",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16004,7 +16004,7 @@
   "13BA": {
     "Field": "IVCurve_Voltage58",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16013,7 +16013,7 @@
   "13BB": {
     "Field": "IVCurve_Current58",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16022,7 +16022,7 @@
   "13BC": {
     "Field": "IVCurve_Voltage59",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16031,7 +16031,7 @@
   "13BD": {
     "Field": "IVCurve_Current59",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16040,7 +16040,7 @@
   "13BE": {
     "Field": "IVCurve_Voltage60",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16049,7 +16049,7 @@
   "13BF": {
     "Field": "IVCurve_Current60",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16094,7 +16094,7 @@
   "13C4": {
     "Field": "IVCurve_Voltage61",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16103,7 +16103,7 @@
   "13C5": {
     "Field": "IVCurve_Current61",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16112,7 +16112,7 @@
   "13C6": {
     "Field": "IVCurve_Voltage62",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16121,7 +16121,7 @@
   "13C7": {
     "Field": "IVCurve_Current62",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16130,7 +16130,7 @@
   "13C8": {
     "Field": "IVCurve_Voltage63",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16139,7 +16139,7 @@
   "13C9": {
     "Field": "IVCurve_Current63",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16148,7 +16148,7 @@
   "13CA": {
     "Field": "IVCurve_Voltage64",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16157,7 +16157,7 @@
   "13CB": {
     "Field": "IVCurve_Current64",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16166,7 +16166,7 @@
   "13CC": {
     "Field": "IVCurve_Voltage65",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16175,7 +16175,7 @@
   "13CD": {
     "Field": "IVCurve_Current65",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16184,7 +16184,7 @@
   "13CE": {
     "Field": "IVCurve_Voltage66",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16193,7 +16193,7 @@
   "13CF": {
     "Field": "IVCurve_Current66",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16202,7 +16202,7 @@
   "13D0": {
     "Field": "IVCurve_Voltage67",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16211,7 +16211,7 @@
   "13D1": {
     "Field": "IVCurve_Current67",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16220,7 +16220,7 @@
   "13D2": {
     "Field": "IVCurve_Voltage68",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16229,7 +16229,7 @@
   "13D3": {
     "Field": "IVCurve_Current68",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16238,7 +16238,7 @@
   "13D4": {
     "Field": "IVCurve_Voltage69",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16247,7 +16247,7 @@
   "13D5": {
     "Field": "IVCurve_Current69",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16256,7 +16256,7 @@
   "13D6": {
     "Field": "IVCurve_Voltage70",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16265,7 +16265,7 @@
   "13D7": {
     "Field": "IVCurve_Current70",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16274,7 +16274,7 @@
   "13D8": {
     "Field": "IVCurve_Voltage71",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16283,7 +16283,7 @@
   "13D9": {
     "Field": "IVCurve_Current71",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16292,7 +16292,7 @@
   "13DA": {
     "Field": "IVCurve_Voltage72",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16301,7 +16301,7 @@
   "13DB": {
     "Field": "IVCurve_Current72",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16310,7 +16310,7 @@
   "13DC": {
     "Field": "IVCurve_Voltage73",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16319,7 +16319,7 @@
   "13DD": {
     "Field": "IVCurve_Current73",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16328,7 +16328,7 @@
   "13DE": {
     "Field": "IVCurve_Voltage74",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16337,7 +16337,7 @@
   "13DF": {
     "Field": "IVCurve_Current74",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16346,7 +16346,7 @@
   "13E0": {
     "Field": "IVCurve_Voltage75",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16355,7 +16355,7 @@
   "13E1": {
     "Field": "IVCurve_Current75",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16364,7 +16364,7 @@
   "13E2": {
     "Field": "IVCurve_Voltage76",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16373,7 +16373,7 @@
   "13E3": {
     "Field": "IVCurve_Current76",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16382,7 +16382,7 @@
   "13E4": {
     "Field": "IVCurve_Voltage77",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16391,7 +16391,7 @@
   "13E5": {
     "Field": "IVCurve_Current77",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16400,7 +16400,7 @@
   "13E6": {
     "Field": "IVCurve_Voltage78",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16409,7 +16409,7 @@
   "13E7": {
     "Field": "IVCurve_Current78",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16418,7 +16418,7 @@
   "13E8": {
     "Field": "IVCurve_Voltage79",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16427,7 +16427,7 @@
   "13E9": {
     "Field": "IVCurve_Current79",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16436,7 +16436,7 @@
   "13EA": {
     "Field": "IVCurve_Voltage80",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16445,7 +16445,7 @@
   "13EB": {
     "Field": "IVCurve_Current80",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16454,7 +16454,7 @@
   "13EC": {
     "Field": "IVCurve_Voltage81",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16463,7 +16463,7 @@
   "13ED": {
     "Field": "IVCurve_Current81",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16472,7 +16472,7 @@
   "13EE": {
     "Field": "IVCurve_Voltage82",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16481,7 +16481,7 @@
   "13EF": {
     "Field": "IVCurve_Current82",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16490,7 +16490,7 @@
   "13F0": {
     "Field": "IVCurve_Voltage83",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16499,7 +16499,7 @@
   "13F1": {
     "Field": "IVCurve_Current83",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16508,7 +16508,7 @@
   "13F2": {
     "Field": "IVCurve_Voltage84",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16517,7 +16517,7 @@
   "13F3": {
     "Field": "IVCurve_Current84",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16526,7 +16526,7 @@
   "13F4": {
     "Field": "IVCurve_Voltage85",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16535,7 +16535,7 @@
   "13F5": {
     "Field": "IVCurve_Current85",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16544,7 +16544,7 @@
   "13F6": {
     "Field": "IVCurve_Voltage86",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16553,7 +16553,7 @@
   "13F7": {
     "Field": "IVCurve_Current86",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16562,7 +16562,7 @@
   "13F8": {
     "Field": "IVCurve_Voltage87",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16571,7 +16571,7 @@
   "13F9": {
     "Field": "IVCurve_Current87",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16580,7 +16580,7 @@
   "13FA": {
     "Field": "IVCurve_Voltage88",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16589,7 +16589,7 @@
   "13FB": {
     "Field": "IVCurve_Current88",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16598,7 +16598,7 @@
   "13FC": {
     "Field": "IVCurve_Voltage89",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16607,7 +16607,7 @@
   "13FD": {
     "Field": "IVCurve_Current89",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16616,7 +16616,7 @@
   "13FE": {
     "Field": "IVCurve_Voltage90",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16625,7 +16625,7 @@
   "13FF": {
     "Field": "IVCurve_Current90",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16634,7 +16634,7 @@
   "140A": {
     "Field": "IVCurve_Voltage94",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16643,7 +16643,7 @@
   "140B": {
     "Field": "IVCurve_Current94",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16652,7 +16652,7 @@
   "140C": {
     "Field": "IVCurve_Voltage95",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16661,7 +16661,7 @@
   "140D": {
     "Field": "IVCurve_Current95",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16670,7 +16670,7 @@
   "140E": {
     "Field": "IVCurve_Voltage96",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16679,7 +16679,7 @@
   "140F": {
     "Field": "IVCurve_Current96",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16688,7 +16688,7 @@
   "141A": {
     "Field": "IVCurve_Voltage102",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16697,7 +16697,7 @@
   "141B": {
     "Field": "IVCurve_Current102",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16706,7 +16706,7 @@
   "141C": {
     "Field": "IVCurve_Voltage103",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16715,7 +16715,7 @@
   "141D": {
     "Field": "IVCurve_Current103",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16724,7 +16724,7 @@
   "141E": {
     "Field": "IVCurve_Voltage104",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16733,7 +16733,7 @@
   "141F": {
     "Field": "IVCurve_Current104",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16742,7 +16742,7 @@
   "142A": {
     "Field": "IVCurve_Voltage110",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16751,7 +16751,7 @@
   "142B": {
     "Field": "IVCurve_Current110",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16760,7 +16760,7 @@
   "142C": {
     "Field": "IVCurve_Voltage111",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16769,7 +16769,7 @@
   "142D": {
     "Field": "IVCurve_Current111",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16778,7 +16778,7 @@
   "142E": {
     "Field": "IVCurve_Voltage112",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16787,7 +16787,7 @@
   "142F": {
     "Field": "IVCurve_Current112",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16796,7 +16796,7 @@
   "143A": {
     "Field": "IVCurve_Voltage118",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16805,7 +16805,7 @@
   "143B": {
     "Field": "IVCurve_Current118",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16814,7 +16814,7 @@
   "143C": {
     "Field": "IVCurve_Voltage119",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16823,7 +16823,7 @@
   "143D": {
     "Field": "IVCurve_Current119",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16832,7 +16832,7 @@
   "143E": {
     "Field": "IVCurve_Voltage120",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16841,7 +16841,7 @@
   "143F": {
     "Field": "IVCurve_Current120",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16850,7 +16850,7 @@
   "144A": {
     "Field": "IVCurve_Voltage124",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16859,7 +16859,7 @@
   "144B": {
     "Field": "IVCurve_Current124",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16868,7 +16868,7 @@
   "144C": {
     "Field": "IVCurve_Voltage125",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16877,7 +16877,7 @@
   "144D": {
     "Field": "IVCurve_Current125",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16886,7 +16886,7 @@
   "144E": {
     "Field": "IVCurve_Voltage126",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16895,7 +16895,7 @@
   "144F": {
     "Field": "IVCurve_Current126",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16904,7 +16904,7 @@
   "145A": {
     "Field": "IVCurve_Voltage132",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16913,7 +16913,7 @@
   "145B": {
     "Field": "IVCurve_Current132",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16922,7 +16922,7 @@
   "145C": {
     "Field": "IVCurve_Voltage133",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16931,7 +16931,7 @@
   "145D": {
     "Field": "IVCurve_Current133",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16940,7 +16940,7 @@
   "145E": {
     "Field": "IVCurve_Voltage134",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16949,7 +16949,7 @@
   "145F": {
     "Field": "IVCurve_Current134",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16958,7 +16958,7 @@
   "146A": {
     "Field": "IVCurve_Voltage140",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16967,7 +16967,7 @@
   "146B": {
     "Field": "IVCurve_Current140",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16976,7 +16976,7 @@
   "146C": {
     "Field": "IVCurve_Voltage141",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -16985,7 +16985,7 @@
   "146D": {
     "Field": "IVCurve_Current141",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -16994,7 +16994,7 @@
   "146E": {
     "Field": "IVCurve_Voltage142",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -17003,7 +17003,7 @@
   "146F": {
     "Field": "IVCurve_Current142",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -17012,7 +17012,7 @@
   "147A": {
     "Field": "IVCurve_Voltage148",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -17021,7 +17021,7 @@
   "147B": {
     "Field": "IVCurve_Current148",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -17030,7 +17030,7 @@
   "147C": {
     "Field": "IVCurve_Voltage149",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -17039,7 +17039,7 @@
   "147D": {
     "Field": "IVCurve_Current149",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -17048,7 +17048,7 @@
   "147E": {
     "Field": "IVCurve_Voltage150",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -17057,7 +17057,7 @@
   "147F": {
     "Field": "IVCurve_Current150",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -19496,7 +19496,7 @@
   "161A": {
     "Field": "EnergyStatistics6",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19514,7 +19514,7 @@
   "161C": {
     "Field": "EnergyStatistics7",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19532,7 +19532,7 @@
   "161E": {
     "Field": "EnergyStatistics8",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19550,7 +19550,7 @@
   "162A": {
     "Field": "EnergyStatistics14",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19568,7 +19568,7 @@
   "162C": {
     "Field": "EnergyStatistics15",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19586,7 +19586,7 @@
   "162E": {
     "Field": "EnergyStatistics16",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19604,7 +19604,7 @@
   "163A": {
     "Field": "EnergyStatistics22",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19622,7 +19622,7 @@
   "163C": {
     "Field": "EnergyStatistics23",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19640,7 +19640,7 @@
   "163E": {
     "Field": "EnergyStatistics24",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19658,7 +19658,7 @@
   "164A": {
     "Field": "EnergyStatistics30",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19676,7 +19676,7 @@
   "164C": {
     "Field": "EnergyStatistics31",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19694,7 +19694,7 @@
   "164E": {
     "Field": "EnergyStatistics32",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19712,7 +19712,7 @@
   "165A": {
     "Field": "EnergyStatistics38",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19730,7 +19730,7 @@
   "165C": {
     "Field": "EnergyStatistics39",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -19748,7 +19748,7 @@
   "165E": {
     "Field": "EnergyStatistics40",
     "Typ": "U32",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kWh",
     "Min": "",
     "Max": "",
@@ -20162,7 +20162,7 @@
   "602C": {
     "Field": "PCU_DC_High_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "",
@@ -20171,7 +20171,7 @@
   "602D": {
     "Field": "PCU_DC_Low_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "0",
     "Max": "",
@@ -20180,7 +20180,7 @@
   "602E": {
     "Field": "PCU_Low_Current",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -20189,7 +20189,7 @@
   "602F": {
     "Field": "PCU_Low_Power",
     "Typ": "I16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "kW",
     "Min": "",
     "Max": "",
@@ -20198,7 +20198,7 @@
   "604A": {
     "Field": "K_Current_HV_Chg",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -20207,7 +20207,7 @@
   "604B": {
     "Field": "K_Current_HV_Dchg",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -20216,7 +20216,7 @@
   "604C": {
     "Field": "K_Voltage_LV",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -20225,7 +20225,7 @@
   "604D": {
     "Field": "K_Current_LV_Chg",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -20234,7 +20234,7 @@
   "604E": {
     "Field": "K_Current_LV_Dchg",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "p.u.",
     "Min": "950",
     "Max": "1050",
@@ -20441,7 +20441,7 @@
   "900F": {
     "Field": "Total_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20522,7 +20522,7 @@
   "905A": {
     "Field": "Pack_RT_Cell_Voltage10",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20531,7 +20531,7 @@
   "905B": {
     "Field": "Pack_RT_Cell_Voltage11",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20540,7 +20540,7 @@
   "905C": {
     "Field": "Pack_RT_Cell_Voltage12",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20549,7 +20549,7 @@
   "905D": {
     "Field": "Pack_RT_Cell_Voltage13",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20558,7 +20558,7 @@
   "905E": {
     "Field": "Pack_RT_Cell_Voltage14",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20567,7 +20567,7 @@
   "905F": {
     "Field": "Pack_RT_Cell_Voltage15",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20576,7 +20576,7 @@
   "906A": {
     "Field": "Pack_RT_Cell_Min_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20585,7 +20585,7 @@
   "906B": {
     "Field": "Pack_RT_Temperature1_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20594,7 +20594,7 @@
   "906C": {
     "Field": "Pack_RT_Temperature2_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20603,7 +20603,7 @@
   "906D": {
     "Field": "Pack_RT_Temperature3_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20612,7 +20612,7 @@
   "906E": {
     "Field": "Pack_RT_Temperature4_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20621,7 +20621,7 @@
   "906F": {
     "Field": "Pack_RT_Temperature_MOS",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20738,7 +20738,7 @@
   "909A": {
     "Field": "Pack_Fault_Cell_Voltage10",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20747,7 +20747,7 @@
   "909B": {
     "Field": "Pack_Fault_Cell_Voltage11",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20756,7 +20756,7 @@
   "909C": {
     "Field": "Pack_Fault_Cell_Voltage12",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20765,7 +20765,7 @@
   "909D": {
     "Field": "Pack_Fault_Cell_Voltage13",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20774,7 +20774,7 @@
   "909E": {
     "Field": "Pack_Fault_Cell_Voltage14",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20783,7 +20783,7 @@
   "909F": {
     "Field": "Pack_Fault_Cell_Voltage15",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20792,7 +20792,7 @@
   "90A0": {
     "Field": "Pack_Fault_Cell_Voltage16",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20801,7 +20801,7 @@
   "90A1": {
     "Field": "Pack_Fault_Cell_Voltage17",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20810,7 +20810,7 @@
   "90A2": {
     "Field": "Pack_Fault_Cell_Voltage18",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20819,7 +20819,7 @@
   "90A3": {
     "Field": "Pack_Fault_Cell_Voltage19",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20828,7 +20828,7 @@
   "90A4": {
     "Field": "Pack_Fault_Cell_Voltage20",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20837,7 +20837,7 @@
   "90A5": {
     "Field": "Pack_Fault_Cell_Voltage21",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20846,7 +20846,7 @@
   "90A6": {
     "Field": "Pack_Fault_Cell_Voltage22",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20855,7 +20855,7 @@
   "90A7": {
     "Field": "Pack_Fault_Cell_Voltage23",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20864,7 +20864,7 @@
   "90A8": {
     "Field": "Pack_Fault_Cell_Voltage24",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20873,7 +20873,7 @@
   "90A9": {
     "Field": "Pack_Fault_Cell_Max_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20882,7 +20882,7 @@
   "90AA": {
     "Field": "Pack_Fault_Cell_Min_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,001",
+    "Accuracy": "0.001",
     "Unit": "V",
     "Min": "",
     "Max": "",
@@ -20891,7 +20891,7 @@
   "90AB": {
     "Field": "Pack_Fault_Temperature1_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20900,7 +20900,7 @@
   "90AC": {
     "Field": "Pack_Fault_Temperature2_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20909,7 +20909,7 @@
   "90AD": {
     "Field": "Pack_Fault_Temperature3_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20918,7 +20918,7 @@
   "90AE": {
     "Field": "Pack_Fault_Temperature4_Pack",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20927,7 +20927,7 @@
   "90AF": {
     "Field": "Pack_Fault_Temperature_MOS",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20936,7 +20936,7 @@
   "90B0": {
     "Field": "Pack_Fault_Temperature_Env",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "�C",
     "Min": "",
     "Max": "",
@@ -20945,7 +20945,7 @@
   "90B1": {
     "Field": "Pack_Fault_Current",
     "Typ": "I16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "A",
     "Min": "",
     "Max": "",
@@ -20954,7 +20954,7 @@
   "90B2": {
     "Field": "Pack_Fault_Remaining_Capacity",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "Ah",
     "Min": "",
     "Max": "",
@@ -20963,7 +20963,7 @@
   "90B3": {
     "Field": "Pack_Fault_FullCharge_Capacity",
     "Typ": "U16",
-    "Accuracy": "0,1",
+    "Accuracy": "0.1",
     "Unit": "Ah",
     "Min": "",
     "Max": "",
@@ -20972,7 +20972,7 @@
   "90B4": {
     "Field": "Pack_Fault_Total_Voltage",
     "Typ": "U16",
-    "Accuracy": "0,01",
+    "Accuracy": "0.01",
     "Unit": "V",
     "Min": "",
     "Max": "",
