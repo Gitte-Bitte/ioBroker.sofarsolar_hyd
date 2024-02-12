@@ -278,7 +278,7 @@ class SofarsolarHyd extends utils.Adapter {
 			for (const reg of this.loopObject[block]) {
 				this.log.error(`Register :   ${JSON.stringify(reg)}`);
 				if (this.registerList[reg].reading) {
-					const name = this.registerList[reg].regPath + this.registerList[reg].regName;
+					const name = this.registerList[reg].regPath + "." + this.registerList[reg].regName;
 					this.log.error(`Pfad + Name :   ${JSON.stringify(name)}`);
 
 					await this.setStateAsync(name, this.registerList[reg].value, true);
