@@ -274,7 +274,7 @@ class SofarsolarHyd extends utils.Adapter {
 		for (const register of liste) {
 			let val = 0;
 			this.log.error(`register :   ${JSON.stringify(register)}`);
-			const relAdr = register % 0x40;
+			const relAdr = (register % 0x40)*2;
 			const type = this.registerList[register].regType;
 			const fktr = Number(this.registerList[register].regAccuracy);
 			switch (type) {
