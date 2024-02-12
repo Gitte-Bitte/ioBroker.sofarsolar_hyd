@@ -246,8 +246,8 @@ class SofarsolarHyd extends utils.Adapter {
 		//this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 
 		for (const block in this.loopObject) {
-			this.log.error(`block :   ${JSON.stringify(block)}`);
-			this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
+			//this.log.error(`block :   ${JSON.stringify(block)}`);
+			//this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
 
 			await client.readHoldingRegisters(Number(block), 0x40)
 				.then((resp) => this.parseBuffer(resp.response._body._valuesAsBuffer, this.loopObject[block]))
@@ -255,7 +255,9 @@ class SofarsolarHyd extends utils.Adapter {
 				.catch((resp) => { this.log.error(` : Stimmt was nicht: ${JSON.stringify(resp)} `); socket.connect({ path: "/dev/ttyUSB0", baudRate: 9600 }); });
 
 		}
-		this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
+		//this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
+		await this.actualiceReadings();
+
 
 		if (this.loopTasks.length > 1) {
 			this.loopTasks = ["entityLoop"];
@@ -267,6 +269,18 @@ class SofarsolarHyd extends utils.Adapter {
 		this.setTimeout(() => { this.loop(); }, 5000);
 	}
 
+	async actualiceReadings() {
+		for (const block in this.loopObject) {
+			for (const reg in this.loopObject[block]) {
+				if (this.registerList[reg].reading) {
+					const name = this.registerList[reg].regPath + this.registerList[reg].regName;
+					await this.setStateAsync(name, this.registerList[reg].value, true);
+				}
+			}
+		}
+	}
+
+
 	async parseBuffer(buf, liste) {
 		this.log.error("parseBuffer erreicht");
 		this.log.error(`buf :   ${JSON.stringify(buf)}`);
@@ -274,7 +288,7 @@ class SofarsolarHyd extends utils.Adapter {
 		for (const register of liste) {
 			let val = 0;
 			this.log.error(`register :   ${JSON.stringify(register)}`);
-			const relAdr = (register % 0x40)*2;
+			const relAdr = (register % 0x40) * 2;
 			const type = this.registerList[register].regType;
 			const fktr = Number(this.registerList[register].regAccuracy);
 			switch (type) {
@@ -527,7 +541,7 @@ class SofarsolarHyd extends utils.Adapter {
 		let register_str = "";
 		let register_nmbr = 0;
 		let loopKind = "";
-		let accuracy=0;
+		let accuracy = 0;
 		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
 		}
@@ -541,13 +555,14 @@ class SofarsolarHyd extends utils.Adapter {
 				if (json[register_str] != undefined) {
 					if (entry["aktiv"]) {
 						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
-						accuracy=Number(json[register_str].Accuracy);
-						if(accuracy==0){accuracy=1;}
+						accuracy = Number(json[register_str].Accuracy);
+						if (accuracy == 0) { accuracy = 1; }
 						this.registerList[register_nmbr] = {};
 						this.registerList[register_nmbr].loop = entry["loop"];
 						this.registerList[register_nmbr].mw = entry["mw"];
 						this.registerList[register_nmbr].reading = entry["reading"];
 						this.registerList[register_nmbr].desc = entry["optDescription"];
+						this.registerList[register_nmbr].regPath = entry["regPath"];
 						this.registerList[register_nmbr].regName = json[register_str].Field;
 						this.registerList[register_nmbr].regType = json[register_str].Typ;
 						this.registerList[register_nmbr].regAccuracy = accuracy;

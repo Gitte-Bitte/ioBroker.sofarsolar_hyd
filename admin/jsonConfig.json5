@@ -362,6 +362,32 @@
                             "default": false
                         },
                         {
+                            "type": "select",
+                            "attr": "regPath",
+                            "title": "Pfad des Readings",
+                            "tooltip": "enter any text",
+                            "options": [
+                                {
+                                    "label": "sekündlich",
+                                    "value": "Seconds."
+                                },
+                                {
+                                    "label": "minütlich",
+                                    "value": "Minutes."
+                                },
+                                {
+                                    "label": "stündlich",
+                                    "value": "Hours."
+                                },
+                                {
+                                    "label": "täglichh",
+                                    "value": "Daylies."
+                                }
+                            ],
+                            "filter": false,
+                            "sort": false
+                        },
+                        {
                             "type": "text",
                             "attr": "optDescription",
                             "title": "opt. Beschreibung",
