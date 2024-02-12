@@ -279,17 +279,17 @@ class SofarsolarHyd extends utils.Adapter {
 			const fktr = Number(this.registerList[register].regAccuracy);
 			switch (type) {
 				case "I16":
-					val = buf.readInt16BE(relAdr) / fktr;
+					val = buf.readInt16BE(relAdr) * fktr;
 					this.log.error("i16");
 					break;
 				case "U16":
-					val = buf.readUInt16BE(relAdr) / fktr;
+					val = buf.readUInt16BE(relAdr) * fktr;
 					break;
 				case "U32":
-					val = buf.readUInt32BE(relAdr) / fktr;
+					val = buf.readUInt32BE(relAdr) * fktr;
 					break;
 				case "U64":
-					val = buf.readBigUInt64BE(relAdr) / fktr;
+					val = buf.readBigUInt64BE(relAdr) * fktr;
 					break;
 			}
 			this.registerList[register].value = val;
