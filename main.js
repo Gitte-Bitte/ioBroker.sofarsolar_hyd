@@ -256,7 +256,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		}
 		//this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
-		await this.actualiceReadings();
+		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `);  });
 
 
 		if (this.loopTasks.length > 1) {
