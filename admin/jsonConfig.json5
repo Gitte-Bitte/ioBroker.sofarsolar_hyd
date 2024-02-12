@@ -369,19 +369,19 @@
                             "options": [
                                 {
                                     "label": "sekündlich",
-                                    "value": "Seconds."
+                                    "value": "Seconds"
                                 },
                                 {
                                     "label": "minütlich",
-                                    "value": "Minutes."
+                                    "value": "Minutes"
                                 },
                                 {
                                     "label": "stündlich",
-                                    "value": "Hours."
+                                    "value": "Hours"
                                 },
                                 {
                                     "label": "täglichh",
-                                    "value": "Daylies."
+                                    "value": "Daylies"
                                 }
                             ],
                             "filter": false,
