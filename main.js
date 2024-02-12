@@ -276,7 +276,7 @@ class SofarsolarHyd extends utils.Adapter {
 			this.log.error(`register :   ${JSON.stringify(register)}`);
 			const relAdr = register % 0x40;
 			const type = this.registerList[register].regType;
-			const fktr = this.registerList[register].regAccuracy;
+			const fktr = Number(this.registerList[register].regAccuracy);
 			switch (type) {
 				case "I16":
 					val = buf.readInt16BE(relAdr) / fktr;
