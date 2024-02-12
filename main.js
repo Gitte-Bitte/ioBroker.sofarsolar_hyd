@@ -542,7 +542,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 
-	parseTable() {
+	async parseTable() {
 		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 		const data = fs.readFileSync(path).toLocaleString();
 		let register_str = "";
@@ -577,6 +577,14 @@ class SofarsolarHyd extends utils.Adapter {
 						this.registerList[register_nmbr].regAdrStr = register_str;
 						this.registerList[register_nmbr].regValue = 0;
 						this.loopInfo[loopKind].push(register_nmbr);
+						if (this.registerList[register_nmbr].reading) {
+							await this.createStateAsync("",
+								this.registerList[register_nmbr].regPath,
+								this.registerList[register_nmbr].regName,
+								{ "role": "value", "name": this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
+								.catch(e => { this.log.error(`fehler bei createstateasync ${JSON.stringify(e)} `); });
+
+						}
 					}
 				}
 				else {
