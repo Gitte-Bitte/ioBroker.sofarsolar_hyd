@@ -256,7 +256,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		}
 		//this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
-		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `);  });
+		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `); });
 
 
 		if (this.loopTasks.length > 1) {
@@ -270,10 +270,16 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async actualiceReadings() {
+		this.log.error("actualiceReadings erreicht");
+
 		for (const block in this.loopObject) {
 			for (const reg in this.loopObject[block]) {
+				this.log.error(`Register :   ${JSON.stringify(reg)}`);
+
 				if (this.registerList[reg].reading) {
 					const name = this.registerList[reg].regPath + this.registerList[reg].regName;
+					this.log.error(`Pfad + Name :   ${JSON.stringify(name)}`);
+
 					await this.setStateAsync(name, this.registerList[reg].value, true);
 				}
 			}
@@ -282,12 +288,12 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 	async parseBuffer(buf, liste) {
-		this.log.error("parseBuffer erreicht");
-		this.log.error(`buf :   ${JSON.stringify(buf)}`);
+		//this.log.error("parseBuffer erreicht");
+		//this.log.error(`buf :   ${JSON.stringify(buf)}`);
 		//this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
 			let val = 0;
-			this.log.error(`register :   ${JSON.stringify(register)}`);
+			//this.log.error(`register :   ${JSON.stringify(register)}`);
 			const relAdr = (register % 0x40) * 2;
 			const type = this.registerList[register].regType;
 			const fktr = Number(this.registerList[register].regAccuracy);
@@ -307,7 +313,7 @@ class SofarsolarHyd extends utils.Adapter {
 					break;
 			}
 			this.registerList[register].value = val;
-			this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
+			//this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
 
 		}
 
