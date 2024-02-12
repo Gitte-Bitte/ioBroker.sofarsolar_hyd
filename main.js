@@ -527,6 +527,7 @@ class SofarsolarHyd extends utils.Adapter {
 		let register_str = "";
 		let register_nmbr = 0;
 		let loopKind = "";
+		let accuracy=0;
 		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
 		}
@@ -540,6 +541,8 @@ class SofarsolarHyd extends utils.Adapter {
 				if (json[register_str] != undefined) {
 					if (entry["aktiv"]) {
 						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
+						accuracy=Number(json[register_str].Accuracy);
+						if(accuracy==0){accuracy=1;}
 						this.registerList[register_nmbr] = {};
 						this.registerList[register_nmbr].loop = entry["loop"];
 						this.registerList[register_nmbr].mw = entry["mw"];
@@ -547,7 +550,7 @@ class SofarsolarHyd extends utils.Adapter {
 						this.registerList[register_nmbr].desc = entry["optDescription"];
 						this.registerList[register_nmbr].regName = json[register_str].Field;
 						this.registerList[register_nmbr].regType = json[register_str].Typ;
-						this.registerList[register_nmbr].regAccuracy = json[register_str].Accuracy;
+						this.registerList[register_nmbr].regAccuracy = accuracy;
 						this.registerList[register_nmbr].regUnit = json[register_str].Unit;
 						this.registerList[register_nmbr].regAdrStr = register_str;
 						this.registerList[register_nmbr].regValue = 0;
