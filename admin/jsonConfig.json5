@@ -400,6 +400,24 @@
                 }
 
             }
+        } ,
+        "tab_4": {
+            "type": "panel",
+            "label": "List:Test",
+            "items": {
+                "lintToJson": {
+                    "type": "staticLink",
+                    "text": "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd",
+                    "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
+                    "icon": "info"
+                },
+             "getDataFiles" : {
+			"type": "fileSelector"
+		        },
+             "getData2Files" : {
+			"type": "file"
+		        }
+            }
         }
     }
 }
