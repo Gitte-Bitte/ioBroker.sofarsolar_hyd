@@ -61,7 +61,7 @@
 		"compact": true,
 		"connectionType": "local",
 		"dataSource": "poll",
-		"dataFolder": "sofarsolar_hyd",
+		"dataFolder": "sofarsolar_hyd.%INSTANCE%",
         "messagebox": true,
 		"subscribe": "messagebox",
 		"adminUI": {
