@@ -383,7 +383,7 @@
 					icon: "info",
 				},
 				getDataFiles: {
-					newline: true,
+					newLine: true,
 					type: "fileSelector",
 					upload: "/",
 					withFolder: true,
@@ -392,7 +392,7 @@
 					upload: "tts.userfiles/",
 				},
 				test2: {
-					newline: true,
+					newLine: true,
 					type: "text",
 					attr: "name",
 					width: "20% ",
@@ -402,7 +402,7 @@
 				},
 				getData2Files: {
 					type: "file",
-					newline: true,
+					newLine: true,
 				},
 			},
 		},
