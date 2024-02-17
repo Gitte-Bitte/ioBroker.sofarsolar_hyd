@@ -63,6 +63,7 @@
 		"dataSource": "poll",
 		"dataFolder": "sofarsolar_hyd",
         "messagebox": true,
+		"subscribe": "messagebox",
 		"adminUI": {
 			"config": "json",
 			"tab": "materialize"

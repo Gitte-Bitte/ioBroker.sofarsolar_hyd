@@ -138,7 +138,13 @@ class SofarsolarHyd extends utils.Adapter {
 		//this.log.error(`aus Tabelle gelesen -> ${JSON.stringify(this.config.table)}`);
 		this.parseTable();
 
-		this.loop();
+		this.log.error(`utils.getAbsoluteInstanceDataDir(this) -> ${JSON.stringify(utils.getAbsoluteInstanceDataDir(this))}`);
+		this.log.error(`utils.getAbsoluteDefaultDataDir() -> ${JSON.stringify(utils.getAbsoluteDefaultDataDir())}`);
+		
+
+		//this.loop();
+		
+		
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
 		//socket.on('open', () => { this.log.error('Port geöffnet '); });
 
