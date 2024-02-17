@@ -731,3 +731,16 @@ if (require.main !== module) {
 	// otherwise start the instance directly
 	new SofarsolarHyd();
 }
+
+
+/*
+
+const utils = require('@iobroker/adapter-core');
+
+const dataDir = utils.getAbsoluteDefaultDataDir();
+// liefert (unter Linux) z.B. /opt/iobroker/iobroker-data/
+
+const instanceDir = utils.getAbsoluteInstanceDataDir(this);
+// liefert (unter Linux) z.B. /opt/iobroker/iobroker-data/<adapterName>.<instanceNr>
+
+*/
