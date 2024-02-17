@@ -1,423 +1,410 @@
-{ // lets start"i18n": true,
-    "type": "tabs",
-    "items": {
-        "tab_1": {
-            "type": "panel",
-            "label": "Protokoll",
-            "sm": 3,
-            "lg": 3,
-            "items": {
-                "select": {
-                    "type": "select",
-                    "label": "Bitte Protokoll wählen",
-                    "newLine": true,
-                    "sm": 3,
-                    "lg": 3,
-                    "options": [
-                        {
-                            "label": "TCP",
-                            "value": 1
-                        },
-                        {
-                            "label": "Seriell",
-                            "value": 2
-                        },
-                        {
-                            "label": "WasWeisIch",
-                            "value": 3
-                        }
-                    ]
-                },
-                "panel_1": {
-                    "type": "panel",
-                    "label": "TCP",
-                    "hidden": "!(data.select==1)",
-                    "newLine": true,
-                    "sm": 3,
-                    "lg": 3,
-                    "items": {
-                        "ip": {
-                            "type": "ip",
-                            "label": "IP-Address",
-                            "newLine": true
-                        },
-                        "port": {
-                            "type": "port",
-                            "label": "Port auswählen",
-                            "newLine": true
-                        }
-                    }
-                },
-                "panel_2": {
-                    "type": "panel",
-                    "hidden": "!(data.select==2)",
-                    "newLine": true,
-                    "sm": 3,
-                    "lg": 3,
-                    "items": {
-                        "schnittstellen": {
-                            "label": "Schnittstelle",
-                            "type": "selectSendTo",
-                            "command": "nu"
-                        },
-                        "baud": {
-                            "type": "select",
-                            "label": "Baudrate",
-                            "newLine": true,
-                            "sm": 3,
-                            "lg": 3,
-                            "options": [
-                                {
-                                    "label": "9600",
-                                    "value": 9600
-                                },
-                                {
-                                    "label": "11000",
-                                    "value": 11000
-                                },
-                                {
-                                    "label": "23000",
-                                    "value": 23000
-                                }
-                            ]
-                        },
-                        "stoppBits": {
-                            "type": "number",
-                            "label": "stopp-bits",
-                            "min": 0,
-                            "max": 3,
-                            "newLine": true,
-                            "sm": 3,
-                            "lg": 3
-                        },
-                        "dataBits": {
-                            "type": "number",
-                            "label": "data-bits",
-                            "min": 5,
-                            "max": 9,
-                            "newLine": true,
-                            "sm": 3,
-                            "lg": 3
-                        },
-                        "parity": {
-                            "type": "checkbox",
-                            "label": "Paritätsbit",
-                            "newLine": true,
-                            "sm": 3,
-                            "lg": 3
-                        }
-                    }
-                },
-                "panel_3": {
-                    "type": "panel",
-                    "label": "TCP",
-                    "hidden": "!(data.select==3)",
-                    "newLine": true,
-                    "sm": 3,
-                    "lg": 3,
-                    "items": {
-                        "selectVal1": {
-                            "type": "pattern",
-                            "pattern": "Hier steht was weiss ich",
-                            "newLine": true
-                        },
-                        "checkbox2a": {
-                            "type": "checkbox",
-                            "label": "wasweissich Checkbox ",
-                            "tooltip": "enables third checkbox",
-                            "newLine": true
-                        }
-                    }
-                },
-                "number2": {
-                    "type": "number",
-                    "label": "Geräte-ID",
-                    "min": 1,
-                    "max": 128,
-                    "newLine": true
-                }
-            }
-        },
-        "tab_2": {
-            "type": "panel",
-            "label": "List:Polling",
-            "items": {
-                "staticText3a": {
-                    "newLine": true,
-                    "type": "staticText",
-                    "text": "Im Textfeld kann beliebiger Text eingegebenwerden. Auszulesende Register müssen jeweils ein # vorangestellt haben",
-                    "style": {
-                        "fontSize": 24
-                    }
-                },
-                "checkbox1": {
-                    "type": "checkbox",
-                    "label": "Register als HEX",
-                    "tooltip": "click to enable or disable checkbox, check tooltip by hovering over checkbox",
-                    "default": false,
-                    "newLine": true
-                },
-                "autocomplete1": {
-                    "newLine": true,
-                    "type": "autocomplete",
-                    "label": "Aktualisierung in Sekunden",
-                    "options": [
-                        "5",
-                        "6",
-                        "10",
-                        "12",
-                        "15",
-                        "20",
-                        "30"
-                    ],
-                    "freeSolo": false,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "autocomplete2": {
-                    "newLine": true,
-                    "type": "autocomplete",
-                    "label": "Anzahl der Messungen bis zur Mittelwertsbildung",
-                    "options": [
-                        "0",
-                        "2",
-                        "3",
-                        "5",
-                        "10"
-                    ],
-                    "freeSolo": false,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "autocomplete3": {
-                    "newLine": true,
-                    "type": "autocomplete",
-                    "label": "Aktualisierung in Minuten",
-                    "options": [
-                        "0,5",
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5"
-                    ],
-                    "freeSolo": false,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "autocomplete4": {
-                    "newLine": true,
-                    "type": "autocomplete",
-                    "label": "Aktualisierung in Stunden",
-                    "options": [
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "6",
-                        "8",
-                        "12"
-                    ],
-                    "freeSolo": false,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "text1": {
-                    "newLine": true,
-                    "type": "text",
-                    "label": "Zu lesende Register für Sekunden",
-                    "minRows": 3,
-                    "maxRows": 7,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "text2": {
-                    "type": "text",
-                    "label": "Zu lesende Register für Minuten",
-                    "minRows": 3,
-                    "maxRows": 7,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "text3": {
-                    "type": "text",
-                    "label": "Zu lesende Register für Stunden",
-                    "minRows": 3,
-                    "maxRows": 7,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                },
-                "text4": {
-                    "type": "text",
-                    "label": "Am Tagesende auszulesen",
-                    "minRows": 3,
-                    "maxRows": 7,
-                    "sm": 6,
-                    "md": 6,
-                    "lg": 6,
-                    "xs": 6
-                }
-            }
-        },
-        "tab_3": {
-            "type": "panel",
-            "label": "List:CronJob",
-            "items": {
-                "lintToJson": {
-                    "type": "staticLink",
-                    "text": "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd",
-                    "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
-                    "icon": "info"
-                },
+{
+	// lets start"i18n": true,
+	type: "tabs",
+	items: {
+		tab_1: {
+			type: "panel",
+			label: "Protokoll",
+			sm: 3,
+			lg: 3,
+			items: {
+				select: {
+					type: "select",
+					label: "Bitte Protokoll wählen",
+					newLine: true,
+					sm: 3,
+					lg: 3,
+					options: [
+						{
+							label: "TCP",
+							value: 1,
+						},
+						{
+							label: "Seriell",
+							value: 2,
+						},
+						{
+							label: "WasWeisIch",
+							value: 3,
+						},
+					],
+				},
+				panel_1: {
+					type: "panel",
+					label: "TCP",
+					hidden: "!(data.select==1)",
+					newLine: true,
+					sm: 3,
+					lg: 3,
+					items: {
+						ip: {
+							type: "ip",
+							label: "IP-Address",
+							newLine: true,
+						},
+						port: {
+							type: "port",
+							label: "Port auswählen",
+							newLine: true,
+						},
+					},
+				},
+				panel_2: {
+					type: "panel",
+					hidden: "!(data.select==2)",
+					newLine: true,
+					sm: 3,
+					lg: 3,
+					items: {
+						schnittstellen: {
+							label: "Schnittstelle",
+							type: "selectSendTo",
+							command: "nu",
+						},
+						baud: {
+							type: "select",
+							label: "Baudrate",
+							newLine: true,
+							sm: 3,
+							lg: 3,
+							options: [
+								{
+									label: "9600",
+									value: 9600,
+								},
+								{
+									label: "11000",
+									value: 11000,
+								},
+								{
+									label: "23000",
+									value: 23000,
+								},
+							],
+						},
+						stoppBits: {
+							type: "number",
+							label: "stopp-bits",
+							min: 0,
+							max: 3,
+							newLine: true,
+							sm: 3,
+							lg: 3,
+						},
+						dataBits: {
+							type: "number",
+							label: "data-bits",
+							min: 5,
+							max: 9,
+							newLine: true,
+							sm: 3,
+							lg: 3,
+						},
+						parity: {
+							type: "checkbox",
+							label: "Paritätsbit",
+							newLine: true,
+							sm: 3,
+							lg: 3,
+						},
+					},
+				},
+				panel_3: {
+					type: "panel",
+					label: "TCP",
+					hidden: "!(data.select==3)",
+					newLine: true,
+					sm: 3,
+					lg: 3,
+					items: {
+						selectVal1: {
+							type: "pattern",
+							pattern: "Hier steht was weiss ich",
+							newLine: true,
+						},
+						checkbox2a: {
+							type: "checkbox",
+							label: "wasweissich Checkbox ",
+							tooltip: "enables third checkbox",
+							newLine: true,
+						},
+					},
+				},
+				number2: {
+					type: "number",
+					label: "Geräte-ID",
+					min: 1,
+					max: 128,
+					newLine: true,
+				},
+			},
+		},
+		tab_2: {
+			type: "panel",
+			label: "List:Polling",
+			items: {
+				staticText3a: {
+					newLine: true,
+					type: "staticText",
+					text: "Im Textfeld kann beliebiger Text eingegebenwerden. Auszulesende Register müssen jeweils ein # vorangestellt haben",
+					style: {
+						fontSize: 24,
+					},
+				},
+				checkbox1: {
+					type: "checkbox",
+					label: "Register als HEX",
+					tooltip: "click to enable or disable checkbox, check tooltip by hovering over checkbox",
+					default: false,
+					newLine: true,
+				},
+				autocomplete1: {
+					newLine: true,
+					type: "autocomplete",
+					label: "Aktualisierung in Sekunden",
+					options: ["5", "6", "10", "12", "15", "20", "30"],
+					freeSolo: false,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				autocomplete2: {
+					newLine: true,
+					type: "autocomplete",
+					label: "Anzahl der Messungen bis zur Mittelwertsbildung",
+					options: ["0", "2", "3", "5", "10"],
+					freeSolo: false,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				autocomplete3: {
+					newLine: true,
+					type: "autocomplete",
+					label: "Aktualisierung in Minuten",
+					options: ["0,5", "1", "2", "3", "4", "5"],
+					freeSolo: false,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				autocomplete4: {
+					newLine: true,
+					type: "autocomplete",
+					label: "Aktualisierung in Stunden",
+					options: ["1", "2", "3", "4", "6", "8", "12"],
+					freeSolo: false,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				text1: {
+					newLine: true,
+					type: "text",
+					label: "Zu lesende Register für Sekunden",
+					minRows: 3,
+					maxRows: 7,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				text2: {
+					type: "text",
+					label: "Zu lesende Register für Minuten",
+					minRows: 3,
+					maxRows: 7,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				text3: {
+					type: "text",
+					label: "Zu lesende Register für Stunden",
+					minRows: 3,
+					maxRows: 7,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+				text4: {
+					type: "text",
+					label: "Am Tagesende auszulesen",
+					minRows: 3,
+					maxRows: 7,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6,
+				},
+			},
+		},
+		tab_3: {
+			type: "panel",
+			label: "List:CronJob",
+			items: {
+				lintToJson: {
+					type: "staticLink",
+					text: "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd",
+					href: "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
+					icon: "info",
+				},
 
-                "table": {
-                    "type": "table",
-                    "newLine": true,
-                    "sm": 12,
-                    "md": 12,
-                    "lg": 12,
-                    "label": "Label",
-                    "showSecondAddAt": 4,
-                    "items": [
-                        {
-                            "type": "checkbox",
-                            "attr": "aktiv",
-                            "width": "5% ",
-                            "title": "Aktiv",
-                            "tooltip": "Click on it",
-                            "filter": false,
-                            "sort": false,
-                            "default": true
-                        },
-                        {
-                            "type": "text",
-                            "attr": "regAdr",
-                            "width": "10% ",
-                            "title": "Hex Adresse",
-                            "tooltip": "enter any text",
-                            "filter": false,
-                            "sort": false,
-                            "default": "",
-                            "validator": "const x={};for (const c of globalData.table) {if (x[c.regAdr]==='x') return false; x[c.regAdr]='x';}; return true;",
-                            "validatorNoSaveOnError": true
-                        },
-                        {
-                            "type": "select",
-                            "attr":"loop",
-                            "title": "Bitte Protokoll wählen",
-                            "label": "",
-                            "width": "20% ",
-                            "options": [
-                                {
-                                    "label": "sekündlich",
-                                    "value": "entityLoop"
-                                },
-                                {
-                                    "label": "minütlich",
-                                    "value": "minuteLoop"
-                                },
-                                {
-                                    "label": "stündlich",
-                                    "value": "hourLoop"
-                                },
-                                {
-                                    "label": "täglichh",
-                                    "value": "dayliLoop"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "checkbox",
-                            "attr": "mw",
-                            "width": "5% ",
-                            "title": "Mittelwert",
-                            "hidden": "data.loop!='entityLoop'",
-                            "tooltip": "Click on it",
-                            "filter": false,
-                            "sort": false,
-                            "default": false
-                        },
-                        {
-                            "type": "checkbox",
-                            "attr": "reading",
-                            "width": "5% ",
-                            "title": "Reading erstellen",
-                            "tooltip": "click to hide fields",
-                            "filter": false,
-                            "sort": false,
-                            "default": false
-                        },
-                        {
-                            "type": "select",
-                            "attr": "regPath",
-                            "title": "Pfad des Readings",
-                            "tooltip": "enter any text",
-                            "options": [
-                                {
-                                    "label": "sekündlich",
-                                    "value": "Seconds"
-                                },
-                                {
-                                    "label": "minütlich",
-                                    "value": "Minutes"
-                                },
-                                {
-                                    "label": "stündlich",
-                                    "value": "Hours"
-                                },
-                                {
-                                    "label": "täglichh",
-                                    "value": "Daylies"
-                                }
-                            ],
-                            "filter": false,
-                            "sort": false
-                        },
-                        {
-                            "type": "text",
-                            "attr": "optDescription",
-                            "title": "opt. Beschreibung",
-                            "tooltip": "enter any text",
-                            "filter": false,
-                            "sort": false,
-                            "default": ""
-                        }
-                    ]
-                }
-
-            }
-        } ,
-        "tab_4": {
-            "type": "panel",
-            "label": "List:Test",
-            "items": {
-                "lintToJson": {
-                    "type": "staticLink",
-                    "text": "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd",
-                    "href": "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
-                    "icon": "info"
-                },
-             "getDataFiles" : {
-			"type": "fileSelector"
-		        },
-             "getData2Files" : {
-			"type": "file"
-		        }
-            }
-        }
-    }
+				table: {
+					type: "table",
+					newLine: true,
+					sm: 12,
+					md: 12,
+					lg: 12,
+					label: "Label",
+					showSecondAddAt: 4,
+					items: [
+						{
+							type: "checkbox",
+							attr: "aktiv",
+							width: "5% ",
+							title: "Aktiv",
+							tooltip: "Click on it",
+							filter: false,
+							sort: false,
+							default: true,
+						},
+						{
+							type: "text",
+							attr: "regAdr",
+							width: "10% ",
+							title: "Hex Adresse",
+							tooltip: "enter any text",
+							filter: false,
+							sort: false,
+							default: "",
+							validator: "const x={};for (const c of globalData.table) {if (x[c.regAdr]==='x') return false; x[c.regAdr]='x';}; return true;",
+							validatorNoSaveOnError: true,
+						},
+						{
+							type: "select",
+							attr: "loop",
+							title: "Bitte Protokoll wählen",
+							label: "",
+							width: "20% ",
+							options: [
+								{
+									label: "sekündlich",
+									value: "entityLoop",
+								},
+								{
+									label: "minütlich",
+									value: "minuteLoop",
+								},
+								{
+									label: "stündlich",
+									value: "hourLoop",
+								},
+								{
+									label: "täglichh",
+									value: "dayliLoop",
+								},
+							],
+						},
+						{
+							type: "checkbox",
+							attr: "mw",
+							width: "5% ",
+							title: "Mittelwert",
+							hidden: "data.loop!='entityLoop'",
+							tooltip: "Click on it",
+							filter: false,
+							sort: false,
+							default: false,
+						},
+						{
+							type: "checkbox",
+							attr: "reading",
+							width: "5% ",
+							title: "Reading erstellen",
+							tooltip: "click to hide fields",
+							filter: false,
+							sort: false,
+							default: false,
+						},
+						{
+							type: "select",
+							attr: "regPath",
+							title: "Pfad des Readings",
+							tooltip: "enter any text",
+							options: [
+								{
+									label: "sekündlich",
+									value: "Seconds",
+								},
+								{
+									label: "minütlich",
+									value: "Minutes",
+								},
+								{
+									label: "stündlich",
+									value: "Hours",
+								},
+								{
+									label: "täglichh",
+									value: "Daylies",
+								},
+							],
+							filter: false,
+							sort: false,
+						},
+						{
+							type: "text",
+							attr: "optDescription",
+							title: "opt. Beschreibung",
+							tooltip: "enter any text",
+							filter: false,
+							sort: false,
+							default: "",
+						},
+					],
+				},
+			},
+		},
+		tab_4: {
+			type: "panel",
+			label: "List:Test",
+			items: {
+				lintToJson: {
+					type: "staticLink",
+					text: "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd",
+					href: "https://github.com/mcm1957/ioBroker.jsonconfig-demo/blob/main/admin/jsonConfig.json5",
+					icon: "info",
+				},
+				getDataFiles: {
+					newline: true,
+					type: "fileSelector",
+					upload: "/",
+					withFolder: true,
+					fileTypes: "audio",
+					pattern: "tts.userfiles/*.mp3",
+					upload: "tts.userfiles/",
+				},
+				test2: {
+					newline: true,
+					type: "text",
+					attr: "name",
+					width: "20% ",
+					title: "Name",
+					tooltip: "templateKeyTip",
+					default: "",
+				},
+				getData2Files: {
+					type: "file",
+					newline: true,
+				},
+			},
+		},
+	},
 }
