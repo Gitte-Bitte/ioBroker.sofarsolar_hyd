@@ -398,6 +398,7 @@
 				jsonFile: {
 					type: "file",
 					newLine: true,
+					fileName:"",
 					sm: 6,
 					md: 6,
 					lg: 6,
