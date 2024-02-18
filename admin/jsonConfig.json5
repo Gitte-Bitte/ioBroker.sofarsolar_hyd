@@ -388,8 +388,8 @@
 					upload: "/",
 					withFolder: true,
 					fileTypes: "audio",
-					pattern: "tts.userfiles/*.mp3",
-					upload: "tts.userfiles/",
+					pattern: "*.*",
+					upload: "../sofarsolar_hyd/",
 				},
 				test2: {
 					newLine: true,
