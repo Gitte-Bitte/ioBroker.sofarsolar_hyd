@@ -385,8 +385,7 @@
 				getDataFiles: {
 					newLine: true,
 					type: "fileSelector",
-					upload: "/",
-					withFolder: true,
+					withFolder: false,
 					fileTypes: "audio",
 					pattern: "*.*",
 					upload: "../sofarsolar_hyd/",

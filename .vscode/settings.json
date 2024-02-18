@@ -17,5 +17,8 @@
 	},
 	"[json5]": {
 		"editor.defaultFormatter": "numso.prettier-standard-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "numso.prettier-standard-vscode"
 	}
 }

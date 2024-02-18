@@ -1,0 +1,15 @@
+{
+	"getDataFiles": {
+		"newLine": true,
+		"type": "fileSelector",
+		"withFolder": true,
+		"fileTypes": "audio",
+		"pattern": "*.*",
+        
+		"upload": "../sofarsolar_hyd/"
+	},
+	"getData2Files": {
+		"type": "file",
+		"newLine": true
+	}
+}
