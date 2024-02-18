@@ -136,7 +136,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
-		this.dataFilePath=utils.getAbsoluteDefaultDataDir() + "file/" +this.config.filename1;
+		this.dataFilePath=utils.getAbsoluteDefaultDataDir() + "files/" +this.config.filename1;
 		this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
 
