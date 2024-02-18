@@ -388,7 +388,7 @@
 					withFolder: false,
 					fileTypes: "audio",
 					pattern: "*.*",
-					upload: "sofarsolar_hyd2/",
+					upload: "",
 					"objectID": "sofarsolar_hyd",
 				},
 				test2: {
