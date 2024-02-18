@@ -399,7 +399,7 @@
 					type: "file",
 					newLine: true,
 					//filterFiles:["json"],
-					disableEdit:true,
+					//disableEdit:true,
 					allowUpload:true,
 					allowDownload:true,
 					allowCreateFolder:true,
