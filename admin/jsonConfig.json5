@@ -403,6 +403,7 @@
 					allowUpload:true,
 					allowDownload:true,
 					allowCreateFolder:true,
+					
 					sm: 6,
 					md: 6,
 					lg: 6,

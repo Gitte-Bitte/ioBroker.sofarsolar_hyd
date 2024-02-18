@@ -81,7 +81,7 @@ class SofarsolarHyd extends utils.Adapter {
 	*/
 	onMessage(obj) {
 
-		//this.log.debug('onMessage erreicht, empfangenes Objekt: ${JSON.stringify(obj)}');
+		this.log.error(`onMessage erreicht, empfangenes Objekt: ${JSON.stringify(obj)}`);
 		//if (typeof obj === 'object' && obj.message) {
 		if (typeof obj === "object") {
 			//             // e.g. send email or pushover or whatever
