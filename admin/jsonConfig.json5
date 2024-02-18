@@ -393,11 +393,16 @@
 					sm: 6,
 					md: 6,
 					lg: 6,
-					xs: 6
+					xs: 6,
 				},
-				jsonFile2: {
+				jsonFile: {
 					type: "file",
-					newLine: true
+					newLine: true,
+					default: "xxx.txt",
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6
 				},
 			},
 		},
