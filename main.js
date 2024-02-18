@@ -39,6 +39,7 @@ class SofarsolarHyd extends utils.Adapter {
 	optionalLoop = "optionalLoop";
 
 	regBuffer = new ArrayBuffer(80);
+	dataFilePath="";
 	loopTasks = [this.entityLoop];
 	loopCounter = 0;
 	avgCount = 0;
@@ -135,15 +136,19 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
+		this.dataFilePath=utils.getAbsoluteDefaultDataDir() + "file/" +this.config.filename1;
+		this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
+
+
 		//this.log.error(`aus Tabelle gelesen -> ${JSON.stringify(this.config.table)}`);
 		this.parseTable();
 
-		this.log.error(`utils.getAbsoluteInstanceDataDir(this) -> ${JSON.stringify(utils.getAbsoluteInstanceDataDir(this))}`);
-		this.log.error(`utils.getAbsoluteDefaultDataDir() -> ${JSON.stringify(utils.getAbsoluteDefaultDataDir())}`);
-		this.log.error(`utils.controllerDir -> ${JSON.stringify(utils.controllerDir)}`);
-		this.log.error(`dataFolder -> ${JSON.stringify(this.common?.dataFolder)}`);
-		this.log.error(`jsonFile -> ${JSON.stringify(this.config.filename1)}`);
-		this.log.error(`config -> ${JSON.stringify(this.config)}`);
+		// this.log.error(`utils.getAbsoluteInstanceDataDir(this) -> ${JSON.stringify(utils.getAbsoluteInstanceDataDir(this))}`);
+		// this.log.error(`utils.getAbsoluteDefaultDataDir() -> ${JSON.stringify(utils.getAbsoluteDefaultDataDir())}`);
+		// this.log.error(`utils.controllerDir -> ${JSON.stringify(utils.controllerDir)}`);
+		// this.log.error(`dataFolder -> ${JSON.stringify(this.common?.dataFolder)}`);
+		// this.log.error(`jsonFile -> ${JSON.stringify(this.config.filename1)}`);
+		// this.log.error(`config -> ${JSON.stringify(this.config)}`);
 
 
 		//this.loop();
@@ -553,7 +558,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 	async parseTable() {
-		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
+		const path = this.dataFilePath;
 		const data = fs.readFileSync(path).toLocaleString();
 		let register_str = "";
 		let register_nmbr = 0;
