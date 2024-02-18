@@ -395,7 +395,7 @@
 				// 	lg: 6,
 				// 	xs: 6,
 				// },
-				jsonFile3: {
+				filename: {
 					type: "file",
 					newLine: true,
 					//filterFiles:["json"],
@@ -403,7 +403,7 @@
 					allowUpload:true,
 					allowDownload:true,
 					allowCreateFolder:true,
-					
+					filename:"test.json",
 					sm: 6,
 					md: 6,
 					lg: 6,
