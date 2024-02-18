@@ -402,7 +402,7 @@
 					//pattern: "*.json",
 					disableEdit:true,
 					allowUpload:true,
-					//allowDownload:true,
+					allowDownload:true,
 					//allowCreateFolder:true,
 					filename:"test.json",
 					sm: 6,
