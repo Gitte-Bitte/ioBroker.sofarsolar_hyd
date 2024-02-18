@@ -151,7 +151,7 @@ class SofarsolarHyd extends utils.Adapter {
 		// this.log.error(`config -> ${JSON.stringify(this.config)}`);
 
 
-		//this.loop();
+		this.loop();
 
 
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
