@@ -140,9 +140,9 @@ class SofarsolarHyd extends utils.Adapter {
 
 		this.log.error(`utils.getAbsoluteInstanceDataDir(this) -> ${JSON.stringify(utils.getAbsoluteInstanceDataDir(this))}`);
 		this.log.error(`utils.getAbsoluteDefaultDataDir() -> ${JSON.stringify(utils.getAbsoluteDefaultDataDir())}`);
-		this.log.error(`utils.controllerDir) -> ${JSON.stringify(utils.controllerDir)}`);
-		this.log.error(`dataFolder) -> ${JSON.stringify(this.common?.dataFolder)}`);
-		this.log.error(`dataFolder) -> ${JSON.stringify(this.common?.dataFolder)}`);
+		this.log.error(`utils.controllerDir -> ${JSON.stringify(utils.controllerDir)}`);
+		this.log.error(`dataFolder -> ${JSON.stringify(this.common?.dataFolder)}`);
+		this.log.error(`jsonFile -> ${JSON.stringify(this.config.jsonFile)}`);
 
 
 		//this.loop();

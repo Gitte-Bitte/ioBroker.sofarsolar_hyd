@@ -387,22 +387,21 @@
 					type: "fileSelector",
 					withFolder: false,
 					fileTypes: "audio",
-					pattern: "*.*",
+					pattern: "*.json",
 					upload: "/",
-					"objectID": "sofarsolar_hyd",
+					objectID: "sofarsolar_hyd",
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6
 				},
-				test2: {
-					newLine: true,
-					type: "text",
-					attr: "name",
-					width: "20% ",
-					title: "Name",
-					tooltip: "templateKeyTip",
-					default: "",
-				},
-				getData2Files: {
+				jsonFile: {
 					type: "file",
 					newLine: true,
+					sm: 6,
+					md: 6,
+					lg: 6,
+					xs: 6
 				},
 			},
 		},
