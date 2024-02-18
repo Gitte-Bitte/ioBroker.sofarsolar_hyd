@@ -44,8 +44,13 @@
 			"uk": "iobroker адаптер sofarsolar інвертор",
 			"zh-cn": "iobroker适配器sofarsolar逆变器"
 		},
-		"authors": ["Gitte-Bitte <lutz.duennbier@web.de>"],
-		"keywords": ["sofarsolar", "inverter"],
+		"authors": [
+			"Gitte-Bitte <lutz.duennbier@web.de>"
+		],
+		"keywords": [
+			"sofarsolar",
+			"inverter"
+		],
 		"license": "MIT",
 		"platform": "Javascript/Node.js",
 		"main": "main.js",
@@ -55,14 +60,16 @@
 		"readme": "https://github.com/Gitte-Bitte/ioBroker.sofarsolar_hyd/blob/main/README.md",
 		"loglevel": "info",
 		"tier": 3,
-		"restartAdapters": ["vis"],
+		"restartAdapters": [
+			"vis"
+		],
 		"mode": "daemon",
 		"type": "energy",
 		"compact": true,
 		"connectionType": "local",
 		"dataSource": "poll",
 		"dataFolder": "sofarsolar_hyd",
-        "messagebox": true,
+		"messagebox": true,
 		"subscribe": "messagebox",
 		"adminUI": {
 			"config": "json",
@@ -99,48 +106,47 @@
 			}
 		]
 	},
-    "native": {
-        "text1": "",
-        "text2": "",
-        "text3": "",
-		"text4":"",
-		"autocomplete2":0,
-		"autocomplete3":0,
-		"autocomplete4":0,
-		"table":[],
-		"jsonFile":"test.json"
-    },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": true,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "",
-            "type": "meta",
-            "common": {
-                "type": "meta"
-				
-            },
-            "native": {}
-        }
-    ]
+	"native": {
+		"text1": "",
+		"text2": "",
+		"text3": "",
+		"text4": "",
+		"autocomplete2": 0,
+		"autocomplete3": 0,
+		"autocomplete4": 0,
+		"table": [],
+		"jsonFile": "test.json"
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"role": "indicator.connected",
+				"name": "Device or service connected",
+				"type": "boolean",
+				"read": true,
+				"write": true,
+				"def": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "",
+			"type": "meta",
+			"common": {
+				"type": "meta"
+			},
+			"native": {}
+		}
+	]
 }

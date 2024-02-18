@@ -386,7 +386,7 @@
 					newLine: true,
 					type: "fileSelector",
 					withFolder: false,
-					fileTypes: "audio",
+					//fileTypes: "audio",
 					pattern: "*.json",
 					upload: "/",
 					objectID: "sofarsolar_hyd",
