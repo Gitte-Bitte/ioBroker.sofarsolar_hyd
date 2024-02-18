@@ -395,10 +395,14 @@
 					lg: 6,
 					xs: 6,
 				},
-				jsonFile2: {
+				jsonFile: {
 					type: "file",
 					newLine: true,
-					default: "xxx.txt",
+					filterFiles:["json"],
+					disableEdit:true,
+					allowUpload:true,
+					allowDownload:true,
+					allowCreateFolder:true,
 					sm: 6,
 					md: 6,
 					lg: 6,
@@ -408,3 +412,33 @@
 		},
 	},
 }
+
+
+
+//fileSelector (only Admin6)
+
+// pattern - File extension pattern. Allowed **/*.ext to show all files from subfolders too, *.ext to show from root folder or folderName/*.ext to show all files in sub-folder folderName. Default **/*.*.
+// fileTypes - [optional] type of files: audio, image, text
+// objectID - Object ID of type meta. You can use special placeholder %INSTANCE%: like myAdapter.%INSTANCE%.files
+// upload - path, where the uploaded files will be stored. Like folderName. If not defined, no upload field will be shown. To upload in the root, set this field to /.
+// refresh - Show refresh button near the select.
+// maxSize - max file size (default 2MB)
+// withFolder - show folder name even if all files in same folder
+// delete - Allow deletion of files
+// noNone - Do not show none option
+// noSize - Do not show size of files
+
+
+// file (only Admin6) Input field with file selector
+
+// disableEdit - if user can manually enter the file name and not only through select dialog
+// limitPath - limit selection to one specific object of type meta and following path (not mandatory)
+// filterFiles - like ['png', 'svg', 'bmp', 'jpg', 'jpeg']
+// filterByType - images, code, txt, audio, video
+// allowUpload - allowed upload of files
+// allowDownload - allowed download of files (default true)
+// allowCreateFolder - allowed creation of folders
+// allowView - allowed tile view (default true)
+// showToolbar - show toolbar (default true)
+// selectOnlyFolders - user can select only folders (e.g. for upload path)
+
