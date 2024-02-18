@@ -398,8 +398,8 @@
 				filename1: {
 					type: "file",
 					newLine: true,
-					filterFiles:["*.json"],
-					pattern: "*.json",
+					//filterFiles:["*.json"],
+					//pattern: "*.json",
 					disableEdit:true,
 					allowUpload:true,
 					allowDownload:true,
