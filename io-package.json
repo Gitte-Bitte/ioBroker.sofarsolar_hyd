@@ -108,7 +108,7 @@
 		"autocomplete3":0,
 		"autocomplete4":0,
 		"table":[],
-		"jsonFile":""
+		"jsonFile":"test.json"
     },
     "objects": [],
     "instanceObjects": [
