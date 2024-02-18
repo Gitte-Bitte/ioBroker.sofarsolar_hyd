@@ -395,7 +395,7 @@
 					lg: 6,
 					xs: 6,
 				},
-				jsonFile: {
+				jsonFile3: {
 					type: "file",
 					newLine: true,
 					filterFiles:["json"],
