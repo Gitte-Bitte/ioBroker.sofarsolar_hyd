@@ -398,7 +398,7 @@
 				filename1: {
 					type: "file",
 					newLine: true,
-					filterFiles:"*.json",
+					filterFiles:["*.json"],
 					disableEdit:true,
 					allowUpload:true,
 					allowDownload:true,
