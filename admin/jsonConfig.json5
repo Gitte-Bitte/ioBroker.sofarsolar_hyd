@@ -395,7 +395,7 @@
 					lg: 6,
 					xs: 6,
 				},
-				jsonFile: {
+				jsonFile2: {
 					type: "file",
 					newLine: true,
 					default: "xxx.txt",
