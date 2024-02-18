@@ -395,14 +395,9 @@
 					lg: 6,
 					xs: 6
 				},
-				jsonFile: {
+				jsonFile2: {
 					type: "file",
-					newLine: true,
-					fileName:"",
-					sm: 6,
-					md: 6,
-					lg: 6,
-					xs: 6
+					newLine: true
 				},
 			},
 		},
