@@ -50,7 +50,74 @@ class SofarsolarHyd extends utils.Adapter {
 	//registerCollection = [];
 	loopTasksChanged = false;
 	loopObject = {};
-	registerList = {};
+	registerList = {
+		"1": {
+			"loop": "entityLoop",
+			"mw": false,
+			"reading": true,
+			"regPath": "Calculates",
+			"regName": "Bat2House",
+			"regAccuracy": 1,
+			"regUnit": "W",
+			"regAdrStr": "0001",
+			"regValue": 0
+		},
+		"2": {
+			"loop": "entityLoop",
+			"mw": false,
+			"reading": true,
+			"regPath": "Calculates",
+			"regName": "PV2Bat",
+			"regAccuracy": 1,
+			"regUnit": "W",
+			"regAdrStr": "0002",
+			"regValue": 0
+		},
+		"3": {
+			"loop": "entityLoop",
+			"mw": false,
+			"reading": true,
+			"regPath": "Calculates",
+			"regName": "Net2Bat",
+			"regAccuracy": 1,
+			"regUnit": "W",
+			"regAdrStr": "0003",
+			"regValue": 0
+		},
+		"4": {
+			"loop": "entityLoop",
+			"mw": false,
+			"reading": true,
+			"regPath": "Calculates",
+			"regName": "PV2Net",
+			"regAccuracy": 1,
+			"regUnit": "W",
+			"regAdrStr": "0004",
+			"regValue": 0
+		},
+		"5": {
+			"loop": "entityLoop",
+			"mw": false,
+			"reading": true,
+			"regPath": "Calculates",
+			"regName": "PV2House",
+			"regAccuracy": 1,
+			"regUnit": "W",
+			"regAdrStr": "0005",
+			"regValue": 0
+		},
+		"6": {
+			"loop": "entityLoop",
+			"mw": false,
+			"reading": true,
+			"regPath": "Calculates",
+			"regName": "Net2House",
+			"regAccuracy": 1,
+			"regUnit": "W",
+			"regAdrStr": "0006",
+			"regValue": 0
+		}
+	};
 
 	loopInfo = {
 
@@ -275,14 +342,17 @@ class SofarsolarHyd extends utils.Adapter {
 		for (const block in this.loopObject) {
 			//this.log.error(`block :   ${JSON.stringify(block)}`);
 			//this.log.error(`liste :   ${JSON.stringify(this.loopObject[block])}`);
-
-			await client.readHoldingRegisters(Number(block), 0x40)
-				.then((resp) => this.parseBuffer(resp.response._body._valuesAsBuffer, this.loopObject[block]))
-				.then(() => this.delay(20))
-				.catch((resp) => { this.log.error(` : Stimmt was nicht: ${JSON.stringify(resp)} `); socket.connect({ path: "/dev/ttyUSB0", baudRate: 9600 }); });
-
+			if (Number(block) > 100) {
+				await client.readHoldingRegisters(Number(block), 0x40)
+					.then((resp) => this.parseBuffer(resp.response._body._valuesAsBuffer, this.loopObject[block]))
+					.then(() => this.delay(20))
+					.catch((resp) => { this.log.error(` : Stimmt was nicht: ${JSON.stringify(resp)} `); socket.connect({ path: "/dev/ttyUSB0", baudRate: 9600 }); });
+			}
 		}
 		//this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
+
+		//await this.calcStates();
+
 		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `); });
 
 		this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);

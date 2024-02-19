@@ -295,21 +295,25 @@
 							width: "20% ",
 							options: [
 								{
-									label: "sekündlich",
+									label: "Seconds",
 									value: "entityLoop",
 								},
 								{
-									label: "minütlich",
+									label: "Minutes",
 									value: "minuteLoop",
 								},
 								{
-									label: "stündlich",
+									label: "Hour",
 									value: "hourLoop",
 								},
 								{
-									label: "täglichh",
+									label: "Daily",
 									value: "dayliLoop",
 								},
+								{
+									label: "StartUp",
+									value: "dayliLoop",
+								}
 							],
 						},
 						{
