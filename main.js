@@ -9,9 +9,9 @@ const fs = require("fs");
 //const path = require('path');
 
 
-const registerOften = {};
-const registerRar = {};
-const registerDayly = {};
+// const registerOften = {};
+// const registerRar = {};
+// const registerDayly = {};
 
 const Modbus = require("jsmodbus");
 const { SerialPort } = require("serialport");
@@ -19,16 +19,16 @@ const socket = new SerialPort({ path: "/dev/ttyUSB0", baudRate: 9600 });
 //const socket = new SerialPort({ path: '/dev/ttyUSB0', baudRate: 9600, autoOpen: true });
 const client = new Modbus.client.RTU(socket, 1);
 
-let counter = 0;
-let ActivePower_Load_Sys = 0;
-let ActivePower_Load_Total = 0;
-let ActivePower_Output_Total = 0;
-let ActivePower_PCC_Total = 0;
-let SysState = 0;
-let Power_PV1 = 0;
-let Power_Bat1 = 0;
+// let counter = 0;
+// let ActivePower_Load_Sys = 0;
+// let ActivePower_Load_Total = 0;
+// let ActivePower_Output_Total = 0;
+// let ActivePower_PCC_Total = 0;
+// let SysState = 0;
+// let Power_PV1 = 0;
+// let Power_Bat1 = 0;
 
-const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net2House"];
+//const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net2House"];
 
 class SofarsolarHyd extends utils.Adapter {
 
@@ -123,11 +123,12 @@ class SofarsolarHyd extends utils.Adapter {
 	async onReady() {
 		let temp = "";
 		//this.log.error("onready erreicht");
-
-		for (const i in this.channelList) {
-			await this.delObjectAsync(this.namespace+"." +this.channelList[i], { recursive: true });
-			this.log.error(`chanel löschen -> ${JSON.stringify(this.namespace+"." +this.channelList[i])}`);
-		}
+		/*
+				for (const i in this.channelList) {
+					await this.delObjectAsync(this.namespace+"." +this.channelList[i], { recursive: true });
+					this.log.error(`chanel löschen -> ${JSON.stringify(this.namespace+"." +this.channelList[i])}`);
+				}
+				*/
 		this.loopTasksChanged = true;
 		this.setState("info.connection", false, true);
 		this.avgCount = this.config.autocomplete2;
@@ -165,6 +166,7 @@ class SofarsolarHyd extends utils.Adapter {
 		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
 		//this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
+		this.log.error(`registerList -> ${JSON.stringify(this.registerList)}`);
 
 
 		this.loop();
