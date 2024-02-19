@@ -304,9 +304,9 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 	async parseBuffer(buf, liste) {
-		//this.log.error("parseBuffer erreicht");
-		//this.log.error(`buf :   ${JSON.stringify(buf)}`);
-		//this.log.error(`liste :   ${JSON.stringify(liste)}`);
+		this.log.error("parseBuffer erreicht");
+		this.log.error(`buf :   ${JSON.stringify(buf)}`);
+		this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
 			let val = 0;
 			//this.log.error(`register :   ${JSON.stringify(register)}`);
@@ -329,10 +329,14 @@ class SofarsolarHyd extends utils.Adapter {
 					break;
 			}
 			if (!this.registerList[register].mw) {
+				this.log.error(`regtype :   ${JSON.stringify(type)}`);
+				this.log.error(`relAdr :   ${JSON.stringify(relAdr)}`);
+				this.log.error(`fktr :   ${JSON.stringify(fktr)}`);
+				this.log.error(`val :   ${JSON.stringify(val)}`);
+
 				this.registerList[register].regValue = val;
 			}
 			else {
-				this.log.error(`buf :   ${JSON.stringify(buf)}`);
 				this.log.error(`regtype :   ${JSON.stringify(type)}`);
 				this.log.error(`relAdr :   ${JSON.stringify(relAdr)}`);
 				this.log.error(`fktr :   ${JSON.stringify(fktr)}`);
