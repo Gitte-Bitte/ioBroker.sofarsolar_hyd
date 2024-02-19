@@ -39,9 +39,8 @@ class SofarsolarHyd extends utils.Adapter {
 	optionalLoop = "optionalLoop";
 
 	regBuffer = new ArrayBuffer(80);
-	dataFilePath="";
+	dataFilePath = "";
 	loopTasks = [this.entityLoop];
-	loopCounter = 0;
 	avgCount = 0;
 	//registerCollection = [];
 	loopTasksChanged = false;
@@ -136,7 +135,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
 
-		this.dataFilePath=utils.getAbsoluteDefaultDataDir() + "files/" +this.config.filename1;
+		this.dataFilePath = utils.getAbsoluteDefaultDataDir() + "files/" + this.config.filename1;
 		this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
 
@@ -241,8 +240,9 @@ class SofarsolarHyd extends utils.Adapter {
 		//this.log.error("loop erreicht");
 		//let average = false;
 		this.loopCounter++;
-		if (this.loopCounter > 2) {
+		if (this.loopCounter >= this.avgCount) {
 			this.loopCounter = 0;
+			this.avgState = true;
 			//average = true;
 			//this.log.error("average");
 
@@ -296,7 +296,7 @@ class SofarsolarHyd extends utils.Adapter {
 					const name = this.registerList[reg].regPath + "." + this.registerList[reg].regName;
 					this.log.error(`Pfad + Name :   ${JSON.stringify(name)}`);
 
-					await this.setStateAsync(name, this.registerList[reg].value, true);
+					await this.setStateAsync(name, this.registerList[reg].regValue, true);
 				}
 			}
 		}
@@ -328,12 +328,18 @@ class SofarsolarHyd extends utils.Adapter {
 					val = buf.readBigUInt64BE(relAdr) * fktr;
 					break;
 			}
-			this.registerList[register].value = val;
-			//this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
-
+			if (!this.registerList[register].mw) {
+				this.registerList[register].regValue = val;
+			}
+			else {
+				this.registerList[register].regValue -= (this.registerList[register].regValue - val) / this.avgCount;
+			}
 		}
+		//this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
 
 	}
+
+
 	//################################################################################################################
 
 
@@ -345,7 +351,7 @@ class SofarsolarHyd extends utils.Adapter {
 			//this.log.error(`Combine task:  ${JSON.stringify(task)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
 			//console.log("task : " + task);
 			for (let block in this.loopInfo[task]) {
-	
+		
 				//console.log("block : " + block);
 				if (temp[block] == undefined) {
 					temp[block] = this.loopInfo[task][block];
@@ -359,8 +365,8 @@ class SofarsolarHyd extends utils.Adapter {
 		//console.log(` tempinfo: ${JSON.stringify(temp)} `);
 		return temp;
 	}
-	
-*/
+		
+	*/
 
 	createLoopObject(tasks) {
 		const tempObj = {};
