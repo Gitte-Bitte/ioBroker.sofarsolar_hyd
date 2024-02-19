@@ -149,7 +149,8 @@ class SofarsolarHyd extends utils.Adapter {
 		// this.log.error(`jsonFile -> ${JSON.stringify(this.config.filename1)}`);
 		// this.log.error(`config -> ${JSON.stringify(this.config)}`);
 
-		const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
+		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
+		const allObjects = await this.getChannelsOfAsync(); // Alle folder, device, channel und state Objekte
 		this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
