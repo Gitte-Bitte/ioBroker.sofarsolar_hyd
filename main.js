@@ -316,7 +316,7 @@ class SofarsolarHyd extends utils.Adapter {
 			switch (type) {
 				case "I16":
 					val = buf.readInt16BE(relAdr) * fktr;
-					this.log.error("i16");
+					//this.log.error("i16");
 					break;
 				case "U16":
 					val = buf.readUInt16BE(relAdr) * fktr;
@@ -332,6 +332,10 @@ class SofarsolarHyd extends utils.Adapter {
 				this.registerList[register].regValue = val;
 			}
 			else {
+				this.log.error(`buf :   ${JSON.stringify(buf)}`);
+				this.log.error(`regtype :   ${JSON.stringify(type)}`);
+				this.log.error(`relAdr :   ${JSON.stringify(relAdr)}`);
+				this.log.error(`fktr :   ${JSON.stringify(fktr)}`);
 				this.log.error(`val :   ${JSON.stringify(val)}`);
 				this.log.error(`this.registerList[register].regValue vorher :   ${JSON.stringify(this.registerList[register].regValue)}`);
 				this.log.error(`avgCount :   ${JSON.stringify(this.avgCount)}`);
