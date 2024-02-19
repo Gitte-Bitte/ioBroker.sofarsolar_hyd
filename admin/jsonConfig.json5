@@ -340,21 +340,29 @@
 							tooltip: "enter any text",
 							options: [
 								{
-									label: "sekündlich",
+									label: "Seconds",
 									value: "Seconds",
 								},
 								{
-									label: "minütlich",
+									label: "Minutes",
 									value: "Minutes",
 								},
 								{
-									label: "stündlich",
+									label: "Hours",
 									value: "Hours",
 								},
 								{
-									label: "täglichh",
-									value: "Daylies",
+									label: "Daily",
+									value: "Daily",
 								},
+								{
+									label: "Calculated",
+									value: "Calculated",
+								},
+								{
+									label: "StartUp",
+									value: "StartUp",
+								}
 							],
 							filter: false,
 							sort: false,

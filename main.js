@@ -32,6 +32,9 @@ const calcStates = ["Bat2House", "PV2Bat", "Net2Bat", "PV2Net", "PV2House", "Net
 
 class SofarsolarHyd extends utils.Adapter {
 
+	channelList = ["Seconds", "Minutes", "Hours", "Daily", "StartUp", "Calculated"];
+
+
 	entityLoop = "entityLoop";
 	minuteLoop = "minuteLoop";
 	hourLoop = "hourLoop";
@@ -625,7 +628,7 @@ class SofarsolarHyd extends utils.Adapter {
 							await this.createStateAsync("",
 								this.registerList[register_nmbr].regPath,
 								this.registerList[register_nmbr].regName,
-								{ "role": "value", "name": this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
+								{ "role": "value", "name": register_str+"_"+this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
 								.catch(e => { this.log.error(`fehler bei createstateasync ${JSON.stringify(e)} `); });
 
 						}
