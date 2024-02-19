@@ -34,7 +34,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	channelList = ["Seconds", "Minutes", "Hours", "Daily", "StartUp", "Calculated"];
 	defaultRegister = [
-		{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60B" }];
+		{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
 
 
 	entityLoop = "entityLoop";
