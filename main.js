@@ -34,7 +34,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	channelList = ["Seconds", "Minutes", "Hours", "Daily", "StartUp", "Calculated"];
 	defaultRegister = [
-		{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
+		{ "regAdr": "1" },{ "regAdr": "2" },{ "regAdr": "3" },{ "regAdr": "4" },{ "regAdr": "5" },{ "regAdr": "6" },{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
 
 	bat2House = 1;
 	pv2Bat = 2;
@@ -676,7 +676,7 @@ class SofarsolarHyd extends utils.Adapter {
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
 				loopKind = entry["loop"] || this.entityLoop;
 				this.log.error(` entry: ${JSON.stringify(entry)} `);
-				if (json[register_str] != undefined) {
+				if (register_nmbr<100||json[register_str] != undefined) {
 					if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
 						this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 						accuracy = Number(json[register_str].Accuracy);
