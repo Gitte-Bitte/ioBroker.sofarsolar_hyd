@@ -36,6 +36,21 @@ class SofarsolarHyd extends utils.Adapter {
 	defaultRegister = [
 		{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
 
+	bat2House = 1;
+	pv2Bat = 2;
+	net2Bat = 3;
+	pv2Net = 4;
+	pv2House = 5;
+	net2House = 6;
+	activePower_Output_Total = 1157;
+	activePower_PCC_Total = 1160;
+	activePower_Load_Sys = 1199;
+	activePower_Load_Total = 1284;
+	power_PV1 = 1414;
+	power_PV2 = 1417;
+	power_Bat1 = 1542;
+	power_Bat2 = 1549;
+
 
 	entityLoop = "entityLoop";
 	minuteLoop = "minuteLoop";
@@ -351,7 +366,7 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 		//this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
 
-		//await this.calcStates();
+		this.calcStates();
 
 		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `); });
 
@@ -544,43 +559,38 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 
-	async calcStates() {
-		let Bat2House, PV2Bat, Net2House, PV2Net, PV2House;
-		if (SysState == 7) {
-			//val = 0;
-		}
-		else {
-			if (Power_Bat1 < 0) {
-				Bat2House = -Power_Bat1 * 1000;
-				PV2Bat = 0;
+	calcStates() {
+		// if (SysState == 7) {
+		// 	//val = 0;
+		// }
+		//else 
+		{
+			if (this.registerList[this.power_Bat1].regValue < 0) {
+				this.registerList[this.bat2House].regValue = this.registerList[this.power_Bat1].regValue * 1000;
+				this.registerList[this.pv2Bat].regValue = 0;
 			}
 			else {
-				Bat2House = 0;
-				PV2Bat = Power_Bat1 * 1000;
+				this.registerList[this.bat2House] = 0;
+				this.registerList[this.pv2Bat].regValue = this.registerList[this.power_Bat1].regValue * 1000;
 			}
-			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.Bat2House", Bat2House, true);
-			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.PV2Bat", PV2Bat, true);
 
-			if (ActivePower_PCC_Total > 0) {
-				if (Power_PV1 > 0) {
-					Net2House = 0;//Hausbezug
-					PV2Net = ActivePower_PCC_Total * 1000;//PVEinspeisung
+			if (this.registerList[this.activePower_PCC_Total].regValue > 0) {
+				if (this.registerList[this.power_PV1].regValue > 0) {
+					this.registerList[this.net2House].regValue = 0;//Hausbezug
+					this.registerList[this.pv2Net].regValue = this.registerList[this.activePower_PCC_Total].regValue * 1000;//PVEinspeisung
 				}
 				else {
-					PV2Net = 0;
-					Net2House = ActivePower_PCC_Total * 1000;
+					this.registerList[this.pv2Net].regValue = 0;
+					this.registerList[this.net2House].regValue = this.registerList[this.activePower_PCC_Total].regValue * 1000;
 				}
 			}
 			else {
-				Net2House = -ActivePower_PCC_Total * 1000;
-				PV2Net = 0;
+				this.registerList[this.net2House].regValue = -this.registerList[this.activePower_PCC_Total].regValue * 1000;
+				this.registerList[this.pv2Net].regValue = 0;
 			}
-			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.Net2House", Net2House, true);
-			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.PV2Net", PV2Net, true);
 
 
-			PV2House = Power_PV1 * 1000 - PV2Bat - PV2Net;
-			await this.setStateAsync("sofarsolar_hyd.0.CalculatedStates.PV2House", PV2House, true);
+			this.registerList[this.pv2House].regValue = this.registerList[this.power_PV1].regValue * 1000 - this.registerList[this.pv2Bat].regValue - this.registerList[this.pv2Net].regValue;
 		}
 	}
 
