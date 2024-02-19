@@ -622,7 +622,7 @@ class SofarsolarHyd extends utils.Adapter {
 						this.registerList[register_nmbr].regValue = 0;
 						this.loopInfo[loopKind].push(register_nmbr);
 						if (this.registerList[register_nmbr].reading) {
-							await this.createStateAsync("",
+							await this.createStateAsync("test",
 								this.registerList[register_nmbr].regPath,
 								this.registerList[register_nmbr].regName,
 								{ "role": "value", "name": this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
