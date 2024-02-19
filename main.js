@@ -250,10 +250,10 @@ class SofarsolarHyd extends utils.Adapter {
 		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
 		//this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
-		this.log.error(`registerList -> ${JSON.stringify(this.registerList)}`);
+		//this.log.error(`registerList -> ${JSON.stringify(this.registerList)}`);
 
 
-		this.loop();
+		//this.loop();
 
 
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
@@ -675,10 +675,10 @@ class SofarsolarHyd extends utils.Adapter {
 				register_nmbr = parseInt(entry["regAdr"], 16);
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
 				loopKind = entry["loop"] || this.entityLoop;
-				//this.log.error(` entry: ${JSON.stringify(entry)} `);
+				this.log.error(` entry: ${JSON.stringify(entry)} `);
 				if (json[register_str] != undefined) {
 					if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
-						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
+						this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 						accuracy = Number(json[register_str].Accuracy);
 						if (accuracy == 0) { accuracy = 1; }
 						this.registerList[register_nmbr] = {};
@@ -708,8 +708,8 @@ class SofarsolarHyd extends utils.Adapter {
 					this.log.error(` Eintrag-> ${JSON.stringify(register_str)} <- wurde nicht in Datei gefunden`);
 				}
 			}
-			//this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
-			//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
+			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
+			this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 		}
 	}
 
