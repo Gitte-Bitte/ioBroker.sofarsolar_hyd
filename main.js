@@ -285,16 +285,16 @@ class SofarsolarHyd extends utils.Adapter {
 	}
 
 	async actualiceReadings() {
-		this.log.error("actualiceReadings erreicht");
-		this.log.error(`loopObject :   ${JSON.stringify(this.loopObject)}`);
+		//this.log.error("actualiceReadings erreicht");
+		//this.log.error(`loopObject :   ${JSON.stringify(this.loopObject)}`);
 
 		for (const block in this.loopObject) {
-			this.log.error(`block :   ${JSON.stringify(block)}`);
+			//this.log.error(`block :   ${JSON.stringify(block)}`);
 			for (const reg of this.loopObject[block]) {
-				this.log.error(`Register :   ${JSON.stringify(reg)}`);
+				//this.log.error(`Register :   ${JSON.stringify(reg)}`);
 				if (this.registerList[reg].reading) {
 					const name = this.registerList[reg].regPath + "." + this.registerList[reg].regName;
-					this.log.error(`Pfad + Name :   ${JSON.stringify(name)}`);
+					//this.log.error(`Pfad + Name :   ${JSON.stringify(name)}`);
 
 					await this.setStateAsync(name, this.registerList[reg].regValue, true);
 				}
@@ -332,7 +332,15 @@ class SofarsolarHyd extends utils.Adapter {
 				this.registerList[register].regValue = val;
 			}
 			else {
-				this.registerList[register].regValue -= (this.registerList[register].regValue - val) / this.avgCount;
+				this.log.error(`val :   ${JSON.stringify(val)}`);
+				this.log.error(`this.registerList[register].regValue vorher :   ${JSON.stringify(this.registerList[register].regValue)}`);
+				this.log.error(`avgCount :   ${JSON.stringify(this.avgCount)}`);
+
+				this.registerList[register].regValue -= ((this.registerList[register].regValue - val) / this.avgCount);
+
+				this.log.error(`this.registerList[register].regValue nachher :   ${JSON.stringify(this.registerList[register].regValue)}`);
+
+
 			}
 		}
 		//this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
