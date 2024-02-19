@@ -160,8 +160,8 @@ class SofarsolarHyd extends utils.Adapter {
 		// this.ioPack - Die io-package.json als Objekt
 
 		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
-		const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
-		this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
+		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
+		//this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
 
@@ -253,15 +253,6 @@ class SofarsolarHyd extends utils.Adapter {
 
 	async loop() {
 		//this.log.error("loop erreicht");
-		//let average = false;
-		this.loopCounter++;
-		if (this.loopCounter >= this.avgCount) {
-			this.loopCounter = 0;
-			this.avgState = true;
-			//average = true;
-			//this.log.error("average");
-
-		}
 		if (this.loopTasksChanged) {
 			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
@@ -319,9 +310,9 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 	async parseBuffer(buf, liste) {
-		this.log.error("parseBuffer erreicht");
-		this.log.error(`buf :   ${JSON.stringify(buf)}`);
-		this.log.error(`liste :   ${JSON.stringify(liste)}`);
+		// this.log.error("parseBuffer erreicht");
+		// this.log.error(`buf :   ${JSON.stringify(buf)}`);
+		// this.log.error(`liste :   ${JSON.stringify(liste)}`);
 		for (const register of liste) {
 			let val = 0;
 			//this.log.error(`register :   ${JSON.stringify(register)}`);
@@ -347,18 +338,7 @@ class SofarsolarHyd extends utils.Adapter {
 				this.registerList[register].regValue = val;
 			}
 			else {
-				this.log.error(`regtype :   ${JSON.stringify(type)}`);
-				this.log.error(`relAdr :   ${JSON.stringify(relAdr)}`);
-				this.log.error(`fktr :   ${JSON.stringify(fktr)}`);
-				this.log.error(`val :   ${JSON.stringify(val)}`);
-				this.log.error(`this.registerList[register].regValue vorher :   ${JSON.stringify(this.registerList[register].regValue)}`);
-				this.log.error(`avgCount :   ${JSON.stringify(this.avgCount)}`);
-
 				this.registerList[register].regValue -= ((this.registerList[register].regValue - val) / this.avgCount);
-
-				this.log.error(`this.registerList[register].regValue nachher :   ${JSON.stringify(this.registerList[register].regValue)}`);
-
-
 			}
 		}
 		//this.log.error("relAdr : " + relAdr + " register : " + register + "  faktor : " + fktr + "  val : " + val + "  type : " + type);
