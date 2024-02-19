@@ -157,7 +157,7 @@ class SofarsolarHyd extends utils.Adapter {
 		// this.ioPack - Die io-package.json als Objekt
 
 		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
-		const allObjects = await this.getObjectAsync(this.namespace); // Alle folder, device, channel und state Objekte
+		const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
 		this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
