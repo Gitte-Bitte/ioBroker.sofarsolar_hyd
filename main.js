@@ -149,8 +149,12 @@ class SofarsolarHyd extends utils.Adapter {
 		// this.log.error(`jsonFile -> ${JSON.stringify(this.config.filename1)}`);
 		// this.log.error(`config -> ${JSON.stringify(this.config)}`);
 
+		const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
+		this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
+		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
-		this.loop();
+
+		//this.loop();
 
 
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
@@ -329,11 +333,6 @@ class SofarsolarHyd extends utils.Adapter {
 					break;
 			}
 			if (!this.registerList[register].mw) {
-				this.log.error(`regtype :   ${JSON.stringify(type)}`);
-				this.log.error(`relAdr :   ${JSON.stringify(relAdr)}`);
-				this.log.error(`fktr :   ${JSON.stringify(fktr)}`);
-				this.log.error(`val :   ${JSON.stringify(val)}`);
-
 				this.registerList[register].regValue = val;
 			}
 			else {
