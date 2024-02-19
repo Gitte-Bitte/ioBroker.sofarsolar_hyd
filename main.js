@@ -670,7 +670,7 @@ class SofarsolarHyd extends utils.Adapter {
 		else {
 			const json = JSON.parse(data);
 			this.defaultRegister = this.defaultRegister.concat(this.config.table);
-			//this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
+			this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
 			for (const entry of this.defaultRegister) {
 				register_nmbr = parseInt(entry["regAdr"], 16);
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
