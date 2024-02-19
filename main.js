@@ -148,9 +148,16 @@ class SofarsolarHyd extends utils.Adapter {
 		// this.log.error(`dataFolder -> ${JSON.stringify(this.common?.dataFolder)}`);
 		// this.log.error(`jsonFile -> ${JSON.stringify(this.config.filename1)}`);
 		// this.log.error(`config -> ${JSON.stringify(this.config)}`);
+		//this.namespace
+		// this.host -
+		// this.FORBIDDEN_CHARS -
+		// this.namespace - Der komplette Namespace im Format. z.B. admin.0
+		// this.instance - Die Instanznummer als numerischer Wert. z.B. 0
+		// this.adapterDir - Der abolute Pfad zum Adapter-Verzeichnis (innerhalb node_modules)
+		// this.ioPack - Die io-package.json als Objekt
 
 		//const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
-		const allObjects = await this.getChannelsOfAsync(); // Alle folder, device, channel und state Objekte
+		const allObjects = await this.getObjectAsync(this.namespace); // Alle folder, device, channel und state Objekte
 		this.log.error(`allObjects -> ${JSON.stringify(allObjects)}`);
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
 
