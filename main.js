@@ -123,9 +123,11 @@ class SofarsolarHyd extends utils.Adapter {
 	async onReady() {
 		let temp = "";
 		//this.log.error("onready erreicht");
-		await this.delObjectAsync("sofarsolar_hyd.0.LongInterval", { recursive: true });
-		await this.delObjectAsync("sofarsolar_hyd.0.ShortInterval", { recursive: true });
-		await this.delObjectAsync("sofarsolar_hyd.0.CalculatedStates", { recursive: true });
+
+		for (const i in this.channelList) {
+			await this.delObjectAsync(this.namespace+"." +this.channelList[i], { recursive: true });
+			this.log.error(`chanel löschen -> ${JSON.stringify(this.namespace+"." +this.channelList[i])}`);
+		}
 		this.loopTasksChanged = true;
 		this.setState("info.connection", false, true);
 		this.avgCount = this.config.autocomplete2;
@@ -608,7 +610,7 @@ class SofarsolarHyd extends utils.Adapter {
 							await this.createStateAsync("",
 								this.registerList[register_nmbr].regPath,
 								this.registerList[register_nmbr].regName,
-								{ "role": "value", "name": register_str+"_"+this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
+								{ "role": "value", "name": register_str + "_" + this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
 								.catch(e => { this.log.error(`fehler bei createstateasync ${JSON.stringify(e)} `); });
 
 						}
