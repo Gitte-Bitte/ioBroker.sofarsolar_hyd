@@ -34,7 +34,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	channelList = ["Seconds", "Minutes", "Hours", "Daily", "StartUp", "Calculated"];
 	defaultRegister = [
-		{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" },{"regAdr": "589"},{"regAdr": "606"},{"regAdr": "609"}];
+		{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60B" }];
 
 
 	entityLoop = "entityLoop";
@@ -284,6 +284,8 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 		//this.log.error(`registerlist :   ${JSON.stringify(this.registerList)}`);
 		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `); });
+
+		this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
 
 
 		if (this.loopTasks.length > 1) {
@@ -587,24 +589,24 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 		else {
 			const json = JSON.parse(data);
-			this.defaultRegister=this.defaultRegister.concat(this.config.table);
-			this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
+			this.defaultRegister = this.defaultRegister.concat(this.config.table);
+			//this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
 			for (const entry of this.defaultRegister) {
 				register_nmbr = parseInt(entry["regAdr"], 16);
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
-				loopKind = entry["loop"]||this.entityLoop;
+				loopKind = entry["loop"] || this.entityLoop;
 				//this.log.error(` entry: ${JSON.stringify(entry)} `);
 				if (json[register_str] != undefined) {
-					if ((entry["aktiv"]==true)||(entry["aktiv"]==undefined)) {
+					if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
 						//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 						accuracy = Number(json[register_str].Accuracy);
 						if (accuracy == 0) { accuracy = 1; }
 						this.registerList[register_nmbr] = {};
-						this.registerList[register_nmbr].loop = entry["loop"]||this.entityLoop;
-						this.registerList[register_nmbr].mw = entry["mw"]||false;
-						this.registerList[register_nmbr].reading = entry["reading"]||false;
-						this.registerList[register_nmbr].desc = entry["optDescription"]||"";
-						this.registerList[register_nmbr].regPath = entry["regPath"]||"Seconds";
+						this.registerList[register_nmbr].loop = entry["loop"] || this.entityLoop;
+						this.registerList[register_nmbr].mw = entry["mw"] || false;
+						this.registerList[register_nmbr].reading = entry["reading"] || false;
+						this.registerList[register_nmbr].desc = entry["optDescription"] || "";
+						this.registerList[register_nmbr].regPath = entry["regPath"] || "Seconds";
 						this.registerList[register_nmbr].regName = json[register_str].Field;
 						this.registerList[register_nmbr].regType = json[register_str].Typ;
 						this.registerList[register_nmbr].regAccuracy = accuracy;
@@ -626,8 +628,8 @@ class SofarsolarHyd extends utils.Adapter {
 					this.log.error(` Eintrag-> ${JSON.stringify(register_str)} <- wurde nicht in Datei gefunden`);
 				}
 			}
-			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
-			this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
+			//this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
+			//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 		}
 	}
 
