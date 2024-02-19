@@ -585,6 +585,7 @@ class SofarsolarHyd extends utils.Adapter {
 		}
 		else {
 			const json = JSON.parse(data);
+			this.log.error(` config.table: ${JSON.stringify(this.config.table)} `);
 			for (const entry of this.config.table) {
 				register_nmbr = parseInt(entry["regAdr"], 16);
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
