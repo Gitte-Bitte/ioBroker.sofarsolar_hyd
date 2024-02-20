@@ -141,39 +141,7 @@
 			"native": {}
 		},
 		{
-			"_id": "Seconds",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "Minutes",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "Hours",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "Daily",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "StartUp",
+			"_id": "Fetched",
 			"type": "channel",
 			"common": {
 				"name": "Information"

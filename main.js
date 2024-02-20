@@ -349,8 +349,8 @@ class SofarsolarHyd extends utils.Adapter {
 			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
-			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
-			this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
+		this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+		this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 		if (this.loopTasks.length > 1) {
 			this.log.error("loopTasks.length>1");
 
@@ -669,6 +669,7 @@ class SofarsolarHyd extends utils.Adapter {
 		let register_str = "";
 		let register_nmbr = 0;
 		let loopKind = "";
+		let regPath = "";
 		let accuracy = 0;
 		let set = {};
 		if (!fs.existsSync(path)) {
@@ -687,9 +688,10 @@ class SofarsolarHyd extends utils.Adapter {
 					//this.log.error(` loopkind: ${JSON.stringify(loopKind)} `);
 					if (register_nmbr <= 100) {
 						set = this.calcRegisterList[register_nmbr];
+						regPath = "Calculated";
 					}
 					else {
-						if (json[register_str] != undefined) { set = json[register_str]; }
+						if (json[register_str] != undefined) { set = json[register_str]; regPath = "Fetched"; }
 						else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `); continue; }
 					}
 					//this.log.error(` set: ${JSON.stringify(set)} `);
@@ -700,8 +702,8 @@ class SofarsolarHyd extends utils.Adapter {
 					//this.registerList[register_nmbr].loop = entry["loop"] || this.seconds;
 					this.registerList[register_nmbr].mw = entry["mw"] || false;
 					this.registerList[register_nmbr].reading = entry["reading"] || true;
-					this.registerList[register_nmbr].desc = register_str +"_"+ (entry["optDescription"] || entry["loop"] || this.calculated);
-					this.registerList[register_nmbr].regPath = entry["loop"] || this.calculated;
+					this.registerList[register_nmbr].desc = register_str + "_" + (entry["optDescription"] || entry["loop"] || this.calculated);
+					this.registerList[register_nmbr].regPath = regPath;
 					this.registerList[register_nmbr].regName = set.Field;
 					this.registerList[register_nmbr].regType = set.Typ || "";
 					this.registerList[register_nmbr].regAccuracy = accuracy;
