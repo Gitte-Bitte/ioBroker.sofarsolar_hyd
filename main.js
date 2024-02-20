@@ -578,7 +578,7 @@ class SofarsolarHyd extends utils.Adapter {
 		//else 
 		{
 			if (this.registerList[this.power_Bat1].regValue < 0) {
-				this.registerList[this.bat2House].regValue = this.registerList[this.power_Bat1].regValue * 1000;
+				this.registerList[this.bat2House].regValue = -this.registerList[this.power_Bat1].regValue * 1000;
 				this.registerList[this.pv2Bat].regValue = 0;
 			}
 			else {
