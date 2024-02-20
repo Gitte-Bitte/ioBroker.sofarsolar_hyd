@@ -349,11 +349,11 @@ class SofarsolarHyd extends utils.Adapter {
 			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
+			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 		if (this.loopTasks.length > 1) {
 			this.log.error("loopTasks.length>1");
 
-			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
-			this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 
 			//this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
 			//this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
@@ -376,7 +376,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 		await this.actualiceReadings().catch((resp) => { this.log.error(`actualiceReadings : Stimmt was nicht: ${JSON.stringify(resp)} `); });
 
-		this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
+		// this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
 
 
 		if (this.loopTasks.length > 1) {
