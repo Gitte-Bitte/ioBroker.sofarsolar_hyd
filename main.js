@@ -645,7 +645,8 @@ class SofarsolarHyd extends utils.Adapter {
 					set = this.calcRegisterList[register_nmbr];
 				}
 				else {
-					if (json[register_str] != undefined) { set = json[register_str]; break; }
+					if (json[register_str] != undefined) { set = json[register_str]; }
+					else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `); break; }
 				}
 				this.log.error(` set: ${JSON.stringify(set)} `);
 				if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
@@ -659,7 +660,7 @@ class SofarsolarHyd extends utils.Adapter {
 					this.registerList[register_nmbr].desc = entry["optDescription"] || "Calculated";
 					this.registerList[register_nmbr].regPath = entry["regPath"] || "Calculated";
 					this.registerList[register_nmbr].regName = set.Field;
-					this.registerList[register_nmbr].regType = set.Typ||"";
+					this.registerList[register_nmbr].regType = set.Typ || "";
 					this.registerList[register_nmbr].regAccuracy = accuracy;
 					this.registerList[register_nmbr].regUnit = set.Unit;
 					this.registerList[register_nmbr].regAdrStr = register_str;
