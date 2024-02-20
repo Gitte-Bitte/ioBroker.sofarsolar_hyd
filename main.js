@@ -698,7 +698,7 @@ class SofarsolarHyd extends utils.Adapter {
 					//this.registerList[register_nmbr].loop = entry["loop"] || this.seconds;
 					this.registerList[register_nmbr].mw = entry["mw"] || false;
 					this.registerList[register_nmbr].reading = entry["reading"] || true;
-					this.registerList[register_nmbr].desc = register_str + entry["optDescription"] || entry["loop"] || this.calculated;
+					this.registerList[register_nmbr].desc = register_str +"_"+ (entry["optDescription"] || entry["loop"] || this.calculated);
 					this.registerList[register_nmbr].regPath = entry["loop"] || this.calculated;
 					this.registerList[register_nmbr].regName = set.Field;
 					this.registerList[register_nmbr].regType = set.Typ || "";
