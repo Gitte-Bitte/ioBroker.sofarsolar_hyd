@@ -55,8 +55,8 @@ class SofarsolarHyd extends utils.Adapter {
 	seconds = "seconds";
 	minutes = "minutes";
 	hours = "hours";
-	daily= "dayli";
-	startUp="startUp";
+	daily = "dayli";
+	startUp = "startUp";
 	optional = "optional";
 
 	regBuffer = new ArrayBuffer(80);
@@ -101,11 +101,12 @@ class SofarsolarHyd extends utils.Adapter {
 
 	loopInfo = {
 
-		entityLoop: [],
-		minuteLoop: [],
-		hourLoop: [],
-		dayliLoop: [],
-		optionalLoop: []
+		seconds: [],
+		minutes: [],
+		hours: [],
+		daily: [],
+		optional: [],
+		startUp: []
 	};
 
 
@@ -183,12 +184,12 @@ class SofarsolarHyd extends utils.Adapter {
 		this.avgCount = this.config.autocomplete2;
 
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
-		schedule.scheduleJob(temp, () => { this.setMinuteLoop(); });
+		schedule.scheduleJob(temp, () => { this.loopTasks.push(this.minutes); this.loopTasksChanged = true; });
 
 		temp = "0 */" + this.config.autocomplete4 + " * * *";
-		schedule.scheduleJob(temp, () => { this.setHourLoop(); });
+		schedule.scheduleJob(temp, () => { this.loopTasks.push(this.hours); this.loopTasksChanged = true; });
 
-		schedule.scheduleJob("* 59 23 * *", () => { this.setDayliLoop(); });
+		schedule.scheduleJob("* 59 23 * *", () => { this.loopTasks.push(this.daily); this.loopTasksChanged = true; });
 
 		this.dataFilePath = utils.getAbsoluteDefaultDataDir() + "files/" + this.config.filename1;
 		//this.log.error(`dataFilePath) -> ${JSON.stringify(this.dataFilePath)}`);
@@ -443,7 +444,6 @@ class SofarsolarHyd extends utils.Adapter {
 		for (const i in tempArray) {
 			//console.log(reg[i]);
 			const c = (tempArray[i] - tempArray[i] % 0x40);
-			const relAdr = tempArray[i] % 0x40;
 			//console.log(c);
 			if (tempObj[c]) {
 				// console.log(' cluster existiert');
@@ -457,73 +457,74 @@ class SofarsolarHyd extends utils.Adapter {
 		return tempObj;
 	}
 
-
-	setMinuteLoop() {
-		this.loopTasks.push(this.minuteLoop);
-		this.loopTasksChanged = true;
-	}
-	setHourLoop() {
-		this.loopTasks.push(this.hourLoop);
-		this.loopTasksChanged = true;
-	}
-	setDayliLoop() {
-		this.loopTasks.push(this.dayliLoop);
-		this.loopTasksChanged = true;
-	}
-
-
-	async splitter2(resp, arr) {
-		//const buf = Buffer.from(resp.response._body._valuesAsBuffer);
-		const buf = Buffer.from(resp);
-		this.log.silly(`splitter2: resp: ${JSON.stringify(resp)} , array:  ${JSON.stringify(arr)}  `);
-		for (const register of arr) {
-			const addr = (register.regNrRel) * 2;
-			const fktr = register.regAccuracy;
-			this.log.silly(`const: ${JSON.stringify(register)}  arr_const    ${JSON.stringify(register.regName)} `);
-			this.log.silly(register.regPath + register.regName + "  : " + (addr) + "  accuracy : " + register.regAccuracy + "  fktr : " + fktr + " typeof : " + typeof (register.regAccuracy) + " typeof fktr : " + typeof (fktr));
-			let val = 0;
-			const name = register.regPath + register.regName;
-			if (register.regType == "I16") {
-				val = buf.readInt16BE(addr) / fktr;
-			}
-			else if (register.regType == "U16") {
-				val = buf.readUint16BE(addr) / fktr;
-			}
-			else if (register.regType == "U32") {
-				val = buf.readUint32BE(addr) / fktr;
-			}
-			else if (register.regType == "U64") {
-				//val= buf.readBigUInt64BE(addr);
-			}
-			await this.setStateAsync(name, val, true);
-			switch (register.regName) {
-				case "ActivePower_Load_Sys":
-					ActivePower_Load_Sys = val;
-					break;
-				case "ActivePower_Load_Total":
-					ActivePower_Load_Total = val;
-					break;
-				case "ActivePower_Output_Total":
-					ActivePower_Output_Total = val;
-					break;
-				case "ActivePower_PCC_Total":
-					ActivePower_PCC_Total = val;
-					break;
-				case "SysState":
-					SysState = val;
-					break;
-				case "Power_PV1":
-					Power_PV1 = val;
-					break;
-				case "Power_Bat1":
-					Power_Bat1 = val;
-					break;
-			}
-
+	/*
+		setMinuteLoop() {
+			this.loopTasks.push(this.minutes);
+			this.loopTasksChanged = true;
 		}
-	}
-
-
+		setHourLoop() {
+			this.loopTasks.push(this.hours);
+			this.loopTasksChanged = true;
+		}
+		setDayliLoop() {
+			this.loopTasks.push(this.daily);
+			this.loopTasksChanged = true;
+		}
+	
+	*/
+	/*
+		async splitter2(resp, arr) {
+			//const buf = Buffer.from(resp.response._body._valuesAsBuffer);
+			const buf = Buffer.from(resp);
+			this.log.silly(`splitter2: resp: ${JSON.stringify(resp)} , array:  ${JSON.stringify(arr)}  `);
+			for (const register of arr) {
+				const addr = (register.regNrRel) * 2;
+				const fktr = register.regAccuracy;
+				this.log.silly(`const: ${JSON.stringify(register)}  arr_const    ${JSON.stringify(register.regName)} `);
+				this.log.silly(register.regPath + register.regName + "  : " + (addr) + "  accuracy : " + register.regAccuracy + "  fktr : " + fktr + " typeof : " + typeof (register.regAccuracy) + " typeof fktr : " + typeof (fktr));
+				let val = 0;
+				const name = register.regPath + register.regName;
+				if (register.regType == "I16") {
+					val = buf.readInt16BE(addr) / fktr;
+				}
+				else if (register.regType == "U16") {
+					val = buf.readUint16BE(addr) / fktr;
+				}
+				else if (register.regType == "U32") {
+					val = buf.readUint32BE(addr) / fktr;
+				}
+				else if (register.regType == "U64") {
+					//val= buf.readBigUInt64BE(addr);
+				}
+				await this.setStateAsync(name, val, true);
+				switch (register.regName) {
+					case "ActivePower_Load_Sys":
+						ActivePower_Load_Sys = val;
+						break;
+					case "ActivePower_Load_Total":
+						ActivePower_Load_Total = val;
+						break;
+					case "ActivePower_Output_Total":
+						ActivePower_Output_Total = val;
+						break;
+					case "ActivePower_PCC_Total":
+						ActivePower_PCC_Total = val;
+						break;
+					case "SysState":
+						SysState = val;
+						break;
+					case "Power_PV1":
+						Power_PV1 = val;
+						break;
+					case "Power_Bat1":
+						Power_Bat1 = val;
+						break;
+				}
+	
+			}
+		}
+	
+	*/
 	calcStates() {
 		// if (SysState == 7) {
 		// 	//val = 0;
@@ -649,7 +650,7 @@ class SofarsolarHyd extends utils.Adapter {
 					}
 					else {
 						if (json[register_str] != undefined) { set = json[register_str]; }
-						else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `);continue;  }
+						else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `); continue; }
 					}
 					//this.log.error(` set: ${JSON.stringify(set)} `);
 					//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
