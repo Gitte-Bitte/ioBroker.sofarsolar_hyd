@@ -293,6 +293,7 @@
 							title: "Bitte Protokoll wählen",
 							label: "",
 							width: "20% ",
+							default:"Seconds",
 							options: [
 								{
 									label: "Seconds",
@@ -321,7 +322,7 @@
 							attr: "mw",
 							width: "5% ",
 							title: "Mittelwert",
-							hidden: "data.loop!='seconds",
+							hidden: "data.loop!='Seconds",
 							tooltip: "Click on it",
 							filter: false,
 							sort: false,

@@ -102,12 +102,12 @@ class SofarsolarHyd extends utils.Adapter {
 
 	loopInfo = {
 
-		seconds: [],
-		minutes: [],
-		hours: [],
-		daily: [],
-		optional: [],
-		startUp: []
+		Seconds: [],
+		Minutes: [],
+		Hours: [],
+		Daily: [],
+		Optional: [],
+		StartUp: []
 	};
 
 
