@@ -99,7 +99,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	regBuffer = new ArrayBuffer(80);
 	dataFilePath = "";
-	loopTasks = [this.seconds];
+	loopTasks = [this.seconds, this.startUp];
 	avgCount = 0;
 	loopTasksChanged = false;
 	loopObject = {};
@@ -222,12 +222,11 @@ class SofarsolarHyd extends utils.Adapter {
 		this.avgCount = this.config.autocomplete2;
 
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
-		this.log.error(`temp-> ${JSON.stringify(temp)}`);
+		//this.log.error(`temp-> ${JSON.stringify(temp)}`);
 
 		schedule.scheduleJob(temp, () => {
 			this.loopTasks.push(this.minutes);
 			this.loopTasksChanged = true;
-			this.log.error(`MinutenScheduler, loopTask -> ${JSON.stringify(this.loopTasks)}`);
 		});
 
 		temp = "0 */" + this.config.autocomplete4 + " * * *";
@@ -355,10 +354,10 @@ class SofarsolarHyd extends utils.Adapter {
 			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
-		this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
-		this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 		if (this.loopTasks.length > 1) {
 			this.log.error("loopTasks.length>1");
+			//this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			//this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 
 
 			//this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
@@ -462,7 +461,7 @@ class SofarsolarHyd extends utils.Adapter {
 			//this.log.error(`Combine task:  ${JSON.stringify(task)}  mit registern:  ${JSON.stringify(this.loopInfo[task])} `);
 			//console.log("task : " + task);
 			for (let block in this.loopInfo[task]) {
-		
+
 				//console.log("block : " + block);
 				if (temp[block] == undefined) {
 					temp[block] = this.loopInfo[task][block];
@@ -476,7 +475,7 @@ class SofarsolarHyd extends utils.Adapter {
 		//console.log(` tempinfo: ${JSON.stringify(temp)} `);
 		return temp;
 	}
-		
+
 	*/
 
 	createLoopObject(tasks) {
@@ -516,7 +515,7 @@ class SofarsolarHyd extends utils.Adapter {
 			this.loopTasks.push(this.daily);
 			this.loopTasksChanged = true;
 		}
-	
+
 	*/
 	/*
 		async splitter2(resp, arr) {
@@ -566,16 +565,17 @@ class SofarsolarHyd extends utils.Adapter {
 						Power_Bat1 = val;
 						break;
 				}
-	
+
 			}
 		}
-	
+
 	*/
+
 	calcStates() {
 		// if (SysState == 7) {
 		// 	//val = 0;
 		// }
-		//else 
+		//else
 		{
 			if (this.registerList[this.power_Bat1].regValue < 0) {
 				this.registerList[this.bat2House].regValue = -this.registerList[this.power_Bat1].regValue * 1000;
@@ -610,6 +610,7 @@ class SofarsolarHyd extends utils.Adapter {
 		return new Promise(resolve => setTimeout(resolve, t, val));
 	}
 
+	/*
 	async readFromObject() {
 		//this.log.error("readfromobject erreicht");
 		let toRead = null;
@@ -640,6 +641,7 @@ class SofarsolarHyd extends utils.Adapter {
 		this.calcStates();
 		this.setTimeout(() => { this.readFromObject(); }, 8000);
 	}
+*/
 
 	//empfangenes Objekt: {"command":"nu","message":null,"from":"system.adapter.admin.0","callback":{"message":null,"id":14,"ack":false,"time":1700482381104},"_id":12502332}
 
@@ -650,7 +652,7 @@ class SofarsolarHyd extends utils.Adapter {
 		parseText(str) {
 			const txtArr = str.split("#");
 			const regArr = [];
-	
+
 			const lenght = txtArr.length;
 			if (lenght > 1) {
 				for (let jjj = 1; jjj < lenght; jjj++) {
@@ -665,9 +667,8 @@ class SofarsolarHyd extends utils.Adapter {
 			}
 			return regArr;
 		}
-	
-	*/
 
+	*/
 
 	async parseTable() {
 		const path = this.dataFilePath;
@@ -708,7 +709,7 @@ class SofarsolarHyd extends utils.Adapter {
 					//this.registerList[register_nmbr].loop = entry["loop"] || this.seconds;
 					this.registerList[register_nmbr].mw = entry["mw"] || false;
 					this.registerList[register_nmbr].reading = entry["reading"] || true;
-					this.registerList[register_nmbr].desc = register_str + "_" + (entry["optDescription"] || entry["loop"] || this.calculated);
+					this.registerList[register_nmbr].desc = register_str + "_" + (entry["loop"] || this.calculated) + "_" + (entry["optDescription"] || "xxx");
 					this.registerList[register_nmbr].regPath = regPath;
 					this.registerList[register_nmbr].regName = set.Field;
 					this.registerList[register_nmbr].regType = set.Typ || "";
@@ -731,49 +732,51 @@ class SofarsolarHyd extends utils.Adapter {
 			this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
 		}
 	}
-
-	arrayIncludesReg(arr, val) {
-		let b = false;
-		for (const i in arr) {
-			// console.log('>>> ' + i+ '  : ' + arr[i].value + '   <<<  ' + val);
-			if (arr[i].regNrRel == val) {
-				b = true;
-				break;
-			}
-		}
-		//console.log(b);
-		return b;
-	}
-
-	createRegName(i) {
-		return i.toString(16).toUpperCase().padStart(4, "0");
-	}
-
-	addRegister(reg, obj) {
-		for (const i in reg) {
-			//console.log(reg[i]);
-			const c = (reg[i] - reg[i] % 0x40);
-			const relAdr = reg[i] % 0x40;
-			//console.log(c);
-			if (obj[c]) {
-				// console.log(' cluster existiert');
-				if (!this.arrayIncludesReg(obj[c], reg[i])) {
-					// console.log('array einfügen');
-					obj[c].push({ regNrRel: relAdr, regName: this.createRegName(reg[i]), regType: "", regAccuracy: 1 });
-				}
-			} else {
-				// console.log('cluster existiert nicht');
-				obj[c] = [{ regNrRel: relAdr, regNr: reg[i], regName: this.createRegName(reg[i]), regType: "", regAccuracy: 1 }];
-			}
-		}
-	}
-
-	fillLoopInfo(loop, textfeld) {
-		let regs = this.parseText(this.config[textfeld]);
-		this.loopInfo[loop] = regs;
-	}
 	/*
-	
+
+		arrayIncludesReg(arr, val) {
+			let b = false;
+			for (const i in arr) {
+				// console.log('>>> ' + i+ '  : ' + arr[i].value + '   <<<  ' + val);
+				if (arr[i].regNrRel == val) {
+					b = true;
+					break;
+				}
+			}
+			//console.log(b);
+			return b;
+		}
+
+		createRegName(i) {
+			return i.toString(16).toUpperCase().padStart(4, "0");
+		}
+
+		addRegister(reg, obj) {
+			for (const i in reg) {
+				//console.log(reg[i]);
+				const c = (reg[i] - reg[i] % 0x40);
+				const relAdr = reg[i] % 0x40;
+				//console.log(c);
+				if (obj[c]) {
+					// console.log(' cluster existiert');
+					if (!this.arrayIncludesReg(obj[c], reg[i])) {
+						// console.log('array einfügen');
+						obj[c].push({ regNrRel: relAdr, regName: this.createRegName(reg[i]), regType: "", regAccuracy: 1 });
+					}
+				} else {
+					// console.log('cluster existiert nicht');
+					obj[c] = [{ regNrRel: relAdr, regNr: reg[i], regName: this.createRegName(reg[i]), regType: "", regAccuracy: 1 }];
+				}
+			}
+		}
+
+		fillLoopInfo(loop, textfeld) {
+			let regs = this.parseText(this.config[textfeld]);
+			this.loopInfo[loop] = regs;
+		}
+		*/
+	/*
+
 		async fillRegisterObjects() {
 			//this.log.error("fillregisterobject erreicht");
 			this.fillLoopInfo(this.entityLoop, "text1");
@@ -781,16 +784,16 @@ class SofarsolarHyd extends utils.Adapter {
 			this.fillLoopInfo(this.hourLoop, "text3");
 			this.fillLoopInfo(this.dayliLoop, "text4");
 			//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
-	
+
 			this.addRegister(this.parseText(this.config.text1), registerOften);
 			this.addRegister(this.parseText(this.config.text2), registerRar);
 			this.addRegister(this.parseText(this.config.text3), registerDayly);
-	
+
 			await this.makeStatesFromRegister(registerOften, "ShortInterval");
 			await this.makeStatesFromRegister(registerRar, "LongInterval");
 			await this.makeStatesFromRegister(registerDayly, "Dayly");
 		}
-	
+
 		async makeStatesFromRegister(obj, myPath) {
 			const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
 			const data = fs.readFileSync(path).toLocaleString();
@@ -807,7 +810,7 @@ class SofarsolarHyd extends utils.Adapter {
 				for (const reg in obj[cluster]) {
 					//this.log.error(reg + `obj_cluster_reg:  ${JSON.stringify(obj[cluster][reg])} `);
 					//this.log.error(`regname:  ${JSON.stringify(obj[cluster][reg].regName)} `);
-	
+
 					if (json[obj[cluster][reg].regName] == undefined) { this.log.error("gibtsnet"); obj[cluster].splice(reg, 1); break; }
 					const desc = "0x" + obj[cluster][reg].regName + "_" + json[obj[cluster][reg].regName].Field;
 					const name = json[obj[cluster][reg].regName].Field || obj[cluster][reg].regName;
@@ -825,9 +828,9 @@ class SofarsolarHyd extends utils.Adapter {
 				}
 			}
 			// this.log.info(myPath + ` :  ${ JSON.stringify(obj) } `);
-	
+
 		}
-	
+
 		async makeStatesFromArray(obj, myPath) {
 			for (const reg in obj) {
 				const name = obj[reg];
