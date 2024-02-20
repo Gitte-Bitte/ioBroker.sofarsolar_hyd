@@ -34,7 +34,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	channelList = ["Seconds", "Minutes", "Hours", "Daily", "StartUp", "Calculated"];
 	defaultRegister = [
-		{ "regAdr": "1" },{ "regAdr": "2" },{ "regAdr": "3" },{ "regAdr": "4" },{ "regAdr": "5" },{ "regAdr": "6" },{ "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
+		{ "regAdr": "1" }, { "regAdr": "2" }, { "regAdr": "3" }, { "regAdr": "4" }, { "regAdr": "5" }, { "regAdr": "6" }, { "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
 
 	bat2House = 1;
 	pv2Bat = 2;
@@ -65,78 +65,43 @@ class SofarsolarHyd extends utils.Adapter {
 	//registerCollection = [];
 	loopTasksChanged = false;
 	loopObject = {};
-	registerList = {
+	registerList = {};
+	calcRegisterList = {
 		"1": {
-			"loop": "entityLoop",
-			"mw": false,
-			"reading": true,
-			"regPath": "Calculated",
-			"regName": "Bat2House",
-			"regAccuracy": 1,
-			"regUnit": "W",
-			"regAdrStr": "0001",
-			"regValue": 0
+			"Field": "Bat2House",
+			"Accuracy": 1,
+			"Unit": "W",
 		},
 		"2": {
-			"loop": "entityLoop",
-			"mw": false,
-			"reading": true,
-			"regPath": "Calculated",
-			"regName": "PV2Bat",
-			"regAccuracy": 1,
-			"regUnit": "W",
-			"regAdrStr": "0002",
-			"regValue": 0
+			"Field": "PV2Bat",
+			"Accuracy": 1,
+			"Unit": "W",
 		},
 		"3": {
-			"loop": "entityLoop",
-			"mw": false,
-			"reading": true,
-			"regPath": "Calculated",
-			"regName": "Net2Bat",
-			"regAccuracy": 1,
-			"regUnit": "W",
-			"regAdrStr": "0003",
-			"regValue": 0
+			"Field": "Net2Bat",
+			"Accuracy": 1,
+			"Unit": "W",
 		},
 		"4": {
-			"loop": "entityLoop",
-			"mw": false,
-			"reading": true,
-			"regPath": "Calculated",
-			"regName": "PV2Net",
-			"regAccuracy": 1,
-			"regUnit": "W",
-			"regAdrStr": "0004",
-			"regValue": 0
+			"Field": "PV2Net",
+			"Accuracy": 1,
+			"Unit": "W",
 		},
 		"5": {
-			"loop": "entityLoop",
-			"mw": false,
-			"reading": true,
-			"regPath": "Calculated",
-			"regName": "PV2House",
-			"regAccuracy": 1,
-			"regUnit": "W",
-			"regAdrStr": "0005",
-			"regValue": 0
+			"Field": "PV2House",
+			"Accuracy": 1,
+			"Unit": "W",
 		},
 		"6": {
-			"loop": "entityLoop",
-			"mw": false,
-			"reading": true,
-			"regPath": "Calculated",
-			"regName": "Net2House",
-			"regAccuracy": 1,
-			"regUnit": "W",
-			"regAdrStr": "0006",
-			"regValue": 0
+			"Field": "Net2House",
+			"Accuracy": 1,
+			"Unit": "W",
 		}
 	};
 
 	loopInfo = {
 
-		entityLoop: [1,2,3,4,5,6],
+		entityLoop: [1, 2, 3, 4, 5, 6],
 		minuteLoop: [],
 		hourLoop: [],
 		dayliLoop: [],
@@ -664,6 +629,7 @@ class SofarsolarHyd extends utils.Adapter {
 		let register_nmbr = 0;
 		let loopKind = "";
 		let accuracy = 0;
+		let set = {};
 		if (!fs.existsSync(path)) {
 			this.log.error("Datei fehlt");
 		}
@@ -675,37 +641,38 @@ class SofarsolarHyd extends utils.Adapter {
 				register_nmbr = parseInt(entry["regAdr"], 16);
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
 				loopKind = entry["loop"] || this.entityLoop;
-				this.log.error(` entry: ${JSON.stringify(entry)} `);
-				if (register_nmbr<100||json[register_str] != undefined) {
-					if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
-						this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
-						accuracy = Number(json[register_str].Accuracy);
-						if (accuracy == 0) { accuracy = 1; }
-						this.registerList[register_nmbr] = {};
-						this.registerList[register_nmbr].loop = entry["loop"] || this.entityLoop;
-						this.registerList[register_nmbr].mw = entry["mw"] || false;
-						this.registerList[register_nmbr].reading = entry["reading"] || false;
-						this.registerList[register_nmbr].desc = entry["optDescription"] || "";
-						this.registerList[register_nmbr].regPath = entry["regPath"] || "Seconds";
-						this.registerList[register_nmbr].regName = json[register_str].Field;
-						this.registerList[register_nmbr].regType = json[register_str].Typ;
-						this.registerList[register_nmbr].regAccuracy = accuracy;
-						this.registerList[register_nmbr].regUnit = json[register_str].Unit;
-						this.registerList[register_nmbr].regAdrStr = register_str;
-						this.registerList[register_nmbr].regValue = 0;
-						this.loopInfo[loopKind].push(register_nmbr);
-						if (this.registerList[register_nmbr].reading) {
-							await this.createStateAsync("",
-								this.registerList[register_nmbr].regPath,
-								this.registerList[register_nmbr].regName,
-								{ "role": "value", "name": register_str + "_" + this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
-								.catch(e => { this.log.error(`fehler bei createstateasync ${JSON.stringify(e)} `); });
-
-						}
-					}
+				//this.log.error(` entry: ${JSON.stringify(entry)} `);
+				if (register_nmbr <= 100) {
+					set = this.calcRegisterList[register_nmbr];
 				}
 				else {
-					this.log.error(` Eintrag-> ${JSON.stringify(register_str)} <- wurde nicht in Datei gefunden`);
+					if (json[register_str] != undefined) { set = json[register_str]; break; }
+				}
+				if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
+					this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
+					accuracy = Number(set.Accuracy) || 1;
+					if (accuracy == 0) { accuracy = 1; }
+					this.registerList[register_nmbr] = {};
+					this.registerList[register_nmbr].loop = entry["loop"] || this.entityLoop;
+					this.registerList[register_nmbr].mw = entry["mw"] || false;
+					this.registerList[register_nmbr].reading = entry["reading"] || true;
+					this.registerList[register_nmbr].desc = entry["optDescription"] || "Calculated";
+					this.registerList[register_nmbr].regPath = entry["regPath"] || "Calculated";
+					this.registerList[register_nmbr].regName = set.Field;
+					this.registerList[register_nmbr].regType = set.Typ||"";
+					this.registerList[register_nmbr].regAccuracy = accuracy;
+					this.registerList[register_nmbr].regUnit = set.Unit;
+					this.registerList[register_nmbr].regAdrStr = register_str;
+					this.registerList[register_nmbr].regValue = 0;
+					this.loopInfo[loopKind].push(register_nmbr);
+					if (this.registerList[register_nmbr].reading) {
+						await this.createStateAsync("",
+							this.registerList[register_nmbr].regPath,
+							this.registerList[register_nmbr].regName,
+							{ "role": "value", "name": register_str + "_" + this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
+							.catch(e => { this.log.error(`fehler bei createstateasync ${JSON.stringify(e)} `); });
+
+					}
 				}
 			}
 			this.log.error(` registerList: ${JSON.stringify(this.registerList)} `);
