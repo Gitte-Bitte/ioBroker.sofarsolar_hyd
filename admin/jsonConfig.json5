@@ -321,7 +321,7 @@
 							attr: "mw",
 							width: "5% ",
 							title: "Mittelwert",
-							hidden: "data.loop!='entityLoop'",
+							hidden: "data.loop!='seconds",
 							tooltip: "Click on it",
 							filter: false,
 							sort: false,

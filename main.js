@@ -340,7 +340,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 		if (this.loopTasks.length > 1) {
-			this.loopTasks = ["entityLoop"];
+			this.loopTasks = [this.seconds];
 			this.loopTasksChanged = true;
 		}
 		else {
@@ -600,27 +600,27 @@ class SofarsolarHyd extends utils.Adapter {
 
 
 
-/*
-	parseText(str) {
-		const txtArr = str.split("#");
-		const regArr = [];
-
-		const lenght = txtArr.length;
-		if (lenght > 1) {
-			for (let jjj = 1; jjj < lenght; jjj++) {
-				const pos = txtArr[jjj].search("[^0-9a-fA-F]");
-				if (pos > 0) {
-					const sub = txtArr[jjj].substring(0, pos);
-					regArr.push(parseInt(sub, 16));
-				} else {
-					regArr.push(parseInt(txtArr[jjj], 16));
+	/*
+		parseText(str) {
+			const txtArr = str.split("#");
+			const regArr = [];
+	
+			const lenght = txtArr.length;
+			if (lenght > 1) {
+				for (let jjj = 1; jjj < lenght; jjj++) {
+					const pos = txtArr[jjj].search("[^0-9a-fA-F]");
+					if (pos > 0) {
+						const sub = txtArr[jjj].substring(0, pos);
+						regArr.push(parseInt(sub, 16));
+					} else {
+						regArr.push(parseInt(txtArr[jjj], 16));
+					}
 				}
 			}
+			return regArr;
 		}
-		return regArr;
-	}
-
-*/
+	
+	*/
 
 
 	async parseTable() {
@@ -724,72 +724,72 @@ class SofarsolarHyd extends utils.Adapter {
 		let regs = this.parseText(this.config[textfeld]);
 		this.loopInfo[loop] = regs;
 	}
-
-
-	async fillRegisterObjects() {
-		//this.log.error("fillregisterobject erreicht");
-		this.fillLoopInfo(this.entityLoop, "text1");
-		this.fillLoopInfo(this.minuteLoop, "text2");
-		this.fillLoopInfo(this.hourLoop, "text3");
-		this.fillLoopInfo(this.dayliLoop, "text4");
-		//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
-
-		this.addRegister(this.parseText(this.config.text1), registerOften);
-		this.addRegister(this.parseText(this.config.text2), registerRar);
-		this.addRegister(this.parseText(this.config.text3), registerDayly);
-
-		await this.makeStatesFromRegister(registerOften, "ShortInterval");
-		await this.makeStatesFromRegister(registerRar, "LongInterval");
-		await this.makeStatesFromRegister(registerDayly, "Dayly");
-	}
-
-	async makeStatesFromRegister(obj, myPath) {
-		const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
-		const data = fs.readFileSync(path).toLocaleString();
-		if (fs.existsSync(path)) {
-			// this.log.error('Datei ist da');
+	/*
+	
+		async fillRegisterObjects() {
+			//this.log.error("fillregisterobject erreicht");
+			this.fillLoopInfo(this.entityLoop, "text1");
+			this.fillLoopInfo(this.minuteLoop, "text2");
+			this.fillLoopInfo(this.hourLoop, "text3");
+			this.fillLoopInfo(this.dayliLoop, "text4");
+			//this.log.error(` loopInfo: ${JSON.stringify(this.loopInfo)} `);
+	
+			this.addRegister(this.parseText(this.config.text1), registerOften);
+			this.addRegister(this.parseText(this.config.text2), registerRar);
+			this.addRegister(this.parseText(this.config.text3), registerDayly);
+	
+			await this.makeStatesFromRegister(registerOften, "ShortInterval");
+			await this.makeStatesFromRegister(registerRar, "LongInterval");
+			await this.makeStatesFromRegister(registerDayly, "Dayly");
 		}
-		else {
-			// this.log.error('Datei fehlt');
+	
+		async makeStatesFromRegister(obj, myPath) {
+			const path = "/opt/iobroker/node_modules/iobroker.sofarsolar_hyd/lib/Mod_Register.json";
+			const data = fs.readFileSync(path).toLocaleString();
+			if (fs.existsSync(path)) {
+				// this.log.error('Datei ist da');
+			}
+			else {
+				// this.log.error('Datei fehlt');
+			}
+			const json = JSON.parse(data);
+			//this.log.info(myPath + ` :  ${JSON.stringify(obj)} `);
+			for (const cluster in obj) {
+				//this.log.error(cluster + `obj_cluster:  :  ${JSON.stringify(obj[cluster])} `);
+				for (const reg in obj[cluster]) {
+					//this.log.error(reg + `obj_cluster_reg:  ${JSON.stringify(obj[cluster][reg])} `);
+					//this.log.error(`regname:  ${JSON.stringify(obj[cluster][reg].regName)} `);
+	
+					if (json[obj[cluster][reg].regName] == undefined) { this.log.error("gibtsnet"); obj[cluster].splice(reg, 1); break; }
+					const desc = "0x" + obj[cluster][reg].regName + "_" + json[obj[cluster][reg].regName].Field;
+					const name = json[obj[cluster][reg].regName].Field || obj[cluster][reg].regName;
+					const unit = json[obj[cluster][reg].regName].Unit;
+					//parseFloat($("#fullcost").text().replace(',', '.'));
+					const accuracy = Math.trunc(1 / parseFloat(json[obj[cluster][reg].regName].Accuracy.replace(",", ".")));
+					const typ = json[obj[cluster][reg].regName].Typ;
+					obj[cluster][reg].regName = name;
+					obj[cluster][reg].regType = typ;
+					obj[cluster][reg].regAccuracy = accuracy || 1;
+					obj[cluster][reg].regPath = myPath + ".";
+					await this.createStateAsync("", myPath, name, { "role": "value", "name": desc, type: "number", read: true, write: true, "unit": unit })
+						//.then(e => { this.log.debug(`geschafft ${ JSON.stringify(e) } `); })
+						.catch(e => { this.log.error(`fehler ${JSON.stringify(e)} `); });
+				}
+			}
+			// this.log.info(myPath + ` :  ${ JSON.stringify(obj) } `);
+	
 		}
-		const json = JSON.parse(data);
-		//this.log.info(myPath + ` :  ${JSON.stringify(obj)} `);
-		for (const cluster in obj) {
-			//this.log.error(cluster + `obj_cluster:  :  ${JSON.stringify(obj[cluster])} `);
-			for (const reg in obj[cluster]) {
-				//this.log.error(reg + `obj_cluster_reg:  ${JSON.stringify(obj[cluster][reg])} `);
-				//this.log.error(`regname:  ${JSON.stringify(obj[cluster][reg].regName)} `);
-
-				if (json[obj[cluster][reg].regName] == undefined) { this.log.error("gibtsnet"); obj[cluster].splice(reg, 1); break; }
-				const desc = "0x" + obj[cluster][reg].regName + "_" + json[obj[cluster][reg].regName].Field;
-				const name = json[obj[cluster][reg].regName].Field || obj[cluster][reg].regName;
-				const unit = json[obj[cluster][reg].regName].Unit;
-				//parseFloat($("#fullcost").text().replace(',', '.'));
-				const accuracy = Math.trunc(1 / parseFloat(json[obj[cluster][reg].regName].Accuracy.replace(",", ".")));
-				const typ = json[obj[cluster][reg].regName].Typ;
-				obj[cluster][reg].regName = name;
-				obj[cluster][reg].regType = typ;
-				obj[cluster][reg].regAccuracy = accuracy || 1;
-				obj[cluster][reg].regPath = myPath + ".";
+	
+		async makeStatesFromArray(obj, myPath) {
+			for (const reg in obj) {
+				const name = obj[reg];
+				const unit = "W";
+				const desc = "xxx";
 				await this.createStateAsync("", myPath, name, { "role": "value", "name": desc, type: "number", read: true, write: true, "unit": unit })
-					//.then(e => { this.log.debug(`geschafft ${ JSON.stringify(e) } `); })
 					.catch(e => { this.log.error(`fehler ${JSON.stringify(e)} `); });
 			}
 		}
-		// this.log.info(myPath + ` :  ${ JSON.stringify(obj) } `);
-
-	}
-
-	async makeStatesFromArray(obj, myPath) {
-		for (const reg in obj) {
-			const name = obj[reg];
-			const unit = "W";
-			const desc = "xxx";
-			await this.createStateAsync("", myPath, name, { "role": "value", "name": desc, type: "number", read: true, write: true, "unit": unit })
-				.catch(e => { this.log.error(`fehler ${JSON.stringify(e)} `); });
-		}
-	}
-
+	*/
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
 	// /**
 	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
@@ -808,6 +808,8 @@ class SofarsolarHyd extends utils.Adapter {
 	// 	}
 	// }
 }
+
+
 
 if (require.main !== module) {
 	// Export the constructor in compact mode
