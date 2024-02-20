@@ -52,15 +52,16 @@ class SofarsolarHyd extends utils.Adapter {
 	power_Bat2 = 1549;
 
 
-	entityLoop = "entityLoop";
-	minuteLoop = "minuteLoop";
-	hourLoop = "hourLoop";
-	dayliLoop = "dayliLoop";
-	optionalLoop = "optionalLoop";
+	seconds = "seconds";
+	minutes = "minutes";
+	hours = "hours";
+	daily= "dayli";
+	startUp="startUp";
+	optional = "optional";
 
 	regBuffer = new ArrayBuffer(80);
 	dataFilePath = "";
-	loopTasks = [this.entityLoop];
+	loopTasks = [this.seconds];
 	avgCount = 0;
 	loopTasksChanged = false;
 	loopObject = {};
@@ -635,14 +636,14 @@ class SofarsolarHyd extends utils.Adapter {
 		else {
 			const json = JSON.parse(data);
 			this.defaultRegister = this.defaultRegister.concat(this.config.table);
-			this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
+			//this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
 			for (const entry of this.defaultRegister) {
 				if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
 					register_nmbr = parseInt(entry["regAdr"], 16);
 					register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
-					loopKind = entry["loop"] || this.entityLoop;
-					this.log.error(` entry: ${JSON.stringify(entry)} `);
-					this.log.error(` loopkind: ${JSON.stringify(loopKind)} `);
+					loopKind = entry["loop"] || this.seconds;
+					//this.log.error(` entry: ${JSON.stringify(entry)} `);
+					//this.log.error(` loopkind: ${JSON.stringify(loopKind)} `);
 					if (register_nmbr <= 100) {
 						set = this.calcRegisterList[register_nmbr];
 					}
@@ -650,17 +651,16 @@ class SofarsolarHyd extends utils.Adapter {
 						if (json[register_str] != undefined) { set = json[register_str]; }
 						else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `);continue;  }
 					}
-					this.log.error(` set: ${JSON.stringify(set)} `);
-
-					this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
+					//this.log.error(` set: ${JSON.stringify(set)} `);
+					//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 					accuracy = Number(set.Accuracy) || 1;
 					if (accuracy == 0) { accuracy = 1; }
 					this.registerList[register_nmbr] = {};
-					this.registerList[register_nmbr].loop = entry["loop"] || this.entityLoop;
+					//this.registerList[register_nmbr].loop = entry["loop"] || this.seconds;
 					this.registerList[register_nmbr].mw = entry["mw"] || false;
 					this.registerList[register_nmbr].reading = entry["reading"] || true;
-					this.registerList[register_nmbr].desc = entry["optDescription"] || "Calculated";
-					this.registerList[register_nmbr].regPath = entry["regPath"] || "Calculated";
+					this.registerList[register_nmbr].desc = entry["optDescription"] || entry["loop"] || "Calculated";
+					this.registerList[register_nmbr].regPath = entry["loop"] || "Calculated";
 					this.registerList[register_nmbr].regName = set.Field;
 					this.registerList[register_nmbr].regType = set.Typ || "";
 					this.registerList[register_nmbr].regAccuracy = accuracy;

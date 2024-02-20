@@ -296,23 +296,23 @@
 							options: [
 								{
 									label: "Seconds",
-									value: "entityLoop",
+									value: "seconds",
 								},
 								{
 									label: "Minutes",
-									value: "minuteLoop",
+									value: "minutes",
 								},
 								{
-									label: "Hour",
-									value: "hourLoop",
+									label: "Hours",
+									value: "hours",
 								},
 								{
 									label: "Daily",
-									value: "dayliLoop",
+									value: "daily",
 								},
 								{
 									label: "StartUp",
-									value: "dayliLoop",
+									value: "startUp",
 								}
 							],
 						},
@@ -336,40 +336,6 @@
 							filter: false,
 							sort: false,
 							default: false,
-						},
-						{
-							type: "select",
-							attr: "regPath",
-							title: "Pfad des Readings",
-							tooltip: "enter any text",
-							options: [
-								{
-									label: "Seconds",
-									value: "Seconds",
-								},
-								{
-									label: "Minutes",
-									value: "Minutes",
-								},
-								{
-									label: "Hours",
-									value: "Hours",
-								},
-								{
-									label: "Daily",
-									value: "Daily",
-								},
-								{
-									label: "Calculated",
-									value: "Calculated",
-								},
-								{
-									label: "StartUp",
-									value: "StartUp",
-								}
-							],
-							filter: false,
-							sort: false,
 						},
 						{
 							type: "text",
