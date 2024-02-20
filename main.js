@@ -257,7 +257,7 @@ class SofarsolarHyd extends utils.Adapter {
 		//this.log.error(`registerList -> ${JSON.stringify(this.registerList)}`);
 
 
-		//this.loop();
+		this.loop();
 
 
 		//socket.on('error', (err) => { this.log.error('Error: ' + err.message); });
@@ -344,15 +344,17 @@ class SofarsolarHyd extends utils.Adapter {
 	//################################################################################################################
 
 	async loop() {
-		//this.log.error("loop erreicht");
+		this.log.error("loop erreicht");
 		if (this.loopTasksChanged) {
 			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
 		if (this.loopTasks.length > 1) {
-			//this.log.error("loopTasks.length>1");
+			this.log.error("loopTasks.length>1");
 
-			//this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
+
 			//this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
 			//this.log.error(`task in blocks and regs  ${JSON.stringify(this.loopObject)}`);
 		}
@@ -675,14 +677,14 @@ class SofarsolarHyd extends utils.Adapter {
 		else {
 			const json = JSON.parse(data);
 			this.defaultRegister = this.defaultRegister.concat(this.config.table);
-			this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
+			//this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
 			for (const entry of this.defaultRegister) {
 				if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
 					register_nmbr = parseInt(entry["regAdr"], 16);
 					register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
 					loopKind = entry["loop"] || this.seconds;
-					this.log.error(` entry: ${JSON.stringify(entry)} `);
-					this.log.error(` loopkind: ${JSON.stringify(loopKind)} `);
+					//this.log.error(` entry: ${JSON.stringify(entry)} `);
+					//this.log.error(` loopkind: ${JSON.stringify(loopKind)} `);
 					if (register_nmbr <= 100) {
 						set = this.calcRegisterList[register_nmbr];
 					}
@@ -690,8 +692,8 @@ class SofarsolarHyd extends utils.Adapter {
 						if (json[register_str] != undefined) { set = json[register_str]; }
 						else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `); continue; }
 					}
-					this.log.error(` set: ${JSON.stringify(set)} `);
-					this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
+					//this.log.error(` set: ${JSON.stringify(set)} `);
+					//this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 					accuracy = Number(set.Accuracy) || 1;
 					if (accuracy == 0) { accuracy = 1; }
 					this.registerList[register_nmbr] = {};
@@ -711,7 +713,7 @@ class SofarsolarHyd extends utils.Adapter {
 						await this.createStateAsync("",
 							this.registerList[register_nmbr].regPath,
 							this.registerList[register_nmbr].regName,
-							{ "role": "value", "name": register_str + "_" + this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
+							{ "role": "value", "name": this.registerList[register_nmbr].desc, type: "number", read: true, write: true, "unit": this.registerList[register_nmbr].regUnit })
 							.catch(e => { this.log.error(`fehler bei createstateasync ${JSON.stringify(e)} `); });
 
 					}
