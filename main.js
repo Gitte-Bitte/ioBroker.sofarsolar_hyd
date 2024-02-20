@@ -222,7 +222,13 @@ class SofarsolarHyd extends utils.Adapter {
 		this.avgCount = this.config.autocomplete2;
 
 		temp = "*/" + this.config.autocomplete3 + " * * * *";
-		schedule.scheduleJob(temp, () => { this.loopTasks.push(this.minutes); this.loopTasksChanged = true; });
+		this.log.error(`temp-> ${JSON.stringify(temp)}`);
+
+		schedule.scheduleJob(temp, () => {
+			this.loopTasks.push(this.minutes);
+			this.loopTasksChanged = true;
+			this.log.error(`MinutenScheduler, loopTask -> ${JSON.stringify(this.loopTasks)}`);
+		});
 
 		temp = "0 */" + this.config.autocomplete4 + " * * *";
 		schedule.scheduleJob(temp, () => { this.loopTasks.push(this.hours); this.loopTasksChanged = true; });
