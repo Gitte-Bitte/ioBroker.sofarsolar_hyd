@@ -52,12 +52,12 @@ class SofarsolarHyd extends utils.Adapter {
 	power_Bat2 = 1549;
 
 
-	seconds = "seconds";
-	minutes = "minutes";
-	hours = "hours";
-	daily = "dayli";
-	startUp = "startUp";
-	optional = "optional";
+	seconds = "Seconds";
+	minutes = "Minutes";
+	hours = "Hours";
+	daily = "Daily";
+	startUp = "StartUp";
+	optional = "Optional";
 
 	regBuffer = new ArrayBuffer(80);
 	dataFilePath = "";
@@ -661,7 +661,7 @@ class SofarsolarHyd extends utils.Adapter {
 					this.registerList[register_nmbr].mw = entry["mw"] || false;
 					this.registerList[register_nmbr].reading = entry["reading"] || true;
 					this.registerList[register_nmbr].desc = entry["optDescription"] || entry["loop"] || "Calculated";
-					this.registerList[register_nmbr].regPath = entry["loop"] || "Calculated";
+					this.registerList[register_nmbr].regPath = this[entry["loop"]] || "Calculated";
 					this.registerList[register_nmbr].regName = set.Field;
 					this.registerList[register_nmbr].regType = set.Typ || "";
 					this.registerList[register_nmbr].regAccuracy = accuracy;
