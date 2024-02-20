@@ -637,19 +637,21 @@ class SofarsolarHyd extends utils.Adapter {
 			this.defaultRegister = this.defaultRegister.concat(this.config.table);
 			this.log.error(` defaultRegister: ${JSON.stringify(this.defaultRegister)} `);
 			for (const entry of this.defaultRegister) {
-				register_nmbr = parseInt(entry["regAdr"], 16);
-				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
-				loopKind = entry["loop"] || this.entityLoop;
-				this.log.error(` entry: ${JSON.stringify(entry)} `);
-				if (register_nmbr <= 100) {
-					set = this.calcRegisterList[register_nmbr];
-				}
-				else {
-					if (json[register_str] != undefined) { set = json[register_str]; }
-					else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `); break; }
-				}
-				this.log.error(` set: ${JSON.stringify(set)} `);
 				if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
+					register_nmbr = parseInt(entry["regAdr"], 16);
+					register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
+					loopKind = entry["loop"] || this.entityLoop;
+					this.log.error(` entry: ${JSON.stringify(entry)} `);
+					this.log.error(` loopkind: ${JSON.stringify(loopKind)} `);
+					if (register_nmbr <= 100) {
+						set = this.calcRegisterList[register_nmbr];
+					}
+					else {
+						if (json[register_str] != undefined) { set = json[register_str]; }
+						else { this.log.error(`Kein Registereintrag für  ${JSON.stringify(register_str)} `);continue;  }
+					}
+					this.log.error(` set: ${JSON.stringify(set)} `);
+
 					this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 					accuracy = Number(set.Accuracy) || 1;
 					if (accuracy == 0) { accuracy = 1; }
