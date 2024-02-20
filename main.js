@@ -34,7 +34,44 @@ class SofarsolarHyd extends utils.Adapter {
 
 	channelList = ["Seconds", "Minutes", "Hours", "Daily", "StartUp", "Calculated"];
 	defaultRegister = [
-		{ "regAdr": "1" }, { "regAdr": "2" }, { "regAdr": "3" }, { "regAdr": "4" }, { "regAdr": "5" }, { "regAdr": "6" }, { "regAdr": "485" }, { "regAdr": "488" }, { "regAdr": "4AF" }, { "regAdr": "504" }, { "regAdr": "586" }, { "regAdr": "589" }, { "regAdr": "606" }, { "regAdr": "60D" }];
+		{ "regAdr": "1" },
+		{ "regAdr": "2" },
+		{ "regAdr": "3" },
+		{ "regAdr": "4" },
+		{ "regAdr": "5" },
+		{ "regAdr": "6" },
+		{
+			"regAdr": "485",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "488",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "4AF",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "504",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "586",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "589",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "606",
+			"loop": "Seconds"
+		},
+		{
+			"regAdr": "60D",
+			"loop": "Seconds"
+		}];
 
 	bat2House = 1;
 	pv2Bat = 2;
@@ -58,7 +95,7 @@ class SofarsolarHyd extends utils.Adapter {
 	daily = "Daily";
 	startUp = "StartUp";
 	optional = "Optional";
-	calculated="Calculated";
+	calculated = "Calculated";
 
 	regBuffer = new ArrayBuffer(80);
 	dataFilePath = "";
@@ -661,7 +698,7 @@ class SofarsolarHyd extends utils.Adapter {
 					//this.registerList[register_nmbr].loop = entry["loop"] || this.seconds;
 					this.registerList[register_nmbr].mw = entry["mw"] || false;
 					this.registerList[register_nmbr].reading = entry["reading"] || true;
-					this.registerList[register_nmbr].desc = entry["optDescription"] || entry["loop"] || this.calculated;
+					this.registerList[register_nmbr].desc = register_str + entry["optDescription"] || entry["loop"] || this.calculated;
 					this.registerList[register_nmbr].regPath = entry["loop"] || this.calculated;
 					this.registerList[register_nmbr].regName = set.Field;
 					this.registerList[register_nmbr].regType = set.Typ || "";
