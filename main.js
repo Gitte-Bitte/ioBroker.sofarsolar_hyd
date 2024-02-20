@@ -62,7 +62,6 @@ class SofarsolarHyd extends utils.Adapter {
 	dataFilePath = "";
 	loopTasks = [this.entityLoop];
 	avgCount = 0;
-	//registerCollection = [];
 	loopTasksChanged = false;
 	loopObject = {};
 	registerList = {};
@@ -101,7 +100,7 @@ class SofarsolarHyd extends utils.Adapter {
 
 	loopInfo = {
 
-		entityLoop: [1, 2, 3, 4, 5, 6],
+		entityLoop: [],
 		minuteLoop: [],
 		hourLoop: [],
 		dayliLoop: [],
@@ -641,13 +640,14 @@ class SofarsolarHyd extends utils.Adapter {
 				register_nmbr = parseInt(entry["regAdr"], 16);
 				register_str = register_nmbr.toString(16).toUpperCase().padStart(4, "0");
 				loopKind = entry["loop"] || this.entityLoop;
-				//this.log.error(` entry: ${JSON.stringify(entry)} `);
+				this.log.error(` entry: ${JSON.stringify(entry)} `);
 				if (register_nmbr <= 100) {
 					set = this.calcRegisterList[register_nmbr];
 				}
 				else {
 					if (json[register_str] != undefined) { set = json[register_str]; break; }
 				}
+				this.log.error(` set: ${JSON.stringify(set)} `);
 				if ((entry["aktiv"] == true) || (entry["aktiv"] == undefined)) {
 					this.log.error(` entry: ${JSON.stringify(entry.regAdr)} `);
 					accuracy = Number(set.Accuracy) || 1;
