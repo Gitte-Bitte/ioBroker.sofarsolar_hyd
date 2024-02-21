@@ -349,15 +349,16 @@ class SofarsolarHyd extends utils.Adapter {
 	//################################################################################################################
 
 	async loop() {
-		this.log.error("loop erreicht");
+		//this.log.error("loop erreicht");
+		this.setStateAsync("info.connection", true, false);
 		if (this.loopTasksChanged) {
 			//this.log.error("loopTaskChanged");
 			this.loopObject = this.createLoopObject(this.loopTasks);
 		}
 		if (this.loopTasks.length > 1) {
 			this.log.error("loopTasks.length>1");
-			//this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
-			//this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
+			this.log.error(`task  ${JSON.stringify(this.loopTasks)}`);
+			this.log.error(`loopObjekt :   ${JSON.stringify(this.loopObject)}`);
 
 
 			//this.log.error(`task  ${JSON.stringify(this.loopInfo)}`);
